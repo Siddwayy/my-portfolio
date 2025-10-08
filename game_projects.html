@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Projects | Prateek Raghav</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="game_projects.html" class="active">Game Projects</a></li>
+                <li><a href="3d_work.html">3D Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2>Game Projects</h2>
+            </article>
+
+            <article class="game-project">
+                <div class="project-layout">
+                    <div class="project-media">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/_-S2DVjqv3M" title="Kivi Board Game (Java) - YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <a href="#" class="download-btn">Download Game</a>
+                        <p class="project-skills">
+                             Runnable .JAR File
+                            <br>
+                            <strong>Skills:</strong> Java - Swing - Object-Oriented Programming (OOP) - Game Architecture - AI Logic - UI Design - Serialization - Design Patterns (GRASP)
+                        </p>
+                    </div>
+
+                    <div class="project-details">
+                        <h3>Kivi Board Game (Java)</h3>
+                        <p class="time-estimation">Time Estimation: 3 Months</p>
+                        <p class="project-description">A turn-based dice strategy game built in Java Swing, where players compete on a 7x7 grid over 10 rounds. Each player rolls up to three times per turn, aiming to match dice patterns like "three pairs" or "sum over 30" to place stones and score points. The game includes AI opponents, dynamic highlighting of valid moves, and a save/load system using Java serialization. Core gameplay logic is handled through a modular design following GRASP principles, ensuring clean architecture and responsive UI performance.</p>
+                        
+                        <h4>Roles and Responsibility</h4>
+                        <ol>
+                            <li>Designed and developed the entire game from scratch using Java Swing, including UI, game logic, and architecture.</li>
+                            <li>Implemented the core turn-based system, managing player turns, dice rolls, and score calculations across multiple rounds.</li>
+                            <li>Created the AI player logic capable of autonomous decision-making, dice evaluation, and move selection.</li>
+                            <li>Developed a dynamic grid validation system that checks dice combinations and highlights valid moves in real-time.</li>
+                            <li>Integrated save/load functionality using Java object serialization to preserve game state and allow seamless session recovery.</li>
+                            <li>Followed GRASP and OOP design principles to maintain clean, modular, and easily extensible code.</li>
+                        </ol>
+                    </div>
+                </div>
+            </article>
+            <article class="game-project">
+                <div class="project-layout">
+                    <div class="project-media">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/o0rbP4KEBjw" title="TowerEcho (Godot4) - YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <a href="#" class="download-btn">Download Game</a>
+                        <p class="project-skills">
+                            Windows .exe File
+                            <br>
+                            <strong>Skills:</strong> Godot Engine - GDScript - 2D Game Development - AI Systems - Game Architecture - UI/UX Design - Save Management - VFX & SFX Integration
+                        </p>
+                    </div>
+
+                    <div class="project-details">
+                        <h3>TowerEcho (Godot4)</h3>
+                        <p class="time-estimation">Time Estimation: 1 Month</p>
+                        <p class="project-description">TowerEcho is a fast-paced 2D tower defense shooter developed in Godot Engine using GDScript. Players take control of a mouse-aimed turret to defend their base against randomized enemy waves, each with unique pathing, attacks, and escalating difficulty. Designed for quick reflexes and strategic play, every session blends precision aiming, timing, and resource management into a tightly balanced arcade experience.</p>
+                        <p class="project-description">The game features real-time combat feedback, including dynamic hit effects, screen shake, and stylized destruction particles. Players can pause, save, and seamlessly resume their progress mid-wave — with tower health, score, and enemy states restored exactly where they left off.</p>
+                        
+                        <h4>Roles and Responsibility</h4>
+                        <ol>
+                            <li>Designed and programmed the complete gameplay loop — from player turret controls to enemy AI and wave progression.</li>
+                            <li>Developed health, ammo, and regeneration systems, integrating animated UI elements for real-time feedback.</li>
+                            <li>Implemented AI pathfinding and attack behavior, including enemy projectiles, collision detection, and on-death effects.</li>
+                            <li>Built a Save & Resume System to serialize and reload tower health, score, enemy positions, and audio state.</li>
+                            <li>Created interactive menus and HUD, including animated transitions, toggleable sound controls, and in-game overlays.</li>
+                            <li>Added audio-visual polish — particle effects, screen shake, floating damage text, and synchronized SFX for immersive combat.</li>
+                            <li>Optimized game performance and code structure for scalability across future levels and enemy types.</li>
+                        </ol>
+                    </div>
+                </div>
+            </article>
+            </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
