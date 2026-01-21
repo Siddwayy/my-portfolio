@@ -1,5 +1,6 @@
 /* --- Google Font Import --- */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
 
 /* --- Global Styles & Variables --- */
 :root {
@@ -14,6 +15,19 @@
     --grid-color: #e0e0e0;
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --border-color: #ffffff;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-blue: #ff8c00;
+    --accent-teal: #ffb347;
+    --accent-red: #ff8c00;
+    --grid-color: #333333;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,7 +35,7 @@
 }
 
 body {
-    font-family: 'Kalam', cursive;
+    font-family: 'Calistoga', cursive;
     background-color: var(--bg-color);
     background-image: 
         linear-gradient(var(--grid-color) 1px, transparent 1px),
@@ -32,6 +46,14 @@ body {
     font-weight: 400;
     animation: fadeInAnimation 0.5s ease-in forwards;
     overflow-x: hidden;
+}
+
+.project-details-block .project-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: 'Calistoga', cursive;
+    color: var(--text-secondary);
 }
 
 body.loaded {
@@ -138,7 +160,7 @@ nav ul {
 }
 
 nav a {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Calistoga', cursive;
     color: var(--text-primary);
     text-decoration: none;
     font-size: 1rem;
@@ -158,6 +180,45 @@ nav a.active {
     font-weight: 700;
     text-decoration: underline;
     text-decoration-thickness: 3px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: 3px solid var(--border-color);
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    height: 40px;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px) scale(1.1);
+    color: var(--accent-red);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    background-color: var(--card-bg);
+}
+
+.theme-toggle:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .theme-toggle {
+    box-shadow: 2px 2px 0 rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    box-shadow: 3px 3px 0 rgba(255,255,255,0.2);
 }
 
 /* Sidebar */
@@ -194,7 +255,7 @@ nav a.active {
 }
 
 .sidebar h1 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
@@ -216,7 +277,7 @@ nav a.active {
 .education-info p strong {
     color: var(--text-primary);
     font-weight: 700;
-    font-family: 'Caveat', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1.1rem;
 }
 
@@ -253,7 +314,7 @@ nav a.active {
 }
 
 .education-info h4 {
-    font-family: 'Caveat', cursive;
+    font-family: 'Calistoga', cursive;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 0.75rem;
@@ -274,7 +335,7 @@ nav a.active {
     border-radius: 0;
     font-size: 1.2rem;
     font-weight: 700;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Calistoga', cursive;
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -348,11 +409,11 @@ nav a.active {
 }
 
 .main-content h2 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 2.2rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
@@ -437,11 +498,11 @@ nav a.active {
 }
 
 .expertise-item h3 {
-    font-family: 'Caveat', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
-    font-weight: 700;
+    font-weight: 500;
 }
 
 /* Tech Stack Section */
@@ -452,6 +513,60 @@ nav a.active {
     margin-top: 1rem;
     border: 3px solid var(--border-color);
     box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border: 3px solid var(--border-color);
+    border-radius: 0;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+}
+
+.tech-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+}
+
+.tech-logo:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
+    border-color: var(--accent-red);
+}
+
+.tech-logo i {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.tech-logo:hover i {
+    color: var(--accent-red);
+    transform: scale(1.1);
+}
+
+.tech-logo span {
+    font-family: 'Calistoga', cursive;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Game Project & GDD List Styles */
@@ -502,9 +617,9 @@ nav a.active {
 
 .game-project > a > h3,
 .game-project > h3 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1.9rem;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--text-primary);
     text-align: center;
     margin-bottom: 1.5rem;
@@ -576,8 +691,8 @@ h3 > a:hover {
     color: var(--text-primary);
     border-radius: 0;
     font-size: 0.95rem;
-    font-weight: 600;
-    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    font-family: 'Calistoga', cursive;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin: 0.5rem auto 1.5rem auto;
@@ -650,8 +765,8 @@ h3 > a:hover {
     color: var(--text-primary);
     border-radius: 0;
     font-size: 1.1rem;
-    font-weight: 700;
-    font-family: 'Permanent Marker', cursive;
+    font-weight: 400;
+    font-family: 'Calistoga', cursive;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin-top: 1.5rem;
@@ -676,7 +791,7 @@ h3 > a:hover {
 .project-skills strong {
     font-weight: 700;
     color: var(--text-primary);
-    font-family: 'Caveat', cursive;
+    font-family: 'Calistoga', cursive;
 }
 
 .project-details-block .time-estimation {
@@ -686,15 +801,11 @@ h3 > a:hover {
     margin-bottom: 1.5rem;
 }
 
-.project-details-block .project-description {
-    font-size: 1rem;
-    line-height: 1.7;
-}
 
 .project-details-block h4 {
-    font-family: 'Caveat', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--text-primary);
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -720,9 +831,11 @@ h3 > a:hover {
 
 .project-details-block ol li {
     margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.8;
+    font-family: 'Calistoga', cursive;
 }
 
 /* Image Hover Overlay */
@@ -781,7 +894,7 @@ h3 > a:hover {
 }
 
 .gdd-content h3 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1.8rem;
     color: var(--text-primary);
     margin-top: 2.5rem;
@@ -804,7 +917,7 @@ h3 > a:hover {
 }
 
 .gdd-content h4 {
-    font-family: 'Caveat', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1.4rem;
     color: var(--text-primary);
     margin-top: 1.5rem;
@@ -860,7 +973,7 @@ h3 > a:hover {
 }
 
 .contact-form h3 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -887,7 +1000,7 @@ h3 > a:hover {
     border: 3px solid var(--border-color);
     border-radius: 0;
     color: var(--text-primary);
-    font-family: 'Kalam', cursive;
+    font-family: 'Calistoga', cursive;
     font-size: 1rem;
     box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
 }
@@ -916,7 +1029,7 @@ h3 > a:hover {
     border-radius: 0;
     font-size: 1rem;
     font-weight: 700;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Calistoga', cursive;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     float: right;
@@ -1206,6 +1319,95 @@ a:not(.resume-btn):not(.github-link):not(.submit-btn):not(.social-links a):not(.
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* --- Code Block Styling --- */
+pre {
+    background-color: var(--card-bg);
+    border: 3px solid var(--border-color);
+    border-radius: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    font-family: 'Calistoga', cursive;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+code {
+    font-family: 'Calistoga', cursive;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2rem 0.4rem;
+    border-radius: 2px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+    color: var(--text-primary);
+}
+
+.code-snippet {
+    margin: 2rem 0;
+}
+
+.code-snippet h4 {
+    font-family: 'Calistoga', cursive;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+/* --- Table Styling --- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    border: 3px solid var(--border-color);
+}
+
+table th,
+table td {
+    border: 2px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-family: 'Calistoga', cursive;
+    vertical-align: top;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+table td {
+    font-weight: 400;
+}
+
+table th {
+    background-color: var(--card-bg);
+    font-family: 'Calistoga', cursive;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--bg-color);
+}
+
+table tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+table td strong {
+    font-family: 'Calistoga', cursive;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
 /* --- Original Animations --- */
 @keyframes fadeInAnimation {
     from {
@@ -1248,5 +1450,55 @@ a:not(.resume-btn):not(.github-link):not(.submit-btn):not(.social-links a):not(.
     
     .sidebar h1 {
         font-size: 1.5rem;
+    }
+    
+    pre {
+        font-size: 0.75rem;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    
+    .code-snippet h4 {
+        font-size: 1.1rem;
+    }
+    
+    table {
+        font-size: 0.95rem;
+    }
+    
+    table th,
+    table td {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    table th {
+        font-size: 1.2rem;
+    }
+    
+    .project-details-block .project-description {
+        font-size: 1.1rem;
+    }
+    
+    .project-details-block ol li {
+        font-size: 1rem;
+    }
+    
+    .tech-stack-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .tech-logo {
+        padding: 1rem 0.5rem;
+    }
+    
+    .tech-logo i {
+        font-size: 2rem;
+    }
+    
+    .tech-logo span {
+        font-size: 0.75rem;
     }
 }

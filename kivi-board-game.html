@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kivi Board Game | Prateek Raghav</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
     <header>
         <nav>
             <ul>
@@ -20,6 +24,11 @@
                 <li><a href="3d_work.html">3D Work</a></li>
                 <li><a href="gdd.html">Game Design Documents</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -30,33 +39,351 @@
                 <h2 class="page-title">Kivi Board Game (Java)</h2>
             </article>
 
+            <!-- Hero Section -->
             <article class="game-project">
+                <div class="project-details-block">
+                    <p class="project-description">
+                        <strong>KiviBoardGame</strong> delivers a full Java Swing adaptation of the dice strategy board game Kivi: 2–4 players (human/AI) roll to match patterns on a 7×7 grid, build scoring lines over 10 rounds, with save/load and color vision support.
+                    </p>
+                </div>
+                
                 <div class="project-media-block">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/_-S2DVjqv3M" title="Kivi Board Game (Java) - YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                    <a href="#" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
-                    <p class="project-skills">Runnable .JAR File</p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a href="https://youtu.be/_-S2DVjqv3M" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-youtube"></i> Demo Video
+                        </a>
+                        <a href="#" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                        <a href="#" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-download"></i> Play JAR
+                        </a>
+                    </div>
                 </div>
+                
+                <!-- Hero Image -->
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="kivi files/HeroScreen.png" alt="Kivi Board Game - Full game screen" class="project-image">
+                </div>
+            </article>
 
+            <!-- Skills & Tech Highlights Table -->
+            <article class="game-project">
                 <div class="project-details-block">
-                    <p><strong>Skills:</strong> Java - Swing - Object-Oriented Programming (OOP) - Game Architecture - AI Logic - UI Design - Serialization - Design Patterns (GRASP)</p>
-                    
-                    <p class="time-estimation"><strong>Time Estimation:</strong> 3 Months</p>
-                    
-                    <p class="project-description">A turn-based dice strategy game built in Java Swing, where players compete on a 7x7 grid over 10 rounds. Each player rolls up to three times per turn, aiming to match dice patterns like "three pairs" or "sum over 30" to place stones and score points. The game includes AI opponents, dynamic highlighting of valid moves, and a save/load system using Java serialization. Core gameplay logic is handled through a modular design following GRASP principles, ensuring clean architecture and responsive UI performance.</p>
-                    
-                    <h4>Roles and Responsibility</h4>
-                    <ol>
-                        <li>Designed and developed the entire game from scratch using Java Swing, including UI, game logic, and architecture.</li>
-                        <li>Implemented the core turn-based system, managing player turns, dice rolls, and score calculations across multiple rounds.</li>
-                        <li>Created the AI player logic capable of autonomous decision-making, dice evaluation, and move selection.</li>
-                        <li>Developed a dynamic grid validation system that checks dice combinations and highlights valid moves in real-time.</li>
-                        <li>Integrated save/load functionality using Java object serialization to preserve game state and allow seamless session recovery.</li>
-                        <li>Followed GRASP and OOP design principles to maintain clean, modular, and easily extensible code.</li>
-                    </ol>
+                    <table style="width: 100%; margin: 0;">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="text-align: center;">Project Overview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 30%;"><strong>Skills</strong></td>
+                                <td>Java - Swing - Object-Oriented Programming (OOP) - Game Architecture - AI Logic - UI Design - Serialization - Design Patterns (GRASP) - Threading - Accessibility</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Time Estimation</strong></td>
+                                <td>3 Months</td>
+                            </tr>
+                            <tr>
+                                <td><strong>UI Framework</strong></td>
+                                <td>Clean Java Swing UI with custom JPanels (GameGrid, DicePanel, PlayerPanel) and event decoupling via listeners.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GRASP Patterns</strong></td>
+                                <td>
+                                    <strong>Controller:</strong> MainGameWindow coordinates UI/game logic.<br>
+                                    <strong>Low Coupling:</strong> GridCellClickListener separates clicks from GameManager.<br>
+                                    <strong>Protected Variations:</strong> validateDiceCombination centralizes all dice rules.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI Implementation</strong></td>
+                                <td>Threaded AI prevents UI freezing during computer turns (Easy: 2 rolls, Hard: 3 rolls + blocking).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Persistence</strong></td>
+                                <td>Full Serialization saves complete GameManager state for seamless resume.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <!-- Setup & Main Menu Section -->
+            <article class="game-project">
+                <h2>Setup & Main Menu</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Configure 2–4 players: human/AI (Easy/Hard), names, colors, vision mode, and backgrounds via the MainMenu.
+                    </p>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="kivi files/MainMenu.png" alt="Kivi Board Game - Main menu and player configuration" class="project-image">
+                </div>
+            </article>
+
+            <!-- Core Gameplay Loop Section -->
+            <article class="game-project">
+                <h2>Core Gameplay Loop</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Roll 6 dice (up to 3 times) → grid highlights pattern matches → place stone → live stats update → next player. 10 rounds to win!
+                    </p>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="kivi files/ActiveGameplay.png" alt="Kivi Board Game - Active gameplay showing dice rolling and stone placement" class="project-image">
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="kivi files/GridMatchingPatterns.png" alt="Kivi Board Game - Grid showing matching patterns" class="project-image">
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="kivi files/DicePatterns.png" alt="Kivi Board Game - Dice patterns showing pairs, straights, and combinations" class="project-image">
+                </div>
+                
+                <!-- Dice Validation Code Snippet -->
+                <div class="code-snippet">
+                    <h4>Dice Pattern Validation</h4>
+                    <pre><code>/**
+ * Validates dice combination against game rules.
+ * Centralized validation shields rules from ripple changes (GRASP: Protected Variations).
+ */
+public boolean validateDiceCombination(int[] dice) {
+    Arrays.sort(dice);
+    int sum = Arrays.stream(dice).sum();
+    
+    // Sum over 30 pattern
+    if (sum > 30) return true;
+    
+    // Three pairs pattern
+    Map&lt;Integer, Integer&gt; counts = new HashMap&lt;&gt;();
+    for (int die : dice) {
+        counts.put(die, counts.getOrDefault(die, 0) + 1);
+    }
+    long pairCount = counts.values().stream()
+        .filter(count -&gt; count &gt;= 2).count();
+    if (pairCount == 3) return true;
+    
+    // Straight pattern (1-6)
+    boolean isStraight = true;
+    for (int i = 0; i &lt; dice.length; i++) {
+        if (dice[i] != i + 1) {
+            isStraight = false;
+            break;
+        }
+    }
+    return isStraight;
+}</code></pre>
+                </div>
+            </article>
+
+            <!-- Player Stats & UI Section -->
+            <article class="game-project">
+                <h2>Player Stats & UI</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Real-time panels show names, colors (R/G/B/W), stones left, and scores – only the current player can act.
+                    </p>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="kivi files/PlayerInfo.png" alt="Kivi Board Game - Player statistics and information panel" class="project-image" style="max-width: 400px;">
+                </div>
+            </article>
+
+            <!-- Save/Load Feature Section -->
+            <article class="game-project">
+                <h2>Save/Load Feature</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Serialize full game state (board, players, round) – pause and resume anytime.
+                    </p>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="kivi files/GameSave.png" alt="Kivi Board Game - Save game confirmation dialog" class="project-image" style="max-width: 500px;">
+                </div>
+                
+                <!-- Save/Load Code Snippet -->
+                <div class="code-snippet">
+                    <h4>Game State Serialization</h4>
+                    <pre><code>/**
+ * Saves complete game state using Java serialization.
+ * Handles transient fields (threads) automatically.
+ */
+public void saveGame(String filename) throws IOException {
+    try (ObjectOutputStream oos = new ObjectOutputStream(
+            new FileOutputStream(filename))) {
+        oos.writeObject(gameManager);  // Serializes board, players, round
+        oos.writeObject(currentPlayerIndex);
+        oos.writeObject(gameState);
+    }
+}
+
+/**
+ * Loads game state and restores UI.
+ */
+public void loadGame(String filename) throws IOException, 
+        ClassNotFoundException {
+    try (ObjectInputStream ois = new ObjectInputStream(
+            new FileInputStream(filename))) {
+        gameManager = (GameManager) ois.readObject();
+        currentPlayerIndex = (Integer) ois.readObject();
+        gameState = (GameState) ois.readObject();
+        restoreUI();  // Rebuild UI from loaded state
+    }
+}</code></pre>
+                </div>
+            </article>
+
+            <!-- Accessibility Options Section -->
+            <article class="game-project">
+                <h2>Accessibility Options</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Toggle color vision deficiency mode (numbered grids 1–3, labeled stones) and custom backgrounds (Whimsy World, Critter Carnival).
+                    </p>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <img src="kivi files/DisplaySettings.png" alt="Kivi Board Game - Display settings dialog" class="project-image">
+                        </div>
+                        <div>
+                            <img src="kivi files/DisplaySettingsConfirmation.png" alt="Kivi Board Game - Settings update confirmation" class="project-image">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Game Over & Win Section -->
+            <article class="game-project">
+                <h2>Game Over & Win</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Final scores are calculated; winner is announced with a Duke mascot popup.
+                    </p>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="kivi files/GameOver.png" alt="Kivi Board Game - Game over screen showing winner" class="project-image" style="max-width: 500px;">
+                </div>
+            </article>
+
+            <!-- Code Snippets Section -->
+            <article class="game-project">
+                <h2>Code Examples</h2>
+                
+                <!-- AI Decision-Making Code Snippet -->
+                <div class="code-snippet">
+                    <h4>Threaded AI Player Logic</h4>
+                    <pre><code>/**
+ * AI runs on separate thread to prevent UI freeze (GRASP: Pure Fabrication).
+ * Easy mode: 2 rolls max, random placement.
+ * Hard mode: 3 rolls, blocks opponent threats.
+ */
+public class ComputerPlayerAI extends Thread {
+    private Difficulty difficulty;
+    private GameManager gameManager;
+    
+    @Override
+    public void run() {
+        int maxRolls = (difficulty == Difficulty.EASY) ? 2 : 3;
+        int rolls = 0;
+        
+        while (rolls &lt; maxRolls) {
+            int[] dice = rollDice();
+            List&lt;Cell&gt; validCells = findValidCells(dice);
+            
+            if (difficulty == Difficulty.HARD) {
+                // Block opponent's longest line
+                validCells = prioritizeBlocking(validCells);
+            }
+            
+            if (!validCells.isEmpty()) {
+                placeStone(validCells.get(0));
+                break;
+            }
+            rolls++;
+        }
+        
+        SwingUtilities.invokeLater(() -&gt; {
+            gameManager.endTurn();
+        });
+    }
+}</code></pre>
+                </div>
+                
+                <!-- Grid Highlighting Code Snippet -->
+                <div class="code-snippet">
+                    <h4>Real-time Grid Pattern Matching</h4>
+                    <pre><code>/**
+ * Highlights valid cells when dice are rolled.
+ * Decoupled via GridCellClickListener (Low Coupling).
+ */
+public void highlightValidCells(int[] dice) {
+    clearHighlights();
+    
+    for (int row = 0; row &lt; GRID_SIZE; row++) {
+        for (int col = 0; col &lt; GRID_SIZE; col++) {
+            Cell cell = grid[row][col];
+            if (cell.isEmpty() && matchesPattern(cell, dice)) {
+                cell.setHighlighted(true);
+                cell.setBorder(BorderFactory.createLineBorder(
+                    Color.GREEN, 3));
+            }
+        }
+    }
+    repaint();
+}
+
+private boolean matchesPattern(Cell cell, int[] dice) {
+    // Check if dice combination matches cell's required pattern
+    return gameManager.validateDiceCombination(dice) &&
+           cell.getPattern().matches(dice);
+}</code></pre>
+                </div>
+                
+                <!-- GameManager Controller Code Snippet -->
+                <div class="code-snippet">
+                    <h4>GameManager Controller Pattern</h4>
+                    <pre><code>/**
+ * Central controller managing game flow (GRASP: Controller).
+ * Coordinates turns, scoring, and state transitions.
+ */
+public class GameManager implements Serializable {
+    private Board board;
+    private List&lt;Player&gt; players;
+    private int currentRound;
+    private int currentPlayerIndex;
+    
+    public void processTurn(int[] dice, int row, int col) {
+        if (!validateDiceCombination(dice)) return;
+        if (!board.isValidPlacement(row, col, dice)) return;
+        
+        Player currentPlayer = players.get(currentPlayerIndex);
+        board.placeStone(row, col, currentPlayer.getColor());
+        updateScores();
+        
+        if (currentPlayerIndex &lt; players.size() - 1) {
+            currentPlayerIndex++;
+        } else {
+            currentPlayerIndex = 0;
+            currentRound++;
+        }
+        
+        notifyListeners();  // Update UI
+    }
+}</code></pre>
                 </div>
             </article>
         </section>
