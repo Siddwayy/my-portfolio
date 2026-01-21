@@ -1,31 +1,195 @@
+// Page transition and loading animations
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize page animations
+    initPageAnimations();
+    
+    // Handle phone number copy
+    initPhoneCopy();
+    
+    // Handle page transitions
+    initPageTransitions();
+    
+    // Handle image loading
+    initImageLoading();
+}, { once: true });
+
+function initPageAnimations() {
+    // Show page content
+    document.documentElement.classList.add('loaded');
+    
+    // Remove loading spinner after page loads
+    const spinner = document.querySelector('.loading-spinner');
+    if (spinner) {
+        // Wait for all content to be ready
+        if (document.readyState === 'complete') {
+            setTimeout(() => {
+                spinner.classList.remove('active');
+            }, 150);
+        } else {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    spinner.classList.remove('active');
+                }, 150);
+            });
+        }
+    }
+    
+    // Trigger content animations
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 20);
+}
+
+function initPhoneCopy() {
     const phoneElement = document.getElementById('phone-number');
 
     if (phoneElement) {
         phoneElement.addEventListener('click', function(event) {
-            // Prevent the link's default behavior (jumping to the top of the page)
             event.preventDefault();
 
             const phoneNumber = this.innerText;
             
-            // Use the modern Clipboard API to copy the text
             navigator.clipboard.writeText(phoneNumber).then(() => {
-                // Provide feedback to the user that the text was copied
                 const originalText = this.innerText;
                 this.innerText = 'Copied!';
-                this.style.color = '#FFA500'; // Make feedback stand out
+                this.style.color = '#4ecdc4';
 
-                // Change the text back after 2 seconds
                 setTimeout(() => {
                     this.innerText = originalText;
-                    this.style.color = ''; // Revert to original color
+                    this.style.color = '';
                 }, 2000);
 
             }).catch(err => {
                 console.error('Failed to copy phone number: ', err);
-                // Fallback for older browsers or if something goes wrong
                 alert('Could not copy number. Please copy it manually.');
             });
         });
     }
+}
+
+function initPageTransitions() {
+    if (window.pageTransitionsSetup) {
+        return; // Already initialized
+    }
+    window.pageTransitionsSetup = true;
+    
+    let isNavigating = false; // Flag to prevent double navigation
+    
+    const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if already navigating
+            if (isNavigating) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                return false;
+            }
+            
+            // Skip if it's the same page or external link
+            if (!href || href === '#' || href.startsWith('http') || href.startsWith('//')) {
+                return true; // Allow default behavior
+            }
+            
+            // Check if clicking the same page
+            const currentPath = window.location.pathname.split('/').pop() || '';
+            const targetPath = href.split('/').pop() || '';
+            
+            // Normalize paths (handle index.html vs ./ vs empty)
+            let normalizedCurrent = currentPath || 'index.html';
+            let normalizedTarget = targetPath || 'index.html';
+            
+            // Handle relative paths
+            if (href === './' || href === '/' || href === '') {
+                normalizedTarget = 'index.html';
+            }
+            if (currentPath === '' || currentPath === '/') {
+                normalizedCurrent = 'index.html';
+            }
+            
+            if (normalizedCurrent === normalizedTarget) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+            
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            
+            isNavigating = true;
+            
+            // Hide page content immediately
+            document.body.classList.add('transitioning');
+            
+            // Create transition overlay and show it immediately
+            const overlay = document.createElement('div');
+            overlay.className = 'page-transition active';
+            document.body.appendChild(overlay);
+            
+            // Force immediate render and show overlay
+            overlay.offsetHeight; // Trigger reflow
+            
+            // Animate out
+            setTimeout(() => {
+                overlay.classList.add('exit');
+                
+                // Navigate after transition
+                setTimeout(() => {
+                    if (isNavigating) { // Double check flag
+                        window.location.href = href;
+                    }
+                }, 250);
+            }, 30);
+            
+            return false;
+        }, { passive: false });
+    });
+}
+
+function initImageLoading() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        if (img.complete) {
+            img.style.opacity = '1';
+        } else {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            img.addEventListener('error', function() {
+                this.style.opacity = '0.5';
+            });
+        }
+    });
+}
+
+// Handle browser back/forward navigation
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        // Page was loaded from cache, trigger animations
+        document.body.classList.add('loaded');
+        document.documentElement.classList.add('loaded');
+    }
+}, { once: true });
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '') return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
