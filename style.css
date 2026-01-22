@@ -137,6 +137,8 @@ nav {
     padding: 0.5rem 0;
     position: relative;
     box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    overflow: visible;
+    min-height: auto;
 }
 
 nav::after {
@@ -156,17 +158,20 @@ nav ul {
     justify-content: center;
     list-style-type: none;
     flex-wrap: wrap;
+    gap: 0.25rem;
+    align-items: center;
 }
 
 nav a {
     font-family: 'Kalam', cursive;
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 1.5rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem;
     transition: transform 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 nav a:hover {
