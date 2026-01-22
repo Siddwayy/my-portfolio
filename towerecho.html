@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TowerEcho | Prateek Raghav</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./">About</a></li>
+                <li><a href="game_projects.html" class="active">Game Projects</a></li>
+                <li><a href="other_projects.html">Other Projects</a></li>
+                <li><a href="3d_work.html">3D Work</a></li>
+                <li><a href="gdd.html">Game Design Documents</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">TowerEcho: 2D Tower Defense Game</h2>
+            </article>
+
+            <!-- Hero Section -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <p class="project-description">
+                        <strong>TowerEcho</strong> is a complete 2D tower defense game built from scratch in Godot Engine using GDScript. Players defend their base with a mouse-controlled turret against waves of enemies that follow randomized paths through handcrafted levels. The game emphasizes skill-based aiming, resource management, and satisfying combat feedback through polished VFX, SFX, and UI.
+                    </p>
+                    <p><strong>Godot Engine - GDScript - May 2025 – Present</strong></p>
+                </div>
+                
+                <div class="project-media-block">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/o0rbP4KEBjw" title="TowerEcho (Godot4) - YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a href="https://www.youtube.com/watch?v=o0rbP4KEBjw" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-youtube"></i> Demo Video
+                        </a>
+                        <a href="https://github.com/Siddwayy/minimilisttd" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                        <a href="#" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-download"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Gameplay Screenshot -->
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="TowerEchoFiles/inGame.png" alt="TowerEcho - In-game action showing HUD, enemies, turret firing" class="project-image">
+                </div>
+            </article>
+
+            <!-- Skills & Tech Highlights Table -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <table style="width: 100%; margin: 0;">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="text-align: center;">Project Overview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 30%;"><strong>Skills</strong></td>
+                                <td>Godot Engine - GDScript - 2D Game Development - AI Systems - Game Architecture - UI/UX Design - Save Management - VFX & SFX Integration - Object Pooling - State Management</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Time Period</strong></td>
+                                <td>May 2025 – Present</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Game Engine</strong></td>
+                                <td>Godot Engine 4 with GDScript for rapid prototyping and gameplay systems.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Core Systems</strong></td>
+                                <td>
+                                    <strong>Combat:</strong> Mouse-aimed turret with real-time projectile physics.<br>
+                                    <strong>AI:</strong> Enemy pathfinding with unique attack behaviors per wave.<br>
+                                    <strong>Waves:</strong> Randomized enemy spawning with escalating difficulty.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Persistence</strong></td>
+                                <td>Advanced Save System serializes complete game state including tower, enemies, audio position, and UI state.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Polish</strong></td>
+                                <td>50+ particle systems, screen shake, floating damage text, 12 unique SFX, and synchronized audio-visual feedback for immersive combat.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <!-- Gameplay & Core Loop Section -->
+            <article class="game-project">
+                <h2>Gameplay & Core Loop</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        The core experience revolves around precision mouse aiming and strategic resource management:
+                    </p>
+                    <ul>
+                        <li><strong>Mouse-Aimed Turret:</strong> Hold to fire continuously toward cursor position. Turret smoothly rotates with instant visual feedback via laser beam traces and muzzle flash.</li>
+                        <li><strong>Wave Progression:</strong> Two distinct levels with 5-8 waves each. Enemy paths randomize at wave start using Godot's Navigation2D system for varied challenge.</li>
+                        <li><strong>Score-Driven Systems:</strong> Kills generate score points. Every 100 points regenerates 10% health and 20 ammo. Score multipliers increase with combo kills.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Tower Defense Systems Section -->
+            <article class="game-project">
+                <h2>Tower Defense Systems</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Your turret serves as both weapon and fragile base that must survive:
+                    </p>
+                    <ul>
+                        <li><strong>Health System:</strong> 100 base HP with animated progress bar (green → yellow → red). Damage causes screen shake and controller rumble.</li>
+                        <li><strong>Ammo Management:</strong> 150 max ammo with visible counter. Depletes per shot, regenerates via score milestones or pickup pickups.</li>
+                        <li><strong>Combat Polish:</strong>
+                            <ul>
+                                <li>Floating damage numbers rise from hit location</li>
+                                <li>Hit SFX with pitch variation based on damage</li>
+                                <li>Enemy bullets create sparks on block/miss</li>
+                                <li>Destruction sequence: explosion particles → screen fade to white → game over</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Screenshot -->
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="TowerEchoFiles/MainMenu.png" alt="TowerEcho - Main menu with New Game, Controls, Exit buttons" class="project-image">
+                </div>
+            </article>
+
+            <!-- Enemy AI & Combat Section -->
+            <article class="game-project">
+                <h2>Enemy AI & Combat</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Eight enemy types with escalating threat levels create tense decision-making:
+                    </p>
+                    <ul>
+                        <li><strong>Pathfinding:</strong> Enemies spawn at randomized start points and follow curved paths to player base using A* navigation. Reaching goal deducts 25 tower HP.</li>
+                        <li><strong>Damage States:</strong> Multi-hit health bars (50-200 HP). Red flash + vibration animation on damage. Death triggers particle burst and score popup.</li>
+                        <li><strong>Counter-Attack:</strong> 40% of enemies fire homing projectiles at turret. <strong>Key Innovation:</strong> Enemy bullets collide with player bullets mid-air, creating risk/reward shooting lanes.</li>
+                        <li><strong>Boss Wave:</strong> Final wave features tanky enemy with shield phase, requiring focus fire to break before damage phase.</li>
+                    </ul>
+                </div>
+                
+                <!-- Early Game Screenshot -->
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="TowerEchoFiles/EnemyAi.png" alt="TowerEcho - Early wave showing pathing, score 0, full ammo" class="project-image">
+                </div>
+            </article>
+
+            <!-- Menus & User Experience Section -->
+            <article class="game-project">
+                <h2>Menus & User Experience</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Intuitive interfaces minimize friction:
+                    </p>
+                    
+                    <h4>Main Menu Features</h4>
+                    <div class="code-snippet">
+                        <h4>Main Menu Options</h4>
+                        <pre><code>NEW GAME     - Start fresh session
+CONTROLS     - Interactive demo of mouse aiming
+RESUME       - Load last save (if exists)
+EXIT         - Quit to desktop
+🔊 Sound Toggle - Animated icon reflects mute state</code></pre>
+                    </div>
+                    
+                    <h4>In-Game HUD (Top-Right)</h4>
+                    <div class="code-snippet">
+                        <h4>HUD Display</h4>
+                        <pre><code>❤️ Health:    [Animated Progress Bar]  75/100
+💰 Score:     1,247  [x1.5 Combo Multiplier]
+🔫 Ammo:      142/150
+👹 Enemies Down: 24</code></pre>
+                    </div>
+                    
+                    <ul>
+                        <li><strong>ScreenFader:</strong> Global singleton handles all scene transitions with configurable fade time</li>
+                        <li><strong>Pause Menu:</strong> ESC saves <strong>complete</strong> game state and returns to menu</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Advanced Save System Section -->
+            <article class="game-project">
+                <h2>Advanced Save System</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Production-ready persistence without external databases:
+                    </p>
+                    
+                    <div class="code-snippet">
+                        <h4>Saved State Structure</h4>
+                        <pre><code>Saved State Includes:
+├─ Tower: health, position, rotation
+├─ Player: score, ammo, combo multiplier  
+├─ Enemies: position, health, path progress
+├─ Audio: Background music position (ms)
+├─ Wave: current wave, enemies remaining
+└─ UI: HUD values, pause state</code></pre>
+                    </div>
+                    
+                    <p class="project-description">
+                        <strong>Resume Behavior:</strong> Restores <strong>exactly</strong> where paused, including mid-explosion VFX and bullet trajectories. Auto-clears save file on victory/defeat.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Audio-Visual Excellence Section -->
+            <article class="game-project">
+                <h2>Audio-Visual Excellence</h2>
+                <div class="project-details-block">
+                    <h4>Sound Design (12 unique SFX)</h4>
+                    <ul>
+                        <li><strong>Muzzle flash:</strong> Sharp pew-pew with distance falloff</li>
+                        <li><strong>Enemy hit:</strong> Meaty thwack, pitch-scaled by damage</li>
+                        <li><strong>Bullet collision:</strong> High-pitched ting!</li>
+                        <li><strong>Tower damage:</strong> Rising alarm pitch</li>
+                        <li><strong>Victory:</strong> Triumphant fanfare + particle cascade</li>
+                    </ul>
+                    
+                    <h4>Visual Polish</h4>
+                    <ul>
+                        <li>50+ particle systems (muzzle flash, explosions, sparks)</li>
+                        <li>Tween-based animations (UI scale/pop, damage numbers)</li>
+                        <li>Camera shake with configurable intensity/duration</li>
+                        <li>Color grading shifts during low health</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Technical Implementation Section -->
+            <article class="game-project">
+                <h2>Technical Implementation</h2>
+                <div class="project-details-block">
+                    <div class="code-snippet">
+                        <h4>Core Systems Architecture</h4>
+                        <pre><code>Core Systems:
+├─ Singleton Managers: GameState, AudioManager, ScreenFader
+├─ Scene Architecture: Modular (Enemy.tscn, Bullet.tscn, Tower.tscn)
+├─ Performance: Object pooling for bullets/particles (2000+ on screen)
+└─ Input: Unified Desktop/Mobile mouse + gamepad support</code></pre>
+                    </div>
+                    
+                    <p class="project-description">
+                        <strong>Skills Demonstrated:</strong> Godot Engine, GDScript, Game Design, Audio Implementation, Particle Systems, UI/UX, State Management, Object Pooling
+                    </p>
+                </div>
+            </article>
+
+            <!-- Code Examples Section -->
+            <article class="game-project">
+                <h2>Code Examples</h2>
+                
+                <div class="code-snippet">
+                    <h4>Enemy AI Pathfinding</h4>
+                    <pre><code># Enemy pathfinding and movement in GDScript
+func _ready():
+    path = get_path_to_target()
+    path_index = 0
+
+func _physics_process(delta):
+    if path_index < path.size():
+        var target = path[path_index]
+        var direction = (target - global_position).normalized()
+        velocity = direction * speed
+        move_and_slide()
+        
+        if global_position.distance_to(target) < 5:
+            path_index += 1
+    else:
+        attack_base()</code></pre>
+                </div>
+                
+                <div class="code-snippet">
+                    <h4>Wave Management System</h4>
+                    <pre><code># Wave spawning and difficulty scaling
+func spawn_wave(wave_number: int):
+    var enemy_count = base_enemies + (wave_number * 2)
+    var spawn_delay = max(0.5, 2.0 - (wave_number * 0.1))
+    
+    for i in range(enemy_count):
+        var enemy_type = get_random_enemy_type()
+        var spawn_point = get_random_spawn_point()
+        spawn_enemy(enemy_type, spawn_point)
+        await get_tree().create_timer(spawn_delay).timeout</code></pre>
+                </div>
+                
+                <div class="code-snippet">
+                    <h4>Save System</h4>
+                    <pre><code># Save game state to file
+func save_game():
+    var save_data = {
+        "tower_health": tower_health,
+        "tower_position": tower_position,
+        "tower_rotation": tower_rotation,
+        "score": current_score,
+        "ammo": current_ammo,
+        "combo_multiplier": combo_multiplier,
+        "wave_number": current_wave,
+        "enemy_positions": get_all_enemy_positions(),
+        "enemy_health": get_all_enemy_health(),
+        "audio_position": get_audio_position(),
+        "ui_state": get_ui_state()
+    }
+    var file = FileAccess.open("user://savegame.dat", FileAccess.WRITE)
+    file.store_string(JSON.stringify(save_data))
+    file.close()</code></pre>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

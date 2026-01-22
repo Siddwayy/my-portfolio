@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Projects | Prateek Raghav</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./">About</a></li>
+                <li><a href="game_projects.html">Game Projects</a></li>
+                <li><a href="other_projects.html" class="active">Other Projects</a></li>
+                <li><a href="3d_work.html">3D Work</a></li>
+                <li><a href="gdd.html">Game Design Documents</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">Other Projects</h2>
+            </article>
+
+            <div class="game-project-wrapper">
+                <article class="game-project">
+                    <h3>Metrobus Redesign</h3>
+                    <p class="project-description">
+                        This university project for the Human Computer Interaction Course (HCI3150) redesigns the MetroBus (St. John's public transit) homepage to fix usability issues like clutter, poor navigation, and hidden key features. The prototype uses a clean dark theme with the Trip Planner front and center for better user experience.
+                    </p>
+                    <a href="https://github.com/Siddwayy/Metrobus" class="github-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <div class="project-media-block" style="margin-top: 1.5rem;">
+                        <img src="metrobus.jpg" alt="Metrobus Redesign" class="project-image">
+                        <div class="tech-stack-grid" style="margin-top: 0; gap: 0.5rem; padding: 0.75rem; grid-template-columns: repeat(3, 1fr); width: 100%;">
+                            <div class="tech-logo" style="padding: 0.5rem;">
+                                <i class="fab fa-html5" style="font-size: 1.25rem; margin-bottom: 0.25rem;"></i>
+                                <span style="font-size: 0.7rem;">HTML5</span>
+                            </div>
+                            <div class="tech-logo" style="padding: 0.5rem;">
+                                <i class="fab fa-css3-alt" style="font-size: 1.25rem; margin-bottom: 0.25rem;"></i>
+                                <span style="font-size: 0.7rem;">CSS3</span>
+                            </div>
+                            <div class="tech-logo" style="padding: 0.5rem;">
+                                <i class="fab fa-js" style="font-size: 1.25rem; margin-bottom: 0.25rem;"></i>
+                                <span style="font-size: 0.7rem;">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="game-project-wrapper">
+                <article class="game-project">
+                    <h3>Portfolio Website</h3>
+                    <p class="project-description">
+                        A personal portfolio website showcasing game development projects, 3D work, and design documents. Built with a unique sketchy art style, featuring smooth page transitions, dark mode support, and responsive design.
+                    </p>
+                    <a href="https://github.com/Siddwayy/my-portfolio" class="github-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <div class="project-media-block" style="margin-top: 1.5rem;">
+                        <img src="portfolio.avif" alt="Portfolio Website" class="project-image">
+                        <div class="tech-stack-grid" style="margin-top: 0; gap: 0.5rem; padding: 0.75rem; grid-template-columns: repeat(3, 1fr); width: 100%;">
+                            <div class="tech-logo" style="padding: 0.5rem;">
+                                <i class="fab fa-html5" style="font-size: 1.25rem; margin-bottom: 0.25rem;"></i>
+                                <span style="font-size: 0.7rem;">HTML5</span>
+                            </div>
+                            <div class="tech-logo" style="padding: 0.5rem;">
+                                <i class="fab fa-css3-alt" style="font-size: 1.25rem; margin-bottom: 0.25rem;"></i>
+                                <span style="font-size: 0.7rem;">CSS3</span>
+                            </div>
+                            <div class="tech-logo" style="padding: 0.5rem;">
+                                <i class="fab fa-js" style="font-size: 1.25rem; margin-bottom: 0.25rem;"></i>
+                                <span style="font-size: 0.7rem;">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
