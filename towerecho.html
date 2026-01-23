@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TowerEcho - A fast-paced 2D tower defense game developed in Godot Engine by Prateek Raghav. Features mouse-aimed turret, randomized enemy waves, and advanced save system.">
     <title>TowerEcho | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -23,7 +25,6 @@
                 <li><a href="game_projects.html" class="active">Game Projects</a></li>
                 <li><a href="other_projects.html">Other Projects</a></li>
                 <li><a href="3d_work.html">3D Work</a></li>
-                <li><a href="gdd.html">Game Design Documents</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -50,10 +51,6 @@
                 </div>
                 
                 <div class="project-media-block">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/o0rbP4KEBjw" title="TowerEcho (Godot4) - YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
                         <a href="https://www.youtube.com/watch?v=o0rbP4KEBjw" target="_blank" rel="noopener noreferrer" class="github-link">
                             <i class="fab fa-youtube"></i> Demo Video
@@ -61,15 +58,20 @@
                         <a href="https://github.com/Siddwayy/minimilisttd" class="github-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i> Source Code
                         </a>
-                        <a href="#" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-download"></i> Play Game
-                        </a>
                     </div>
+                </div>
+                
+                <!-- Gameplay Video -->
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <video controls autoplay muted loop class="project-image" style="width: 100%; height: auto; border: 3px solid var(--border-color); box-shadow: 3px 3px 0 rgba(0,0,0,0.1);">
+                        <source src="TowerEchoFiles/GameplayDemo.mov" type="video/quicktime">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 
                 <!-- Gameplay Screenshot -->
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="TowerEchoFiles/inGame.png" alt="TowerEcho - In-game action showing HUD, enemies, turret firing" class="project-image">
+                    <img src="TowerEchoFiles/inGame.png" alt="TowerEcho - In-game action showing HUD, enemies, turret firing" class="project-image" loading="lazy">
                 </div>
             </article>
 
@@ -154,7 +156,7 @@
                 
                 <!-- Menu Screenshot -->
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="TowerEchoFiles/MainMenu.png" alt="TowerEcho - Main menu with New Game, Controls, Exit buttons" class="project-image">
+                    <img src="TowerEchoFiles/MainMenu.png" alt="TowerEcho - Main menu with New Game, Controls, Exit buttons" class="project-image" loading="lazy">
                 </div>
             </article>
 
@@ -175,7 +177,7 @@
                 
                 <!-- Early Game Screenshot -->
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="TowerEchoFiles/EnemyAi.png" alt="TowerEcho - Early wave showing pathing, score 0, full ammo" class="project-image">
+                    <img src="TowerEchoFiles/EnemyAi.png" alt="TowerEcho - Early wave showing pathing, score 0, full ammo" class="project-image" loading="lazy">
                 </div>
             </article>
 

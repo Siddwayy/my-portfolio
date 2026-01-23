@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pit2 - A fast-paced 2D multiplayer arcade sport reimagining the classic Indian game Lagori by Prateek Raghav. Game Design Document and project details.">
+    <title>Pit2 | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./">About</a></li>
+                <li><a href="game_projects.html" class="active">Game Projects</a></li>
+                <li><a href="other_projects.html">Other Projects</a></li>
+                <li><a href="3d_work.html">3D Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">Pit2 - Game Design Document</h2>
+            </article>
+
+            <!-- Hero Section -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <p class="project-description">
+                        <strong>Pit2</strong> is a fast-paced, 2D multiplayer arcade sport that reimagines the classic Indian game Lagori (Pitthu) for the digital arena. Two teams of three players battle it out in a clash of precision, reflexes, and teamwork — one side striking to scatter the iconic stack of seven stones, the other racing to rebuild it under pressure. With quick-time mechanics driving every hit and rebuild, every moment counts. Designed for intense 3v3 matches, Pit2 blends traditional play with modern competitive energy — easy to pick up, hard to master, and endlessly replayable.
+                    </p>
+                    <p><strong>Game Design Document - 2D Multiplayer Arcade Sport</strong></p>
+                </div>
+                
+                <div class="project-media-block">
+                    <div class="image-hover-container">
+                        <img src="pit2.png" alt="Pit2 Game Cover" class="project-image" loading="lazy">
+                        <div class="image-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a href="pit2_gdd.html" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-alt"></i> View Full GDD
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Skills & Tech Highlights Table -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <table style="width: 100%; margin: 0;">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="text-align: center;">Project Overview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 30%;"><strong>Skills</strong></td>
+                                <td>Game Design - Game Design Documents (GDD) - Multiplayer Design - UI/UX Design - Game Mechanics Design - Level Design - Competitive Game Design</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Genre</strong></td>
+                                <td>2D, Team-Based, Multiplayer Arcade Sport</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Target Audience</strong></td>
+                                <td>Casual to mid-core players</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Platform</strong></td>
+                                <td>PC</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Core Concept</strong></td>
+                                <td>
+                                    A modern, 2D multiplayer adaptation of the traditional Indian sport, Lagori (also known as Pitthu or Seven Stones). Two teams of three players, "Hitters" and "Seekers," compete in a strategic contest of accuracy, speed, and teamwork.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Unique Features</strong></td>
+                                <td>
+                                    <strong>Digitized Tradition:</strong> A fresh take on a beloved, classic outdoor game.<br>
+                                    <strong>Skill-Based QTEs:</strong> Success is driven by player skill and timing, not just luck.<br>
+                                    <strong>Intense Team Dynamics:</strong> Constant communication and strategy are required for both attacking and defending roles.<br>
+                                    <strong>Fast-Paced Rounds:</strong> Quick, engaging matches that are perfect for both short and long play sessions.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <!-- Core Gameplay Section -->
+            <article class="game-project">
+                <h2>Core Gameplay Loop</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        The game is played in rounds. One team is the Attacking Team (Hitters) and the other is the Defending Team (Seekers):
+                    </p>
+                    <ul>
+                        <li><strong>The Hit:</strong> An Attacker throws a ball at a central stack of seven stones, using a Quick Time Event (QTE) mechanic to determine the throw's power and accuracy.</li>
+                        <li><strong>The Scatter:</strong> The stones fly across the map. The Defending Team must now retrieve them one by one.</li>
+                        <li><strong>The Hunt:</strong> The Attacker retrieves the ball and attempts to hit the Defending players to eliminate them from the round.</li>
+                        <li><strong>The Rebuild:</strong> The Defenders must bring the stones back to the central point and re-stack them, using a precision-based QTE for each placement. A failed QTE causes the currently built portion of the stack to collapse.</li>
+                        <li><strong>Round End:</strong> The round concludes when the Defenders successfully rebuild the stack, all Defenders are eliminated, or the time expires.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Game Mechanics Section -->
+            <article class="game-project">
+                <h2>Game Mechanics</h2>
+                <div class="project-details-block">
+                    <h4>Player Roles & Teams</h4>
+                    <ul>
+                        <li>The game is exclusively 3v3.</li>
+                        <li>Matches consist of 6 rounds.</li>
+                        <li>Teams switch roles after 3 rounds. (e.g., Team A attacks for rounds 1-3, defends for rounds 4-6).</li>
+                        <li>On the Attacking team, the role of the primary "Hitter" rotates, giving each player one chance to initiate a round.</li>
+                    </ul>
+                    
+                    <h4>The Attacking Phase (Hitter)</h4>
+                    <ul>
+                        <li><strong>The Hit QTE:</strong> A power/accuracy bar appears. The player must press a button to stop a moving cursor.</li>
+                        <li><strong>Perfect Hit (Center):</strong> All 7 stones scatter far across the map. Maximum points awarded. The ball moves with higher velocity.</li>
+                        <li><strong>Good Hit (Near Center):</strong> 4-6 stones are knocked down.</li>
+                        <li><strong>Poor Hit (Edges):</strong> 1-3 stones are knocked down and don't travel far.</li>
+                        <li><strong>Elimination:</strong> After the initial hit, the Hitter is free to move, pick up the ball, and throw it at the Defenders. A successful hit eliminates that Defender for the rest of the round.</li>
+                    </ul>
+                    
+                    <h4>The Defending Phase (Seeker)</h4>
+                    <ul>
+                        <li><strong>Stone Collection:</strong> Defenders must run to the scattered stones to pick them up. A player can only carry one stone at a time.</li>
+                        <li><strong>The Stack QTE:</strong> Upon returning to the central stacking point with a stone, a precision QTE appears. This is a smaller, more difficult bar than the hitting QTE.</li>
+                        <li><strong>Success:</strong> The stone is placed correctly on the stack.</li>
+                        <li><strong>Failure:</strong> The player drops their stone, and the entire stack they have rebuilt so far collapses, scattering those specific stones nearby. This creates a high-risk, high-reward scenario, especially when placing the final stones.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Scoring System Section -->
+            <article class="game-project">
+                <h2>Scoring System</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Points are awarded at the end of each round. The team with the highest total score after 6 rounds wins the match.
+                    </p>
+                    
+                    <h4>Attacker Points</h4>
+                    <ul>
+                        <li><strong>Perfect Hit:</strong> +100 points</li>
+                        <li><strong>Good Hit:</strong> +50 points</li>
+                        <li><strong>Poor Hit:</strong> +25 points</li>
+                        <li><strong>Per Defender Eliminated:</strong> +150 points</li>
+                        <li><strong>Team Wipe (All 3 Defenders Eliminated):</strong> +200 bonus points</li>
+                        <li><strong>Round Win (Defenders fail to stack in time):</strong> +300 points</li>
+                    </ul>
+                    
+                    <h4>Defender Points</h4>
+                    <ul>
+                        <li><strong>Partial Stack:</strong> +30 points per stone successfully placed</li>
+                        <li><strong>Round Win (Full Stack Rebuilt):</strong> +500 points</li>
+                        <li><strong>Speed Bonus (stack completed with over 30 seconds left):</strong> +100 points</li>
+                        <li><strong>Flawless Bonus (stack completed with no Defenders eliminated):</strong> +150 points</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Maps Section -->
+            <article class="game-project">
+                <h2>Maps</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        The 5 launch maps will each have a distinct theme and layout with unique obstacles to provide strategic variety:
+                    </p>
+                    <ul>
+                        <li><strong>Urban Rooftop:</strong> A cityscape at dusk with AC units and vents for cover.</li>
+                        <li><strong>Temple Ruins:</strong> An ancient courtyard with crumbling pillars and walls.</li>
+                        <li><strong>Beach Cove:</strong> A sunny beach with palm trees, rocks, and sandcastles.</li>
+                        <li><strong>Market Square:</strong> A vibrant town market with stalls and carts to navigate.</li>
+                        <li><strong>Cyber Arena:</strong> A futuristic, neon-lit arena with digital barriers.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- View Full GDD Section -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <p class="project-description">
+                        This is a summary of the Pit2 Game Design Document. For the complete detailed document including UI flow, customization options, monetization strategy, and comprehensive game mechanics, please view the full GDD.
+                    </p>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="pit2_gdd.html" class="github-link" style="font-size: 1.2rem; padding: 1rem 2rem;">
+                            <i class="fas fa-file-alt"></i> View Full Game Design Document
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

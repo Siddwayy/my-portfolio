@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kivi Board Game - A turn-based dice strategy game built in Java Swing by Prateek Raghav. Features 2-4 players, pattern matching, and save/load functionality.">
     <title>Kivi Board Game | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -23,7 +25,6 @@
                 <li><a href="game_projects.html" class="active">Game Projects</a></li>
                 <li><a href="other_projects.html">Other Projects</a></li>
                 <li><a href="3d_work.html">3D Work</a></li>
-                <li><a href="gdd.html">Game Design Documents</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -49,26 +50,24 @@
                 </div>
                 
                 <div class="project-media-block">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/_-S2DVjqv3M" title="Kivi Board Game (Java) - YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
                         <a href="https://youtu.be/_-S2DVjqv3M" target="_blank" rel="noopener noreferrer" class="github-link">
                             <i class="fab fa-youtube"></i> Demo Video
                         </a>
-                        <a href="#" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                        <a href="#" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-download"></i> Play JAR
-                        </a>
                     </div>
+                </div>
+                
+                <!-- Gameplay Video -->
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <video controls autoplay muted loop class="project-image" style="width: 100%; height: auto; border: 3px solid var(--border-color); box-shadow: 3px 3px 0 rgba(0,0,0,0.1);">
+                        <source src="kivi files/GameplayVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 
                 <!-- Hero Image -->
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="kivi files/HeroScreen.png" alt="Kivi Board Game - Full game screen" class="project-image">
+                    <img src="kivi files/HeroScreen.png" alt="Kivi Board Game - Full game screen" class="project-image" loading="lazy">
                 </div>
             </article>
 
@@ -125,7 +124,7 @@
                 </div>
                 
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="kivi files/MainMenu.png" alt="Kivi Board Game - Main menu and player configuration" class="project-image">
+                    <img src="kivi files/MainMenu.png" alt="Kivi Board Game - Main menu and player configuration" class="project-image" loading="lazy">
                 </div>
             </article>
 
@@ -139,15 +138,15 @@
                 </div>
                 
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="kivi files/ActiveGameplay.png" alt="Kivi Board Game - Active gameplay showing dice rolling and stone placement" class="project-image">
+                    <img src="kivi files/ActiveGameplay.png" alt="Kivi Board Game - Active gameplay showing dice rolling and stone placement" class="project-image" loading="lazy">
                 </div>
                 
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="kivi files/GridMatchingPatterns.png" alt="Kivi Board Game - Grid showing matching patterns" class="project-image">
+                    <img src="kivi files/GridMatchingPatterns.png" alt="Kivi Board Game - Grid showing matching patterns" class="project-image" loading="lazy">
                 </div>
                 
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="kivi files/DicePatterns.png" alt="Kivi Board Game - Dice patterns showing pairs, straights, and combinations" class="project-image">
+                    <img src="kivi files/DicePatterns.png" alt="Kivi Board Game - Dice patterns showing pairs, straights, and combinations" class="project-image" loading="lazy">
                 </div>
                 
                 <!-- Dice Validation Code Snippet -->
@@ -196,7 +195,7 @@ public boolean validateDiceCombination(int[] dice) {
                 </div>
                 
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="kivi files/PlayerInfo.png" alt="Kivi Board Game - Player statistics and information panel" class="project-image" style="max-width: 400px;">
+                    <img src="kivi files/PlayerInfo.png" alt="Kivi Board Game - Player statistics and information panel" class="project-image" style="max-width: 400px;" loading="lazy">
                 </div>
             </article>
 
@@ -210,7 +209,7 @@ public boolean validateDiceCombination(int[] dice) {
                 </div>
                 
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="kivi files/GameSave.png" alt="Kivi Board Game - Save game confirmation dialog" class="project-image" style="max-width: 500px;">
+                    <img src="kivi files/GameSave.png" alt="Kivi Board Game - Save game confirmation dialog" class="project-image" style="max-width: 500px;" loading="lazy">
                 </div>
                 
                 <!-- Save/Load Code Snippet -->
@@ -257,10 +256,10 @@ public void loadGame(String filename) throws IOException,
                 <div class="project-media-block" style="margin-top: 2rem;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
                         <div>
-                            <img src="kivi files/DisplaySettings.png" alt="Kivi Board Game - Display settings dialog" class="project-image">
+                            <img src="kivi files/DisplaySettings.png" alt="Kivi Board Game - Display settings dialog" class="project-image" loading="lazy">
                         </div>
                         <div>
-                            <img src="kivi files/DisplaySettingsConfirmation.png" alt="Kivi Board Game - Settings update confirmation" class="project-image">
+                            <img src="kivi files/DisplaySettingsConfirmation.png" alt="Kivi Board Game - Settings update confirmation" class="project-image" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -276,7 +275,7 @@ public void loadGame(String filename) throws IOException,
                 </div>
                 
                 <div class="project-media-block" style="margin-top: 2rem;">
-                    <img src="kivi files/GameOver.png" alt="Kivi Board Game - Game over screen showing winner" class="project-image" style="max-width: 500px;">
+                    <img src="kivi files/GameOver.png" alt="Kivi Board Game - Game over screen showing winner" class="project-image" style="max-width: 500px;" loading="lazy">
                 </div>
             </article>
 

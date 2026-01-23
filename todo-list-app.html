@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TO-DO-LIST-APP - A lightweight task management utility app built in Unreal Engine 5 using UMG by Prateek Raghav. Features persistent data storage and full task management capabilities.">
+    <title>TO-DO-LIST-APP | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./">About</a></li>
+                <li><a href="game_projects.html" class="active">Game Projects</a></li>
+                <li><a href="other_projects.html">Other Projects</a></li>
+                <li><a href="3d_work.html">3D Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">TO-DO-LIST-APP (Unreal Engine 5)</h2>
+            </article>
+
+            <!-- Hero Section -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <p class="project-description">
+                        <strong>TO-DO-LIST-APP</strong> is a lightweight task management utility app built in Unreal Engine 5 using UMG. The application provides a simple, intuitive way to organize daily goals with persistent data storage and full task creation and management capabilities.
+                    </p>
+                    <p><strong>Unreal Engine 5 - UMG - Blueprints - 2024</strong></p>
+                </div>
+                
+                <div class="project-media-block">
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a href="https://www.youtube.com/watch?v=aA1XqaND2fg" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-youtube"></i> Demo Video
+                        </a>
+                        <a href="https://github.com/Siddwayy/ToDo" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Skills & Tech Highlights Table -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <table style="width: 100%; margin: 0;">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="text-align: center;">Project Overview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 30%;"><strong>Skills</strong></td>
+                                <td>Unreal Engine 5 - UMG (Unreal Motion Graphics) - Blueprints - UI/UX Design - Data Persistence - File I/O - Software Development</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Time Period</strong></td>
+                                <td>2024</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Engine</strong></td>
+                                <td>Unreal Engine 5 with UMG for rapid UI prototyping and development.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Core Features</strong></td>
+                                <td>
+                                    <strong>Task Management:</strong> Create, edit, delete, and organize tasks with priority levels.<br>
+                                    <strong>Data Persistence:</strong> Save and load task data using Unreal's file system.<br>
+                                    <strong>User Interface:</strong> Clean, intuitive UMG-based interface for seamless task management.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Technical Implementation</strong></td>
+                                <td>Built entirely with Blueprints, utilizing UMG widgets for UI elements, and implementing custom save/load systems for persistent data storage.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <!-- Features Section -->
+            <article class="game-project">
+                <h2>Key Features</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        The TO-DO-LIST-APP provides essential task management functionality:
+                    </p>
+                    <ul>
+                        <li><strong>Task Creation:</strong> Add new tasks with titles, descriptions, and priority levels</li>
+                        <li><strong>Task Management:</strong> Edit, delete, and mark tasks as complete</li>
+                        <li><strong>Data Persistence:</strong> All tasks are automatically saved and persist between sessions</li>
+                        <li><strong>Intuitive UI:</strong> Clean, user-friendly interface built with UMG widgets</li>
+                        <li><strong>Organization:</strong> Organize tasks by priority and completion status</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Technical Implementation Section -->
+            <article class="game-project">
+                <h2>Technical Implementation</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        This project demonstrates proficiency in Unreal Engine 5's UI system and data management:
+                    </p>
+                    <ul>
+                        <li><strong>UMG Widgets:</strong> Custom widget blueprints for task display, input fields, and buttons</li>
+                        <li><strong>Data Structures:</strong> Custom data structures to store task information</li>
+                        <li><strong>File I/O:</strong> Implementation of save/load functionality using Unreal's file system</li>
+                        <li><strong>Event-Driven Architecture:</strong> Blueprint event system for UI interactions and data updates</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

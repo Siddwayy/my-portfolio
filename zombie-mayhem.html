@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zombie Mayhem - A first-person survival shooter game developed in Unreal Engine 5 by Prateek Raghav. Features wave-based progression, autonomous zombie AI, and immersive combat systems.">
+    <title>Zombie Mayhem | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./">About</a></li>
+                <li><a href="game_projects.html" class="active">Game Projects</a></li>
+                <li><a href="other_projects.html">Other Projects</a></li>
+                <li><a href="3d_work.html">3D Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">Zombie Mayhem: Wave-Based Survival Shooter</h2>
+            </article>
+
+            <!-- Hero Section -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <p class="project-description">
+                        <strong>Zombie Mayhem</strong> is a first-person survival shooter developed solo in Unreal Engine 5 using Blueprints. Designed around a wave-based progression system, the game challenges players to survive against relentless hordes of zombies with escalating difficulty, reactive combat, and immersive feedback systems.
+                    </p>
+                    <p><strong>Unreal Engine 5 - Blueprints - Solo Development</strong></p>
+                </div>
+                
+                <div class="project-media-block">
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a href="https://www.youtube.com/watch?v=O1o8laZn7rs" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-youtube"></i> Demo Video
+                        </a>
+                        <a href="Zombie/Blueprints/Blueprint Logic – Zombie Survival Game (Unreal Engine).pdf" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Gameplay Video -->
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <video controls autoplay muted loop class="project-image" style="width: 100%; height: auto; border: 3px solid var(--border-color); box-shadow: 3px 3px 0 rgba(0,0,0,0.1);">
+                        <source src="Zombie/GameplayVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </article>
+
+            <!-- Skills & Tech Highlights Table -->
+            <article class="game-project">
+                <div class="project-details-block">
+                    <table style="width: 100%; margin: 0;">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="text-align: center;">Project Overview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 30%;"><strong>Skills</strong></td>
+                                <td>Project Management · Game Design & Player Feedback · User Experience (UX) · UX Design & Evaluation · Unreal Engine – Blueprints & UMG</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Development</strong></td>
+                                <td>Entire project created solo, showcasing end-to-end development skills in Unreal Engine 5. Fully Blueprint-based systems, demonstrating strong design logic and technical implementation.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Game Engine</strong></td>
+                                <td>Unreal Engine 5 with Blueprints for rapid prototyping and gameplay systems. No C++ code required - all systems implemented visually.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Core Systems</strong></td>
+                                <td>
+                                    <strong>Wave System:</strong> Dynamic wave generator continuously ramps up challenge with larger groups and tougher enemies.<br>
+                                    <strong>Combat:</strong> Trace-based shooting with recoil, precise hit detection, and immersive VFX for muzzle flashes and impacts.<br>
+                                    <strong>AI:</strong> Autonomous enemy AI designed entirely in Blueprints using Pawn Sensing to detect, chase, and engage players.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>UI & Feedback</strong></td>
+                                <td>Interactive HUD built with UMG featuring health bar and functional minimap. Animated screen transitions, wave progression alerts, and win/lose state notifications.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <!-- Core Gameplay Section -->
+            <article class="game-project">
+                <h2>Core Gameplay</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        The game centers around surviving increasingly difficult waves of zombies in a post-apocalyptic floating island setting:
+                    </p>
+                    <ul>
+                        <li><strong>Wave System:</strong> A dynamic wave generator continuously ramps up challenge with larger groups and tougher enemies as rounds progress. Waves spawn from two separate locations, doubling zombies with each wave.</li>
+                        <li><strong>Combat Mechanics:</strong> Implemented responsive, trace-based shooting featuring recoil, precise hit detection, and immersive VFX for muzzle flashes and impacts. Different damage for headshots and body shots.</li>
+                        <li><strong>Player Health System:</strong> Includes damage overlays for visual feedback, health regeneration mechanics (5 HP every 5 seconds until 50 health), and a full fail state when the player is overwhelmed.</li>
+                    </ul>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    
+                </div>
+            </article>
+
+            <!-- Artificial Intelligence Section -->
+            <article class="game-project">
+                <h2>Artificial Intelligence</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Fully autonomous enemy AI designed entirely in Blueprints:
+                    </p>
+                    <ul>
+                        <li><strong>Pawn Sensing:</strong> Zombies utilize Pawn Sensing to detect, chase, and engage players. They switch from slow walk to fast run when player is in acceptance radius.</li>
+                        <li><strong>Behavior States:</strong> Enemies transition between idle, chase, and attack states, ensuring varied encounters and reactive gameplay. Running animations and zombie sounds enhance immersion.</li>
+                        <li><strong>Attack System:</strong> Zombies attack the player with custom animations made through Blendspace, applying 20 HP damage in a loop until the zombie is killed.</li>
+                        <li><strong>Death Animations:</strong> Zombies fall to the ground and remain for 5 seconds before disappearing, adding to the game's realism.</li>
+                    </ul>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="Zombie/ArtificalIntelligence.png" alt="Zombie Mayhem - Zombie AI Behavior" class="project-image" loading="lazy">
+                </div>
+            </article>
+
+            <!-- User Interface & Feedback Section -->
+            <article class="game-project">
+                <h2>User Interface & Feedback</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        Comprehensive UI system built with UMG:
+                    </p>
+                    
+                    <h4>Interactive HUD</h4>
+                    <ul>
+                        <li><strong>Health Bar:</strong> Visual health indicator with animated feedback</li>
+                        <li><strong>Minimap:</strong> Functional minimap displaying player and zombie positions for situational awareness</li>
+                        <li><strong>Wave Progression:</strong> Animated wave starting events with custom animations using render opacity transitions</li>
+                    </ul>
+                    
+                    <h4>Game Flow Feedback</h4>
+                    <ul>
+                        <li><strong>Screen Transitions:</strong> Smooth animated transitions between game states</li>
+                        <li><strong>Win/Lose States:</strong> Custom death and win screens with smooth animations</li>
+                        <li><strong>Blood Overlay:</strong> Blood effect overlay animation appears when health goes below 50, using render opacity for smooth transitions</li>
+                        <li><strong>Retry/Exit Options:</strong> Clear navigation options after death or victory</li>
+                    </ul>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <img src="Zombie/MainMenu.png" alt="Zombie Mayhem - Main menu" class="project-image" loading="lazy">
+                        </div>
+                        <div>
+                            <img src="Zombie/GameOver.png" alt="Zombie Mayhem - Game over screen" class="project-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- UX Improvements Section -->
+            <article class="game-project">
+                <h2>UX Improvements & Development Highlights</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        The project implemented numerous UX improvements based on Celia Hodent's principles from The Gamer's Brain:
+                    </p>
+                    
+                    <h4>Enhanced Zombie Behavior</h4>
+                    <ul>
+                        <li>Zombies now have running animations and play zombie sounds</li>
+                        <li>Use pawn sensing to chase player upon sight</li>
+                        <li>Switch from slow walk to fast run when player is in acceptance radius</li>
+                        <li>Enhances anticipation and immersion through clear audiovisual cues</li>
+                    </ul>
+                    
+                    <h4>Blood Hit Effects</h4>
+                    <ul>
+                        <li>Blood effect and hit animation play upon shooting a zombie</li>
+                        <li>Provides clear and immediate feedback for damage output</li>
+                        <li>Reinforces player actions through clear visual feedback</li>
+                    </ul>
+                    
+                    <h4>Dynamic Movement Animations</h4>
+                    <ul>
+                        <li>Different walk speeds and unique animations for idle and aiming states</li>
+                        <li>Uses blend spaces and animation montages for smooth transitions</li>
+                        <li>Supports usability and perception principles by offering clear visual transitions</li>
+                    </ul>
+                    
+                    <h4>Shooting Feedback</h4>
+                    <ul>
+                        <li>Gun movement animation when firing</li>
+                        <li>Gun sound effects upon shooting</li>
+                        <li>Bullet line trace through vector for accurate shooting mechanics</li>
+                        <li>Different effects upon hitting different surfaces</li>
+                        <li>Different damage for headshots and body shots</li>
+                    </ul>
+                    
+                    <h4>Health Regeneration & Damage Effects</h4>
+                    <ul>
+                        <li>Blood effects appear when player health is below 50</li>
+                        <li>Regeneration system restores 5 HP every 5 seconds until 50 health</li>
+                        <li>Adds strategic survival element and sense of recovery</li>
+                    </ul>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    <img src="Zombie/Precision Combat.png" alt="Zombie Mayhem - Combat and VFX" class="project-image" loading="lazy">
+                </div>
+            </article>
+
+            <!-- Game Story Section -->
+            <article class="game-project">
+                <h2>Game Story</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        The survival shooter is set in a post-apocalyptic Floating Island where the player must survive waves of zombies. The goal is to eliminate all zombies while managing health and ammunition, with increasing difficulty through a wave system.
+                    </p>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                    
+                </div>
+            </article>
+
+            <!-- Technical Implementation Section -->
+            <article class="game-project">
+                <h2>Technical Implementation</h2>
+                <div class="project-details-block">
+                    <div class="code-snippet">
+                        <h4>Core Blueprint Systems</h4>
+                        <pre><code>Key Blueprint References:
+├─ BP_Zombie: Zombie AI, attack logic, death animations
+├─ BP_FirstPersonCharacter: Player movement, shooting, health
+├─ ZombieGameMode: Wave spawning and progression
+├─ MainWidget_W: UI system with health bar and minimap
+└─ WB_Minimap: Minimap functionality with player/zombie tracking</code></pre>
+                    </div>
+                    
+                    <p class="project-description">
+                        <strong>Blueprint Highlights:</strong>
+                    </p>
+                    <ul>
+                        <li><strong>Zombie AI:</strong> Custom event for health regeneration, pawn sensing for detection, blendspace animations for movement states</li>
+                        <li><strong>Combat System:</strong> Line trace shooting mechanics, surface-based hit effects, headshot/body shot damage differentiation</li>
+                        <li><strong>Wave System:</strong> Custom events for wave updates, timer-based spawning from multiple locations, difficulty scaling</li>
+                        <li><strong>UI System:</strong> Render opacity animations for smooth transitions, custom events for win/lose states, minimap position tracking</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Asset Sources Section -->
+            <article class="game-project">
+                <h2>Asset Sources</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        The project utilized the following assets from various sources:
+                    </p>
+                    <ul>
+                        <li><strong>Foliage Level Map:</strong> Starting point from Assignment 2 (Fab.com)</li>
+                        <li><strong>VFX Pack:</strong> Blood and surface hit animations (Fab.com)</li>
+                        <li><strong>Character Assets:</strong> Zombie character mesh, zombie animations, and first-person character animations (SmartPoly)</li>
+                        <li><strong>Gun Asset:</strong> Weapon model and animations (Fab.com)</li>
+                        <li><strong>UI Elements:</strong> Player health bar, minimap cursor, and crosshair assets (Fab.com)</li>
+                    </ul>
+                    <p class="project-description">
+                        All gameplay systems, AI logic, wave management, and UI functionality were implemented from scratch using Blueprints.
+                    </p>
+                </div>
+            </article>
+
+            <!-- UX Testing Section -->
+            <article class="game-project">
+                <h2>UX Testing Results</h2>
+                <div class="project-details-block">
+                    <p class="project-description">
+                        During UX testing, a non-classmate player was given the opportunity to play the game without prior instructions:
+                    </p>
+                    <ul>
+                        <li><strong>Positive Feedback:</strong> Player responded positively to enhanced zombie behavior, noting the sense of urgency created by running animations and zombie sounds</li>
+                        <li><strong>Blood Hit Effects:</strong> Well-received for providing immediate and satisfying feedback when shooting zombies</li>
+                        <li><strong>Dynamic Movement:</strong> Player adapted quickly to different movement states, particularly when switching between idle and aiming</li>
+                        <li><strong>Wave System:</strong> Increased engagement as difficulty escalated with each wave</li>
+                        <li><strong>Health System:</strong> Health regeneration and blood overlay helped player understand status without focusing solely on health bar</li>
+                        <li><strong>Minimap:</strong> Proved particularly useful for spatial awareness and strategic movement planning</li>
+                    </ul>
+                    <p class="project-description">
+                        <strong>Future Improvements Suggested:</strong> Distinct hitboxes for head and body shots to make aiming more strategic, and ammo restriction or reload mechanic to introduce resource management.
+                    </p>
+                </div>
+                
+                <div class="project-media-block" style="margin-top: 2rem;">
+                   
+                </div>
+            </article>
+
+            <!-- Development Highlights Section -->
+            <article class="game-project">
+                <h2>Development Highlights</h2>
+                <div class="project-details-block">
+                    <ul>
+                        <li><strong>Solo Development:</strong> Entire project created solo, showcasing end-to-end development skills in Unreal Engine 5</li>
+                        <li><strong>Blueprint-Based:</strong> Fully Blueprint-based systems, demonstrating strong design logic and technical implementation without C++</li>
+                        <li><strong>Balanced Focus:</strong> Balanced focus on gameplay, AI, and UI, ensuring a complete, playable survival experience</li>
+                        <li><strong>UX-Driven Design:</strong> All improvements grounded in established UX principles (Hodent's perception, cognition, and motivation principles)</li>
+                        <li><strong>Iterative Development:</strong> Multiple rounds of UX testing and refinement based on player feedback</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

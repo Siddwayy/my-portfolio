@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3D Work portfolio by Prateek Raghav - Game Developer & 3D Designer showcasing 3D modeling, character design, and environment creation.">
     <title>3D Work | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
     <header>
-<nav>
-    <ul>
-        <li><a href="./">About</a></li>
-        <li><a href="game_projects.html">Game Projects</a></li>
-        <li><a href="other_projects.html">Other Projects</a></li>
-        <li><a href="3d_work.html" class="active">3D Work</a></li>
-        <li><a href="gdd.html">Game Design Documents</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon" id="theme-icon"></i>
-            </button>
-        </li>
-    </ul>
-</nav>
+        <nav>
+            <ul>
+                <li><a href="./">About</a></li>
+                <li><a href="game_projects.html">Game Projects</a></li>
+                <li><a href="other_projects.html">Other Projects</a></li>
+                <li><a href="3d_work.html" class="active">3D Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main class="container-full-width">
