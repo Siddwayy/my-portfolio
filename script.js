@@ -17,30 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
 }, { once: true });
 
 function initPageAnimations() {
-    // Show page content
     document.documentElement.classList.add('loaded');
-    
-    // Remove loading spinner after page loads
-    const spinner = document.querySelector('.loading-spinner');
-    if (spinner) {
-        // Wait for all content to be ready
-        if (document.readyState === 'complete') {
-            setTimeout(() => {
-                spinner.classList.remove('active');
-            }, 150);
-        } else {
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    spinner.classList.remove('active');
-                }, 150);
-            });
-        }
-    }
-    
-    // Trigger content animations
-    setTimeout(() => {
-        document.body.classList.add('loaded');
-    }, 20);
+    document.body.classList.add('loaded');
 }
 
 function initPhoneCopy() {
@@ -72,11 +50,10 @@ function initPhoneCopy() {
 
 function initPageTransitions() {
     if (window.pageTransitionsSetup) {
-        return; // Already initialized
+        return;
     }
     window.pageTransitionsSetup = true;
-    
-    let isNavigating = false; // Flag to prevent double navigation
+    window.isNavigating = false;
     
     const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])');
     
@@ -84,8 +61,7 @@ function initPageTransitions() {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Skip if already navigating
-            if (isNavigating) {
+            if (window.isNavigating) {
                 e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation();
@@ -123,9 +99,7 @@ function initPageTransitions() {
             e.stopPropagation();
             e.stopImmediatePropagation();
             
-            isNavigating = true;
-            
-            // Hide page content immediately
+            window.isNavigating = true;
             document.body.classList.add('transitioning');
             
             // Create transition overlay and show it immediately
@@ -133,20 +107,13 @@ function initPageTransitions() {
             overlay.className = 'page-transition active';
             document.body.appendChild(overlay);
             
-            // Force immediate render and show overlay
-            overlay.offsetHeight; // Trigger reflow
-            
-            // Animate out
+            overlay.offsetHeight;
             setTimeout(() => {
                 overlay.classList.add('exit');
-                
-                // Navigate after transition
                 setTimeout(() => {
-                    if (isNavigating) { // Double check flag
-                        window.location.href = href;
-                    }
-                }, 250);
-            }, 30);
+                    if (window.isNavigating) window.location.href = href;
+                }, 180);
+            }, 10);
             
             return false;
         }, { passive: false });
@@ -234,12 +201,6 @@ window.addEventListener('pageshow', function(event) {
             initPageAnimations();
         }, 50);
     }
-});
-
-// Also handle pagehide to clean up before navigation
-window.addEventListener('pagehide', function(event) {
-    // Clean up before page unloads
-    cleanupStuckStates();
 });
 
 // Smooth scroll for anchor links
