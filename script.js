@@ -171,14 +171,76 @@ function initImageLoading() {
     });
 }
 
-// Handle browser back/forward navigation
+// Clean up function for stuck states
+function cleanupStuckStates() {
+    // Clean up any stuck overlays or transitions
+    const stuckOverlays = document.querySelectorAll('.page-transition.active');
+    stuckOverlays.forEach(overlay => {
+        overlay.classList.remove('active');
+        overlay.classList.remove('exit');
+        overlay.style.pointerEvents = 'none';
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            if (overlay.parentNode) {
+                overlay.parentNode.removeChild(overlay);
+            }
+        }, 100);
+    });
+    
+    // Remove transitioning class
+    document.body.classList.remove('transitioning');
+    
+    // Reset navigation flag
+    window.isNavigating = false;
+    
+    // Remove loading spinner if stuck
+    const spinner = document.querySelector('.loading-spinner');
+    if (spinner && spinner.classList.contains('active')) {
+        spinner.classList.remove('active');
+        spinner.style.opacity = '0';
+        spinner.style.pointerEvents = 'none';
+    }
+}
+
+// Safety timeout to clean up stuck states after 2 seconds
+setTimeout(() => {
+    const activeOverlay = document.querySelector('.page-transition.active');
+    const activeSpinner = document.querySelector('.loading-spinner.active');
+    if (activeOverlay || activeSpinner) {
+        cleanupStuckStates();
+    }
+}, 2000);
+
+// Handle browser back/forward navigation (popstate)
+window.addEventListener('popstate', function(event) {
+    cleanupStuckStates();
+    // Re-initialize animations
+    setTimeout(() => {
+        initPageAnimations();
+    }, 50);
+});
+
+// Handle browser back/forward navigation (pageshow - for cached pages)
 window.addEventListener('pageshow', function(event) {
+    cleanupStuckStates();
+    
     if (event.persisted) {
         // Page was loaded from cache, trigger animations
         document.body.classList.add('loaded');
         document.documentElement.classList.add('loaded');
+        
+        // Re-initialize animations
+        setTimeout(() => {
+            initPageAnimations();
+        }, 50);
     }
-}, { once: true });
+});
+
+// Also handle pagehide to clean up before navigation
+window.addEventListener('pagehide', function(event) {
+    // Clean up before page unloads
+    cleanupStuckStates();
+});
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
