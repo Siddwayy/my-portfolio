@@ -31,7 +31,7 @@
 }
 
 body {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     background-color: var(--bg-color);
     background-image: 
         linear-gradient(var(--grid-color) 1px, transparent 1px),
@@ -48,7 +48,7 @@ body {
     font-size: 1rem;
     line-height: 1.8;
     font-weight: 400;
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     color: var(--text-secondary);
 }
 
@@ -124,25 +124,21 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--card-bg);
-    border: 4px solid var(--border-color);
-    border-radius: 0;
-    padding: 0.5rem 0;
+    border: 3px solid var(--border-color);
+    border-radius: 9999px;
+    padding: 0.4rem 0.5rem;
     position: relative;
     box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
     overflow: visible;
     min-height: auto;
 }
 
+[data-theme="dark"] nav {
+    box-shadow: 3px 3px 0 rgba(255,255,255,0.08);
+}
+
 nav::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border: 2px solid var(--border-color);
-    opacity: 0.2;
-    pointer-events: none;
+    content: none;
 }
 
 nav ul {
@@ -155,66 +151,63 @@ nav ul {
 }
 
 nav a {
-    font-family: 'Kalam', cursive;
-    color: var(--text-primary);
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.95rem;
-    padding: 0.5rem 1.2rem;
-    transition: transform 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 0.55rem 1.25rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     white-space: nowrap;
 }
 
 nav a:hover {
-    transform: translateY(-2px) scale(1.1);
     color: var(--accent-red);
+    background-color: var(--bg-color);
 }
 
 nav a.active {
-    color: var(--text-primary);
+    color: var(--card-bg);
     font-weight: 700;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
+    background-color: var(--accent-red);
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    text-decoration: none;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
+[data-theme="dark"] nav a.active {
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+/* Theme Toggle Button - inside pill bar */
+nav .theme-toggle {
     background: transparent;
-    border: 3px solid var(--border-color);
-    border-radius: 0;
-    padding: 0.5rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 9999px;
+    padding: 0.5rem 0.85rem;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-primary);
-    transition: all 0.3s ease;
-    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
-    margin-left: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+    margin-left: 0.35rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 45px;
-    height: 40px;
+    min-width: 42px;
+    height: 38px;
 }
 
-.theme-toggle:hover {
-    transform: translateY(-2px) scale(1.1);
+nav .theme-toggle:hover {
     color: var(--accent-red);
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
-    background-color: var(--card-bg);
+    background-color: var(--bg-color);
+    border-color: var(--accent-red);
 }
 
-.theme-toggle:active {
-    transform: translateY(0) scale(1);
-    box-shadow: 1px 1px 0 rgba(0,0,0,0.1);
-}
-
-[data-theme="dark"] .theme-toggle {
-    box-shadow: 2px 2px 0 rgba(255,255,255,0.1);
-}
-
-[data-theme="dark"] .theme-toggle:hover {
-    box-shadow: 3px 3px 0 rgba(255,255,255,0.2);
+nav .theme-toggle:active {
+    transform: scale(0.97);
 }
 
 /* Sidebar */
@@ -251,7 +244,7 @@ nav a.active {
 }
 
 .sidebar h1 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
@@ -273,7 +266,7 @@ nav a.active {
 .education-info p strong {
     color: var(--text-primary);
     font-weight: 700;
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.1rem;
 }
 
@@ -311,7 +304,7 @@ nav a.active {
 }
 
 .education-info h4 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 1rem;
@@ -333,7 +326,7 @@ nav a.active {
     border-radius: 0;
     font-size: 1.2rem;
     font-weight: 700;
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -422,10 +415,10 @@ nav a.active {
 }
 
 .lang-logo span {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 0.65rem;
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -465,7 +458,7 @@ nav a.active {
 }
 
 .main-content h2 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 2.2rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -508,6 +501,7 @@ nav a.active {
     color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.8;
+    font-weight: 400;
 }
 
 /* --- Page-Specific Sections --- */
@@ -554,7 +548,7 @@ nav a.active {
 }
 
 .expertise-item h3 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
@@ -617,12 +611,150 @@ nav a.active {
 }
 
 .tech-logo span {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 0.9rem;
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+/* Game Projects Page - Filter & Grid */
+.game-projects-page .page-title {
+    margin-bottom: 1.25rem;
+}
+
+.game-projects-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 2rem;
+}
+
+.game-projects-filter .filter-btn {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 0.5rem 1.2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.game-projects-filter .filter-btn[type="button"] {
+    appearance: none;
+}
+
+.game-projects-filter a.filter-btn:hover,
+.game-projects-filter button.filter-btn:hover {
+    color: var(--accent-red);
+    border-color: var(--accent-red);
+    background-color: var(--card-bg);
+}
+
+.game-projects-filter .filter-btn--active {
+    color: var(--card-bg);
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+    cursor: default;
+}
+
+.game-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.game-project-card {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--card-bg);
+    border: 3px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.game-project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.12);
+    border-color: var(--accent-red);
+}
+
+[data-theme="dark"] .game-project-card {
+    box-shadow: 3px 3px 0 rgba(255,255,255,0.06);
+}
+
+[data-theme="dark"] .game-project-card:hover {
+    box-shadow: 5px 5px 0 rgba(255,255,255,0.1);
+}
+
+.game-project-card__thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    border-radius: 12px 12px 0 0;
+    display: block;
+    line-height: 0;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.game-project-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    vertical-align: top;
+}
+
+.game-project-card__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem 0.4rem;
+    min-height: 0;
+    margin: 0;
+}
+
+.game-project-card__title {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    text-align: left;
+    line-height: 1.25;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.game-project-card__role {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin: 0;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.game-project-card--hidden {
+    display: none;
 }
 
 /* Game Project & GDD List Styles */
@@ -673,7 +805,7 @@ nav a.active {
 
 .game-project > a > h3,
 .game-project > h3 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.9rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -748,7 +880,7 @@ h3 > a:hover {
     border-radius: 0;
     font-size: 0.95rem;
     font-weight: 400;
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin: 0.5rem auto 1.5rem auto;
@@ -822,7 +954,7 @@ h3 > a:hover {
     border-radius: 0;
     font-size: 1.1rem;
     font-weight: 400;
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin-top: 1.5rem;
@@ -847,7 +979,7 @@ h3 > a:hover {
 .project-skills strong {
     font-weight: 700;
     color: var(--text-primary);
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
 
 .project-details-block .time-estimation {
@@ -859,7 +991,7 @@ h3 > a:hover {
 
 
 .project-details-block h4 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -888,10 +1020,10 @@ h3 > a:hover {
 .project-details-block ol li {
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-primary);
     line-height: 1.8;
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
 
 /* Image Hover Overlay */
@@ -950,7 +1082,7 @@ h3 > a:hover {
 }
 
 .gdd-content h3 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.8rem;
     color: var(--text-primary);
     margin-top: 2.5rem;
@@ -974,7 +1106,7 @@ h3 > a:hover {
 }
 
 .gdd-content h4 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.4rem;
     color: var(--text-primary);
     margin-top: 1.5rem;
@@ -1030,7 +1162,7 @@ h3 > a:hover {
 }
 
 .contact-form h3 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -1057,7 +1189,7 @@ h3 > a:hover {
     border: 3px solid var(--border-color);
     border-radius: 0;
     color: var(--text-primary);
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1rem;
     box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
 }
@@ -1086,7 +1218,7 @@ h3 > a:hover {
     border-radius: 0;
     font-size: 1rem;
     font-weight: 700;
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     float: right;
@@ -1389,13 +1521,13 @@ pre {
     overflow-x: auto;
     margin: 1.5rem 0;
     box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 0.9rem;
     line-height: 1.6;
 }
 
 code {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     background-color: rgba(0, 0, 0, 0.05);
     padding: 0.2rem 0.4rem;
     border-radius: 2px;
@@ -1415,7 +1547,7 @@ pre code {
 }
 
 .code-snippet h4 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
@@ -1436,7 +1568,7 @@ table td {
     border: 2px solid var(--border-color);
     padding: 0.75rem 1rem;
     text-align: left;
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     vertical-align: top;
     font-size: 1.1rem;
     font-weight: 400;
@@ -1449,9 +1581,9 @@ table td {
 
 table th {
     background-color: var(--card-bg);
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--text-primary);
 }
 
@@ -1464,7 +1596,7 @@ table tr:hover {
 }
 
 table td strong {
-    font-family: 'Kalam', cursive;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.2rem;
     font-weight: 700;
 }
@@ -1494,12 +1626,42 @@ table td strong {
     }
 
     nav a {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.82rem;
+    }
+    
+    nav .theme-toggle {
+        min-width: 38px;
+        height: 34px;
+        padding: 0.4rem 0.65rem;
+        margin-left: 0.25rem;
+    }
+
+    .game-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
     }
 }
 
 @media (max-width: 600px) {
+    .game-projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .game-projects-filter .filter-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .game-project-card__title {
+        font-size: 1.05rem;
+    }
+
+    .game-project-card__role {
+        font-size: 0.8rem;
+    }
+
     .gdd-images {
         flex-direction: column;
         align-items: center;

@@ -1,19 +1,11 @@
 // Page transition and loading animations
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize page animations
     initPageAnimations();
-    
-    // Handle phone number copy
     initPhoneCopy();
-    
-    // Handle page transitions
     initPageTransitions();
-    
-    // Handle image loading
     initImageLoading();
-    
-    // Initialize theme toggle
     initThemeToggle();
+    initGameProjectsFilter();
 }, { once: true });
 
 function initPageAnimations() {
@@ -260,5 +252,26 @@ function initThemeToggle() {
         
         // Save preference
         localStorage.setItem('theme', newTheme);
+    });
+}
+
+function initGameProjectsFilter() {
+    const filterBar = document.querySelector('.game-projects-filter');
+    const cards = document.querySelectorAll('.game-project-card');
+    if (!filterBar || !cards.length) return;
+
+    const buttons = filterBar.querySelectorAll('.filter-btn[data-filter]');
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var filter = this.getAttribute('data-filter');
+            buttons.forEach(function(b) { b.classList.remove('filter-btn--active'); });
+            this.classList.add('filter-btn--active');
+
+            cards.forEach(function(card) {
+                var categories = (card.getAttribute('data-category') || '').trim().split(/\s+/);
+                var show = filter === 'all' || categories.indexOf(filter) !== -1;
+                card.classList.toggle('game-project-card--hidden', !show);
+            });
+        });
     });
 }
