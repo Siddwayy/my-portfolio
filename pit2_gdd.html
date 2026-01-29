@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="Pit2 Game Design Document by Prateek Raghav - A fast-paced 2D multiplayer arcade sport reimagining the classic Indian game Lagori.">
+    <title>Pit2 GDD | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link active">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">Pit2 - Game Design Document</h2>
+            </article>
+
+            <article class="gdd-content">
+                <div class="gdd-images">
+                    <img src="Assets/MainMenu.png" alt="Pit2 Concept Art 1" loading="lazy">
+                    <img src="Assets/pit2.png" alt="Pit2 Concept Art 2" loading="lazy">
+                </div>
+                <p><strong>Version:</strong> 1.1 | <strong>Game Title:</strong> Pit2 (Working Title) | <strong>Genre:</strong> 2D, Team-Based, Multiplayer Arcade Sport | <strong>Target Audience:</strong> Casual to mid-core players | <strong>Platform:</strong> PC</p>
+                
+                <h3>1. Game Overview</h3>
+                <h4>1.1. High Concept</h4>
+                <p>Pit2 is a modern, 2D multiplayer adaptation of the traditional Indian sport, Lagori (also known as Pitthu or Seven Stones). Two teams of three players, "Hitters" and "Seekers," compete in a strategic contest of accuracy, speed, and teamwork. It’s a game of throwing, dodging, and rebuilding under pressure.</p>
+                
+                <h4>1.2. Core Gameplay Loop</h4>
+                <p>The game is played in rounds. One team is the Attacking Team (Hitters) and the other is the Defending Team (Seekers).</p>
+                <ul>
+                    <li><strong>The Hit:</strong> An Attacker throws a ball at a central stack of seven stones, using a Quick Time Event (QTE) mechanic to determine the throw's power and accuracy.</li>
+                    <li><strong>The Scatter:</strong> The stones fly across the map. The Defending Team must now retrieve them one by one.</li>
+                    <li><strong>The Hunt:</strong> The Attacker retrieves the ball and attempts to hit the Defending players to eliminate them from the round.</li>
+                    <li><strong>The Rebuild:</strong> The Defenders must bring the stones back to the central point and re-stack them, using a precision-based QTE for each placement. A failed QTE causes the currently built portion of the stack to collapse.</li>
+                    <li><strong>Round End:</strong> The round concludes when the Defenders successfully rebuild the stack, all Defenders are eliminated, or the time expires.</li>
+                </ul>
+
+                <h4>1.3. Unique Selling Points</h4>
+                <ul>
+                    <li><strong>Digitized Tradition:</strong> A fresh take on a beloved, classic outdoor game.</li>
+                    <li><strong>Skill-Based QTEs:</strong> Success is driven by player skill and timing, not just luck.</li>
+                    <li><strong>Intense Team Dynamics:</strong> Constant communication and strategy are required for both attacking and defending roles.</li>
+                    <li><strong>Fast-Paced Rounds:</strong> Quick, engaging matches that are perfect for both short and long play sessions.</li>
+                    <li><strong>Deep Customization:</strong> Players can personalize their characters and equipment.</li>
+                </ul>
+
+                <h3>2. Game Mechanics</h3>
+                <h4>2.1. Player Roles & Teams</h4>
+                <ul>
+                    <li>The game is exclusively 3v3.</li>
+                    <li>Matches consist of 6 rounds.</li>
+                    <li>Teams switch roles after 3 rounds. (e.g., Team A attacks for rounds 1-3, defends for rounds 4-6).</li>
+                    <li>On the Attacking team, the role of the primary "Hitter" rotates, giving each player one chance to initiate a round.</li>
+                </ul>
+
+                <h4>2.2. The Attacking Phase (Hitter)</h4>
+                <ul>
+                    <li><strong>The Hit QTE:</strong> A power/accuracy bar appears. The player must press a button to stop a moving cursor.</li>
+                    <li><strong>Perfect Hit (Center):</strong> All 7 stones scatter far across the map. Maximum points awarded. The ball moves with higher velocity.</li>
+                    <li><strong>Good Hit (Near Center):</strong> 4-6 stones are knocked down.</li>
+                    <li><strong>Poor Hit (Edges):</strong> 1-3 stones are knocked down and don't travel far.</li>
+                    <li><strong>Miss:</strong> Each attacker gets two chances to hit the stack. If the first throw misses, they get an immediate second attempt. If the second throw also misses, the turn passes to the next attacker on the team. If all three attackers exhaust their chances (6 total misses for the team), the round is forfeited, and the defending team wins the round by default.</li>
+                    <li><strong>Elimination:</strong> After the initial hit, the Hitter is free to move, pick up the ball, and throw it at the Defenders. A successful hit eliminates that Defender for the rest of the round.</li>
+                </ul>
+                
+                <h4>2.3. The Defending Phase (Seeker)</h4>
+                <ul>
+                    <li><strong>Stone Collection:</strong> Defenders must run to the scattered stones to pick them up. A player can only carry one stone at a time.</li>
+                    <li><strong>The Stack QTE:</strong> Upon returning to the central stacking point with a stone, a precision QTE appears. This is a smaller, more difficult bar than the hitting QTE.</li>
+                    <li><strong>Success:</strong> The stone is placed correctly on the stack.</li>
+                    <li><strong>Failure:</strong> The player drops their stone, and the entire stack they have rebuilt so far collapses, scattering those specific stones nearby. This creates a high-risk, high-reward scenario, especially when placing the final stones.</li>
+                </ul>
+
+                <h3>3. Detailed Screen & UI Flow</h3>
+                <p>This section details the entire user journey from launching the game to completing a match.</p>
+                <h4>3.1. Main Menu Screen</h4>
+                <p><strong>Visuals:</strong> A clean, energetic UI with an animated background showing highlights from a match. The player's customized character is prominently displayed. A social panel shows online friends.</p>
+                <p><strong>Options:</strong></p>
+                <ul>
+                    <li>Find Match: Enters the public matchmaking queue. Players can queue solo or in a pre-made party of up to 3.</li>
+                    <li>Join Lobby: A text field appears to enter a lobby code for a private match.</li>
+                    <li>Customize: Accesses the character and ball skin customization menu.</li>
+                    <li>Settings: Opens game settings (Graphics, Audio, Controls).</li>
+                    <li>Credits: Shows the development team credits.</li>
+                    <li>Exit Game: Closes the application.</li>
+                </ul>
+
+                <h4>3.2. The Matchmaking Flow</h4>
+                <p><strong>Click "Find Match":</strong> The Main Menu UI animates away, replaced by a "Searching for Match" screen. On-screen elements:</p>
+                <ul>
+                    <li>An animated graphic (e.g., a searching radar).</li>
+                    <li>Estimated Wait Time counter.</li>
+                    <li>Player/Party status display.</li>
+                    <li>A prominent "Cancel" button.</li>
+                </ul>
+                <p><strong>Match Found:</strong> A loud, distinct audio cue plays. A "Match Found!" modal popup appears. On-screen elements:</p>
+                <ul>
+                    <li>Large "ACCEPT" button.</li>
+                    <li>Smaller "Decline" button.</li>
+                    <li>A 10-second countdown timer. If it expires, the action is considered a decline.</li>
+                    <li>If a player declines or fails to accept, they are returned to the Main Menu with a minor, short-term matchmaking cooldown penalty (e.g., 1 minute).</li>
+                </ul>
+
+                <h4>3.3. Match Lobby & Map Selection</h4>
+                <p><strong>Joining Match Lobby:</strong> Once 6 players accept, they are transitioned to the Match Lobby screen. On-screen elements:</p>
+                <ul>
+                    <li>Two columns for "Team A" and "Team B" with player banners.</li>
+                    <li>A chat box for team and all-chat.</li>
+                    <li>A 30-second countdown timer until the map ban phase begins.</li>
+                </ul>
+                <p><strong>Map Ban Phase:</strong> A pool of 5 maps is displayed. The UI clearly indicates which team's turn it is to ban.</p>
+                <ul>
+                    <li>Team A bans one map (a red 'X' appears over it).</li>
+                    <li>Team B bans one map.</li>
+                    <li>Team A bans a second map.</li>
+                    <li>Team B bans a second map.</li>
+                    <li>The last remaining map is highlighted and selected for the match.</li>
+                </ul>
+                
+                <h4>3.4. Match Loading & Pre-Round Sequence</h4>
+                <p><strong>Loading Screen:</strong> Appears after the map is selected. On-screen elements:</p>
+                <ul>
+                    <li>Splash art of the selected map.</li>
+                    <li>Player banners for both teams.</li>
+                    <li>A random gameplay tip (e.g., "A Perfect Hit scatters all 7 stones!").</li>
+                    <li>Loading progress indicator.</li>
+                </ul>
+                <p><strong>Match Introduction (15 seconds):</strong> A short, unskippable instructional screen. On-screen elements:</p>
+                <ul>
+                    <li>A slow pan or fly-through of the map.</li>
+                    <li>Text overlays explaining the core objectives for each role.</li>
+                </ul>
+                <p><strong>Role Assignment Popup (5 seconds):</strong> A large, full-screen overlay announces the starting roles. Content: "YOU ARE ATTACKERS" or "YOU ARE DEFENDERS" in a bold, team-colored font. Sub-text: "Attack for the first 3 rounds."</p>
+                <p><strong>First Hitter Assignment (5 seconds):</strong> A second popup immediately follows, specific to the Attacking team. Content: A spotlight on the first player to throw, e.g., "[Player_Name] is hitting first!" A 5-second countdown timer to the start of the round appears, allowing players to get into position.</p>
+
+                <h4>3.5. In-Game HUD (Heads-Up Display)</h4>
+                <ul>
+                    <li><strong>Top Center:</strong> Round Timer, Round Number (e.g., Round 2/6), Overall Team Score.</li>
+                    <li><strong>Top Left (Attacker Info):</strong> Icon of the current Hitter, ball possession status.</li>
+                    <li><strong>Top Right (Defender Info):</strong> Status of all 3 Defenders (Alive, Carrying Stone, Eliminated).</li>
+                    <li><strong>Center-Right:</strong> A visual indicator of the stack's progress (e.g., 4/7 stones stacked).</li>
+                </ul>
+
+                <h4>3.6. Mid-Match Flow</h4>
+                <p><strong>Round End:</strong> The game briefly freezes on the final action, then a "ROUND WON" or "ROUND LOST" banner appears. A small summary shows points earned in that round. A 10-second countdown to the next round begins.</p>
+                <p><strong>Half-Time (After Round 3):</strong> A dedicated "HALF-TIME" screen appears for 10 seconds. On-screen elements:</p>
+                <ul>
+                    <li>"SWITCHING SIDES" displayed prominently.</li>
+                    <li>The current score is shown (Team A: X / Team B: Y).</li>
+                    <li>A message confirms the new role: "You are now DEFENDERS".</li>
+                </ul>
+
+                <h4>3.7. End of Match Flow</h4>
+                <p><strong>Match Over Screen:</strong> A large "VICTORY" or "DEFEAT" banner fills the screen, with appropriate sound effects and music.</p>
+                <p><strong>Scoreboard Screen:</strong> Automatically transitions after 5 seconds. A detailed scoreboard shows stats for all 6 players. Columns: Player Name, Eliminations, Stones Stacked, Round Points, Total Score. The top-performing player is highlighted as the "Match MVP". A "Return to Main Menu" button is present.</p>
+                <p><strong>Progression Screen:</strong> After the scoreboard, players see their personal progression. On-screen elements:</p>
+                <ul>
+                    <li>Experience points (XP) gained.</li>
+                    <li>Level-up progress bar.</li>
+                    <li>Battle Pass progression track.</li>
+                    <li>Any new items unlocked or rewards earned are displayed in a celebratory popup.</li>
+                </ul>
+
+                <h3>4. Scoring System</h3>
+                <p>Points are awarded at the end of each round. The team with the highest total score after 6 rounds wins the match.</p>
+                <h4>4.1. Attacker Points</h4>
+                <p><strong>Initial Hit Bonus:</strong></p>
+                <ul>
+                    <li>Perfect Hit: +100 points</li>
+                    <li>Good Hit: +50 points</li>
+                    <li>Poor Hit: +25 points</li>
+                </ul>
+                <p><strong>Elimination Bonus:</strong></p>
+                <ul>
+                    <li>Per Defender Eliminated: +150 points</li>
+                    <li>Team Wipe (All 3 Defenders Eliminated): +200 bonus points</li>
+                    <li>Round Win (Defenders fail to stack in time): +300 points</li>
+                </ul>
+
+                <h4>4.2. Defender Points</h4>
+                <ul>
+                    <li><strong>Partial Stack:</strong> If the round ends due to time or a team wipe, points are awarded for each stone successfully placed: +30 points per stone.</li>
+                    <li><strong>Round Win (Full Stack Rebuilt):</strong> +500 points</li>
+                </ul>
+                <p><strong>Bonuses for Winning the Round:</strong></p>
+                <ul>
+                    <li>Speed Bonus (stack completed with over 30 seconds left): +100 points</li>
+                    <li>Flawless Bonus (stack completed with no Defenders eliminated): +150 points</li>
+                </ul>
+
+                <h3>5. Customization & Monetization</h3>
+                <ul>
+                    <li><strong>Character Skins:</strong> A variety of cosmetic outfits that players can unlock or purchase.</li>
+                    <li><strong>Ball Skins:</strong> Cosmetic skins for the throwing ball (e.g., glowing, patterned, themed).</li>
+                    <li><strong>Monetization Strategy:</strong> The game will be free-to-play, supported by a cosmetic-only in-game store and a seasonal Battle Pass system that rewards players for playing. There will be no pay-to-win mechanics.</li>
+                </ul>
+
+                <h3>6. Maps</h3>
+                <p>The 5 launch maps will each have a distinct theme and layout with unique obstacles to provide strategic variety.</p>
+                <ul>
+                    <li><strong>Urban Rooftop:</strong> A cityscape at dusk with AC units and vents for cover.</li>
+                    <li><strong>Temple Ruins:</strong> An ancient courtyard with crumbling pillars and walls.</li>
+                    <li><strong>Beach Cove:</strong> A sunny beach with palm trees, rocks, and sandcastles.</li>
+                    <li><strong>Market Square:</strong> A vibrant town market with stalls and carts to navigate.</li>
+                    <li><strong>Cyber Arena:</strong> A futuristic, neon-lit arena with digital barriers.</li>
+                </ul>
+
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

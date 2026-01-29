@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="Prateek Raghav - Game Developer & 3D Designer. Portfolio showcasing game development projects, 3D work, and design documents built with Unreal Engine, Unity, and Godot.">
+    <title>Prateek Raghav | Game Developer & 3D Designer</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link active">About</a></li>
+                <li><a href="game_projects.html" class="nav-link">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <img src="Assets/profile.jpg" alt="Prateek Raghav" class="profile-pic" loading="lazy">
+            <h1>Prateek Raghav</h1>
+            
+            <div class="contact-info">
+                <p><strong>Email</strong><br>
+                    <a href="mailto:siddwayy.dev@gmail.com" class="contact-link">siddwayy.dev@gmail.com</a>
+                </p>
+                <p><strong>Phone</strong><br>
+                    <a href="#" id="phone-number" class="contact-link" title="Click to copy">+1 709 330 1435</a>
+                </p>
+                <p><strong>Location</strong><br>St. John's, Newfoundland & Labrador, Canada</p>
+            </div>
+
+            <div class="education-info">
+                <h4>Education</h4>
+                <p>
+                    <strong>Memorial University of Newfoundland</strong><br>
+                    BS, Computer Science (Visual Computing & Games)<br>
+                    <em>Jan 2022 - Apr 2026</em><br>
+                    Grade: 3.6 | 81.3%
+                </p>
+            </div>
+            <a href="https://drive.google.com/file/d/1NydJa0kZTUCkNtxnQtpXbJWRT41OOucP/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="resume-btn">Resume</a>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/prateek-raghav-4668a3328" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Siddwayy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.artstation.com/siddwayy" target="_blank" rel="noopener noreferrer" aria-label="ArtStation"><i class="fab fa-artstation"></i></a>
+            </div>
+
+            <div class="education-info">
+                <h4>Programming Languages</h4>
+                <div class="programming-languages-grid">
+                    <div class="lang-logo">
+                        <i class="fab fa-java"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="lang-logo">
+                        <i class="fab fa-cuttlefish"></i>
+                        <span>C++</span>
+                    </div>
+                    <div class="lang-logo">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="lang-logo">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="lang-logo">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="lang-logo">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="lang-logo">
+                        <i class="fas fa-code"></i>
+                        <span>GDScript</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="main-content">
+            <article id="about">
+                <h2>About Me</h2>
+                <p>Hi, I'm Sid — a Game Developer & 3D Designer. I build interactive worlds and engaging gameplay systems using Unreal Engine (Blueprints & C++), Unity, and Godot. Alongside coding mechanics like combat and AI, I design and model characters, props, and environments, with a strong focus on level design and player experience. My goal is to create games that are both visually immersive and mechanically fun.</p>
+            </article>
+
+            <article id="expertise">
+                <h2>My Expertise</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>Game Development</h3>
+                        <p>Creating complete gameplay systems and mechanics in Unreal Engine & Godot — from Blueprints to C++.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Level & Environment Design</h3>
+                        <p>Designing immersive playable worlds with strong composition, pacing, and atmosphere inside Unreal Engine 5.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Web & Software Development</h3>
+                        <p>Building responsive web applications and software solutions using HTML5, CSS3, JavaScript, and modern frameworks. Creating intuitive user interfaces and efficient backend systems.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-brain"></i>
+                        <h3>Game Design</h3>
+                        <p>Designing engaging gameplay loops, balanced mechanics, and player experiences that feel intuitive and fun.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-desktop"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Crafting clean, functional, and player-centered interfaces inspired by modern design principles.</p>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>Version Control & QA</h3>
+                        <p>Proficient with Git-based workflows, collaborative testing, and iterative QA to ensure stable and polished builds.</p>
+                    </div>
+                </div>
+            </article>
+
+          <article id="tech-stack">
+    <h2>Tech Stack</h2>
+    <img src="Assets/my-stack.png" alt="My Tech Stack" class="tech-stack-image" loading="lazy">
+</article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

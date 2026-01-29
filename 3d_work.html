@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="3D Work portfolio by Prateek Raghav - Game Developer & 3D Designer showcasing 3D modeling, character design, and environment creation.">
+    <title>3D Work | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link active">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content game-projects-page">
+            <article>
+                <h2 class="page-title">3D Work</h2>
+            </article>
+
+            <div class="game-projects-filter" role="group" aria-label="Filter projects">
+                <button type="button" class="filter-btn filter-btn--active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="3d-props-hero">3D Props/Hero</button>
+                <button type="button" class="filter-btn" data-filter="3d-environment">3D Environment</button>
+            </div>
+
+            <div class="game-projects-grid game-projects-grid--empty" role="region" aria-label="3D projects">
+                <p class="empty-state-message">More 3D work coming soon.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

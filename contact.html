@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="Contact Prateek Raghav - Game Developer & 3D Designer. Get in touch for collaborations, opportunities, or inquiries.">
+    <title>Contact | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">Contact</h2>
+            </article>
+
+            <article>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87948.79021278146!2d-52.78859182313886!3d47.54426032470725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b0a596c07190fbd%3A0x8cb4369766a50518!2sSt.%20John's%2C%20NL!5e0!3m2!1sen!2sca!4v1678886400000!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of St. John's, Newfoundland & Labrador"></iframe>
+                </div>
+
+                <form class="contact-form" action="https://formspree.io/f/mrbyarbn" method="POST">
+                    <h3>Contact Form</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email address" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="Zombie Mayhem - A first-person survival shooter game developed in Unreal Engine 5 by Prateek Raghav. Features wave-based progression, autonomous zombie AI, and immersive combat systems.">
+    <title>Zombie Mayhem | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link active">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">ZOMBIE MAYHEM</h2>
+            </article>
+
+            <!-- Project Overview -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> Project Overview</h3>
+                <p class="project-description">
+                    <strong>Zombie Mayhem</strong> is a first-person survival shooter developed solo in Unreal Engine 5 using Blueprints. Designed around a wave-based progression system, the game challenges players to survive against relentless hordes of zombies with escalating difficulty, reactive combat, and immersive feedback systems.
+                </p>
+                <div class="showcase-detail-grid" style="margin-top: 1.25rem;">
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Genre</span>
+                        <span class="showcase-detail-item__value">First-Person Survival Shooter</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Studio</span>
+                        <span class="showcase-detail-item__value">Personal Project</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Platform</span>
+                        <span class="showcase-detail-item__value">PC, Mac OS, Linux</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Engine & Tools</span>
+                        <span class="showcase-detail-item__value">Unreal Engine 5, Blueprints, UMG</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Duration</span>
+                        <span class="showcase-detail-item__value">Solo development</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Team Size</span>
+                        <span class="showcase-detail-item__value">Solo Developer</span>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <div class="project-cta-buttons">
+                        <a href="https://www.youtube.com/watch?v=O1o8laZn7rs" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-youtube"></i> Demo Video
+                        </a>
+                        <a href="Zombie/Blueprints/Blueprint Logic – Zombie Survival Game (Unreal Engine).pdf" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fas fa-file-pdf"></i> Blueprint Document
+                        </a>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <video controls autoplay muted loop class="project-image" style="width: 100%; height: auto; border: 3px solid var(--border-color); box-shadow: 3px 3px 0 rgba(0,0,0,0.1);">
+                        <source src="Zombie/GameplayVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <img src="Zombie/Poster.png" alt="Zombie Mayhem - Game poster" class="project-image" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-layer-group"></i> Tech Stack</h3>
+                <div class="tech-stack-categories">
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Core Engine & Scripting</h4>
+                            <ul class="tech-stack-list">
+                                <li>Unreal Engine 5</li>
+                                <li>Blueprint Visual Scripting</li>
+                                <li>UMG (Unreal Motion Graphics)</li>
+                                <li>First-Person Template</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Gameplay & AI</h4>
+                            <ul class="tech-stack-list">
+                                <li>Pawn Sensing & Behavior States</li>
+                                <li>Wave Spawning & Difficulty Scaling</li>
+                                <li>Trace-Based Shooting & Hit Detection</li>
+                                <li>Blend Spaces & Animation Montages</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">UI/UX & Feedback</h4>
+                            <ul class="tech-stack-list">
+                                <li>HUD (Health Bar, Minimap)</li>
+                                <li>Screen Transitions & Win/Lose States</li>
+                                <li>Blood Overlay & Damage Effects</li>
+                                <li>VFX (Muzzle Flash, Impacts)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Design & Evaluation</h4>
+                            <ul class="tech-stack-list">
+                                <li>Game Design & Player Feedback</li>
+                                <li>UX Design & Evaluation</li>
+                                <li>Iterative UX Testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features & Contributions -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-star"></i> Features & Contributions</h3>
+                
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: var(--text-primary);">Main Menu & Flow</h4>
+                <p class="project-description">
+                    Main menu leads into the floating-island arena. Animated screen transitions and clear win/lose states with retry/exit options keep flow predictable. All gameplay systems, AI, wave logic, and UI were built from scratch in Blueprints.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Zombie/MainMenu.png" alt="Zombie Mayhem - Main menu" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Wave System & Combat</h4>
+                <p class="project-description">
+                    Dynamic wave generator ramps challenge with larger groups and tougher enemies; waves spawn from two locations, with zombie count doubling each wave. Trace-based shooting includes recoil, precise hit detection, headshot/body differentiation, and surface-based impact VFX. Player health regens 5 HP every 5 seconds until 50; damage overlays and a blood effect below 50 HP give clear feedback.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Zombie/Precision Combat.png" alt="Zombie Mayhem - Combat and VFX" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Zombie AI & Behavior</h4>
+                <p class="project-description">
+                    Fully autonomous enemy AI in Blueprints: Pawn Sensing for detect, chase, and engage. Enemies switch from slow walk to fast run inside acceptance radius. Idle, chase, and attack states use blend spaces and custom animations; attacks apply 20 HP in a loop. Death uses a fall animation, then the body persists ~5 seconds before removal. Running animations and zombie sounds reinforce threat and improve readability.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Zombie/ArtificalIntelligence.png" alt="Zombie Mayhem - Zombie AI behavior" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">HUD & Game Over</h4>
+                <p class="project-description">
+                    UMG-built HUD: health bar with animated feedback and a functional minimap for player and zombie positions. Wave-start events use render-opacity transitions. Custom death and win screens with smooth transitions; blood overlay when health is below 50. Designed with clear feedback and situational awareness in mind.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Zombie/GameOver.png" alt="Zombie Mayhem - Game over screen" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">UX Testing & Polish</h4>
+                <p class="project-description">
+                    UX improvements follow principles from Celia Hodent’s <em>The Gamer’s Brain</em>. Playtests with a non-classmate (no prior instructions) highlighted: strong response to running zombies and audio; satisfaction with blood hit feedback; quick adaptation to movement/aiming states; engagement with waves and health regen; minimap valued for spatial awareness. Suggested future work: clearer head/body hitboxes and ammo or reload mechanics for resource pressure.
+                </p>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-code"></i> Technical Implementation</h3>
+                
+                <h4 class="tech-stack-category__title">Blueprint architecture</h4>
+                <p class="project-description">
+                    <strong>BP_Zombie</strong> holds AI, attack logic, and death; <strong>BP_FirstPersonCharacter</strong> handles movement, shooting, and health (including regen and damage overlays). <strong>ZombieGameMode</strong> drives wave spawning and progression with timer-based spawns from multiple locations. All logic is Blueprint-only—no C++.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Combat & hit feedback</h4>
+                <p class="project-description">
+                    Shooting uses line traces from the weapon; hit location and surface type drive different impact VFX and damage (head vs body). Gun motion and SFX are triggered on fire. Blood and hit reactions on zombies give immediate feedback. Different surfaces use different decals/particles for clarity.
+                </p>
+                
+                <h4 class="tech-stack-category__title">AI & animation</h4>
+                <p class="project-description">
+                    Pawn Sensing drives detection and range; behavior states (idle, chase, attack) are updated in Blueprints and reflected with blend spaces and montages. Acceptance radius switches movement from walk to run. Attack applies damage on a loop until the zombie is killed; death triggers the fall animation and a short persist before despawn.
+                </p>
+                
+                <h4 class="tech-stack-category__title">UI & game flow</h4>
+                <p class="project-description">
+                    <strong>MainWidget_W</strong> hosts the health bar and minimap; <strong>WB_Minimap</strong> tracks player and zombie positions. Render opacity animations handle wave alerts and transitions. Custom events fire for win/lose; Retry and Exit wire back into the appropriate flows. Blood overlay is toggled by health threshold using opacity transitions.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="Game Projects by Prateek Raghav - Showcasing game development projects built with Java, Godot Engine, and Unreal Engine 5.">
+    <title>Game Projects | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    <div class="page-transition"></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link active">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content game-projects-page">
+            <article>
+                <h2 class="page-title">Game Projects</h2>
+            </article>
+
+            <div class="game-projects-filter" role="group" aria-label="Filter projects">
+                <button type="button" class="filter-btn filter-btn--active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="game-projects">Game Projects</button>
+                <button type="button" class="filter-btn" data-filter="level-design">Level Design</button>
+            </div>
+
+            <div class="game-projects-grid">
+                <!-- data-category: space-separated list. Use "game-projects" and/or "level-design". You can add more categories later. -->
+                <a href="kivi-board-game.html" class="game-project-card" data-category="game-projects">
+                    <div class="game-project-card__thumb">
+                        <img src="kivi files/Poster.png" alt="Kivi Board Game" loading="lazy">
+                    </div>
+                    <div class="game-project-card__meta">
+                        <h3 class="game-project-card__title">Kivi Board Game</h3>
+                        <p class="game-project-card__role">Game Design · Java</p>
+                    </div>
+                </a>
+
+                <a href="towerecho.html" class="game-project-card" data-category="game-projects">
+                    <div class="game-project-card__thumb">
+                        <img src="TowerEchoFiles/Poster.png" alt="TowerEcho" loading="lazy">
+                    </div>
+                    <div class="game-project-card__meta">
+                        <h3 class="game-project-card__title">TowerEcho</h3>
+                        <p class="game-project-card__role">Level Design · Godot</p>
+                    </div>
+                </a>
+
+                <a href="todo-list-app.html" class="game-project-card" data-category="game-projects">
+                    <div class="game-project-card__thumb">
+                        <img src="Poster-Todo.png" alt="TO-DO-LIST-APP" loading="lazy">
+                    </div>
+                    <div class="game-project-card__meta">
+                        <h3 class="game-project-card__title">TO-DO-LIST-APP</h3>
+                        <p class="game-project-card__role">UI/UX · Unreal Engine</p>
+                    </div>
+                </a>
+
+                <a href="pit2_gdd.html" class="game-project-card" data-category="game-projects">
+                    <div class="game-project-card__thumb">
+                        <img src="Assets/Poster-pit2.png" alt="Pit2" loading="lazy">
+                    </div>
+                    <div class="game-project-card__meta">
+                        <h3 class="game-project-card__title">Pit2</h3>
+                        <p class="game-project-card__role">Game Design · GDD</p>
+                    </div>
+                </a>
+
+                <a href="zombie-mayhem.html" class="game-project-card" data-category="game-projects">
+                    <div class="game-project-card__thumb">
+                        <img src="Zombie/Poster.png" alt="Zombie Mayhem" loading="lazy">
+                    </div>
+                    <div class="game-project-card__meta">
+                        <h3 class="game-project-card__title">Zombie Mayhem</h3>
+                        <p class="game-project-card__role">Game Design · Unreal Engine</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

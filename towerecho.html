@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="TowerEcho - A fast-paced 2D tower defense game developed in Godot Engine by Prateek Raghav. Features mouse-aimed turret, randomized enemy waves, and advanced save system.">
+    <title>TowerEcho | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link active">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">TOWER ECHO</h2>
+            </article>
+
+            <!-- Project Overview -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> Project Overview</h3>
+                <p class="project-description">
+                    <strong>TowerEcho</strong> is a complete 2D tower defense game built from scratch in Godot Engine using GDScript. Players defend their base with a mouse-controlled turret against waves of enemies that follow randomized paths through handcrafted levels. The game emphasizes skill-based aiming, resource management, and satisfying combat feedback through polished VFX, SFX, and UI.
+                </p>
+                <div class="showcase-detail-grid" style="margin-top: 1.25rem;">
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Genre</span>
+                        <span class="showcase-detail-item__value">2D Tower Defense</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Studio</span>
+                        <span class="showcase-detail-item__value">Personal Project</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Platform</span>
+                        <span class="showcase-detail-item__value">PC, Mac OS, Linux</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Engine & Tools</span>
+                        <span class="showcase-detail-item__value">Godot Engine 4, GDScript</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Duration</span>
+                        <span class="showcase-detail-item__value">May 2025 – Present</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Team Size</span>
+                        <span class="showcase-detail-item__value">Solo Developer</span>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <div class="project-cta-buttons">
+                        <a href="https://github.com/Siddwayy/minimilisttd" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=o0rbP4KEBjw" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-youtube"></i> Demo Video
+                        </a>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <video controls autoplay muted loop class="project-image" style="width: 100%; height: auto; border: 3px solid var(--border-color); box-shadow: 3px 3px 0 rgba(0,0,0,0.1);">
+                        <source src="TowerEchoFiles/GameplayDemo.mov" type="video/quicktime">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-layer-group"></i> Tech Stack</h3>
+                <div class="tech-stack-categories">
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Core Engine & Scripting</h4>
+                            <ul class="tech-stack-list">
+                                <li>Godot Engine 4</li>
+                                <li>GDScript</li>
+                                <li>2D Game Development</li>
+                                <li>Scene Architecture</li>
+                                <li>Object Pooling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Gameplay & AI</h4>
+                            <ul class="tech-stack-list">
+                                <li>Navigation2D / A* Pathfinding</li>
+                                <li>Enemy AI & Wave Spawning</li>
+                                <li>Combat & Projectile Physics</li>
+                                <li>State Management</li>
+                                <li>Score & Combo Systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">UI/UX & Polish</h4>
+                            <ul class="tech-stack-list">
+                                <li>HUD & Menu Design</li>
+                                <li>Particle Systems (50+ VFX)</li>
+                                <li>Screen Shake & Tweens</li>
+                                <li>SFX Integration (12 unique)</li>
+                                <li>ScreenFader & Transitions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Systems & Persistence</h4>
+                            <ul class="tech-stack-list">
+                                <li>Advanced Save System</li>
+                                <li>Singleton Managers (GameState, Audio)</li>
+                                <li>Desktop/Mobile Input</li>
+                                <li>JSON Serialization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features & Contributions -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-star"></i> Features & Contributions</h3>
+                
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: var(--text-primary);">Main Menu & Setup</h4>
+                <p class="project-description">
+                    Main menu offers New Game, Controls (interactive mouse-aim demo), Resume (load last save), Exit, and an animated sound toggle. Clean navigation with ScreenFader handling all scene transitions.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="TowerEchoFiles/MainMenu.png" alt="TowerEcho - Main menu with New Game, Controls, Exit buttons" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Mouse-Aimed Turret & Combat</h4>
+                <p class="project-description">
+                    Hold to fire continuously toward the cursor. Turret rotates smoothly with instant feedback via laser traces and muzzle flash. Health bar (green → yellow → red), ammo counter (150 max), and score milestones: every 100 points regenerates 10% health and 20 ammo. Combo kills increase score multiplier.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="TowerEchoFiles/Mouseaim.png" alt="TowerEcho - In-game HUD, turret, and combat" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Enemy AI & Waves</h4>
+                <p class="project-description">
+                    Eight enemy types with pathfinding via Navigation2D; paths randomize at wave start. Multi-hit health (50–200 HP), red flash + vibration on damage, particle burst on death. 40% of enemies fire homing projectiles—player and enemy bullets can collide mid-air. Final wave includes a boss with shield phase and damage phase.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="TowerEchoFiles/enemyai.png" alt="TowerEcho - Early wave showing pathing and enemies" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Advanced Save System</h4>
+                <p class="project-description">
+                    Pause (ESC) saves complete state: tower health/position/rotation, score/ammo/combo, all enemy positions and health, audio position, wave number, and UI state. Resume restores exactly where you left off, including mid-explosion VFX and bullet trajectories. Save auto-clears on victory or defeat.
+                </p>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Audio-Visual Polish</h4>
+                <p class="project-description">
+                    12 unique SFX (muzzle, hit, bullet collision, tower damage, victory) with pitch variation. 50+ particle systems, floating damage numbers, camera shake, color grading shifts at low health. Tween-based UI animations and synchronized audio-visual feedback for immersive combat.
+                </p>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-code"></i> Technical Implementation</h3>
+                
+                <h4 class="tech-stack-category__title">Architecture & Managers</h4>
+                <p class="project-description">
+                    Singleton managers handle global concerns: <strong>GameState</strong> for score, ammo, wave, and persistence; <strong>AudioManager</strong> for music and SFX with position restore; <strong>ScreenFader</strong> for all scene transitions. Modular scene setup (Enemy.tscn, Bullet.tscn, Tower.tscn) keeps systems decoupled and testable.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Enemy pathfinding</h4>
+                <p class="project-description">
+                    Enemies use Godot’s Navigation2D to build paths from randomized spawn points to the player base. In <code>_physics_process</code>, each enemy moves toward the next path point; on arrival it advances the index. Reaching the goal calls <strong>attack_base()</strong> and deducts 25 tower HP. Paths are recomputed at wave start for varied runs.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Wave spawning & difficulty</h4>
+                <p class="project-description">
+                    Wave logic uses <strong>base_enemies + (wave_number * 2)</strong> for count and a decreasing spawn delay. Each wave picks random enemy types and spawn points, then spawns with <strong>await get_tree().create_timer(spawn_delay).timeout</strong> between spawns. Boss wave uses a dedicated tank enemy with shield and damage phases.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Save & resume</h4>
+                <p class="project-description">
+                    Save builds a dictionary (tower state, score/ammo/combo, enemy positions/health, audio position, wave, UI state) and writes it as JSON to <strong>user://savegame.dat</strong> via <strong>FileAccess</strong>. Load reads the file, parses JSON, and restores every manager and scene; mid-flight bullets and VFX state are reconstructed so the session continues exactly from the pause moment.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Performance & input</h4>
+                <p class="project-description">
+                    Object pooling for bullets and particles keeps 2000+ instances on screen without churn. Unified input mapping supports desktop mouse and gamepad so the same combat and menu logic works across targets. Damage numbers and UI pops use Tween nodes for smooth, optional animations.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

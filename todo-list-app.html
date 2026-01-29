@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="TO-DO-LIST-APP - A lightweight task management utility app built in Unreal Engine 5 using UMG by Prateek Raghav. Features persistent data storage and full task management capabilities.">
+    <title>TO-DO-LIST-APP | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link active">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">TO-DO LIST APP</h2>
+            </article>
+
+            <!-- Project Overview -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> Project Overview</h3>
+                <p class="project-description">
+                    <strong>TO-DO-LIST-APP</strong> is a lightweight task management utility app built in Unreal Engine 5 using UMG. The application provides a simple, intuitive way to organize daily goals with persistent data storage and full task creation and management capabilities.
+                </p>
+                <div class="showcase-detail-grid" style="margin-top: 1.25rem;">
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Category</span>
+                        <span class="showcase-detail-item__value">Task Management Utility</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Studio</span>
+                        <span class="showcase-detail-item__value">Personal Project</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Platform</span>
+                        <span class="showcase-detail-item__value">PC, Mac OS, Linux</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Engine & Tools</span>
+                        <span class="showcase-detail-item__value">Unreal Engine 5, UMG, Blueprints</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Duration</span>
+                        <span class="showcase-detail-item__value">2024</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Team Size</span>
+                        <span class="showcase-detail-item__value">Solo Developer</span>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <div class="project-cta-buttons">
+                        <a href="https://github.com/Siddwayy/ToDo" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=aA1XqaND2fg" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-youtube"></i> Demo Video
+                        </a>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <img src="Poster-Todo.png" alt="TO-DO-LIST-APP - Task management interface" class="project-image" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-layer-group"></i> Tech Stack</h3>
+                <div class="tech-stack-categories">
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Core Engine & UI</h4>
+                            <ul class="tech-stack-list">
+                                <li>Unreal Engine 5</li>
+                                <li>UMG (Unreal Motion Graphics)</li>
+                                <li>Blueprint Visual Scripting</li>
+                                <li>Widget Blueprints</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Data & Logic</h4>
+                            <ul class="tech-stack-list">
+                                <li>Custom Data Structures</li>
+                                <li>File I/O & Persistence</li>
+                                <li>Save/Load Systems</li>
+                                <li>Event-Driven Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">UI/UX & Design</h4>
+                            <ul class="tech-stack-list">
+                                <li>Task Display Widgets</li>
+                                <li>Input Fields & Buttons</li>
+                                <li>Clean Interface Design</li>
+                                <li>Software Development Practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features & Contributions -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-star"></i> Features & Contributions</h3>
+                
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: var(--text-primary);">Task Creation</h4>
+                <p class="project-description">
+                    Add new tasks with titles, descriptions, and priority levels. The interface supports quick entry and clear organization from the start.
+                </p>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Task Management</h4>
+                <p class="project-description">
+                    Edit, delete, and mark tasks as complete. Full CRUD-style workflow keeps your list up to date without leaving the app.
+                </p>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Data Persistence</h4>
+                <p class="project-description">
+                    All tasks are saved automatically and persist between sessions using Unreal’s file system, so you can close and resume without losing data.
+                </p>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Organization & UI</h4>
+                <p class="project-description">
+                    Organize tasks by priority and completion status. The UMG-based interface is clean and user-friendly, with custom widget blueprints for task display, input fields, and actions.
+                </p>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-code"></i> Technical Implementation</h3>
+                
+                <h4 class="tech-stack-category__title">UMG Widgets</h4>
+                <p class="project-description">
+                    Custom widget blueprints handle task display, input fields, and buttons. Each UI element is built in UMG for rapid iteration and a consistent look. Event bindings connect user actions to game logic without extra glue code.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Data structures</h4>
+                <p class="project-description">
+                    Task information is stored in custom Blueprint data structures (e.g. title, description, priority, completion flag). These structs are used across widgets and save/load logic so the data model stays consistent.
+                </p>
+                
+                <h4 class="tech-stack-category__title">File I/O & persistence</h4>
+                <p class="project-description">
+                    Save/load uses Unreal’s file APIs to write and read task data to disk. On launch, the app loads persisted tasks and rebuilds the UI from that data. All task changes are reflected in the saved state so sessions survive restarts.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Event-driven architecture</h4>
+                <p class="project-description">
+                    The Blueprint event system drives UI interactions and data updates: button clicks, list updates, and save triggers are wired through events. This keeps UI and logic decoupled and makes it easy to add or change behaviors without touching unrelated code.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

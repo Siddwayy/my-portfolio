@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="Coding Projects by Prateek Raghav - Web development and data science projects including Metrobus redesign and portfolio website.">
+    <title>Coding Projects | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link active">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content game-projects-page">
+            <article>
+                <h2 class="page-title">Coding Projects</h2>
+            </article>
+
+            <div class="game-projects-filter" role="group" aria-label="Filter projects">
+                <button type="button" class="filter-btn filter-btn--active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="web-development">Web Development</button>
+                <button type="button" class="filter-btn" data-filter="data-science">Data Science</button>
+            </div>
+
+            <div class="game-projects-grid">
+                <!-- data-category: "web-development" and/or "data-science" -->
+                <a href="https://github.com/Siddwayy/Metrobus" class="game-project-card" data-category="web-development" target="_blank" rel="noopener noreferrer">
+                    <div class="game-project-card__thumb">
+                        <img src="Assets/metrobus.png" alt="Metrobus Redesign" loading="lazy">
+                    </div>
+                    <div class="game-project-card__meta">
+                        <h3 class="game-project-card__title">Metrobus Redesign</h3>
+                        <p class="game-project-card__role">Web Dev · HTML/CSS/JS</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Siddwayy/my-portfolio" class="game-project-card" data-category="web-development" target="_blank" rel="noopener noreferrer">
+                    <div class="game-project-card__thumb">
+                        <img src="Assets/portfolio.avif" alt="Portfolio Website" loading="lazy">
+                    </div>
+                    <div class="game-project-card__meta">
+                        <h3 class="game-project-card__title">Portfolio Website</h3>
+                        <p class="game-project-card__role">Web Dev · HTML/CSS/JS</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

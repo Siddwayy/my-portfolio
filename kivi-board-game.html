@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="Kivi Board Game - A turn-based dice strategy game built in Java Swing by Prateek Raghav. Features 2-4 players, pattern matching, and save/load functionality.">
+    <title>Kivi Board Game | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link active">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">KIVI BOARD GAME</h2>
+            </article>
+
+            <!-- Project Overview -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> Project Overview</h3>
+                <p class="project-description">
+                    <strong>KiviBoardGame</strong> delivers a full Java Swing adaptation of the dice strategy board game Kivi: 2–4 players (human/AI) roll to match patterns on a 7×7 grid, build scoring lines over 10 rounds, with save/load and color vision support.
+                </p>
+                <div class="showcase-detail-grid" style="margin-top: 1.25rem;">
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Players</span>
+                        <span class="showcase-detail-item__value">2–4</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Studio</span>
+                        <span class="showcase-detail-item__value">Personal Project</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Genre</span>
+                        <span class="showcase-detail-item__value">Dice Strategy Board Game</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Platform</span>
+                        <span class="showcase-detail-item__value">PC, Mac OS, Linux</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Engine & Tools</span>
+                        <span class="showcase-detail-item__value">IntelliJ, Java Swing</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Duration</span>
+                        <span class="showcase-detail-item__value">3 Months</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Team Size</span>
+                        <span class="showcase-detail-item__value">Solo Developer</span>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <div class="project-cta-buttons">
+                        <a href="https://github.com/Siddwayy/KiviBoardGame" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                        <a href="#" class="github-link project-cta-play" target="_blank" rel="noopener noreferrer" title="Add your play link (e.g. downloadable JAR or itch.io)">
+                            <i class="fas fa-gamepad"></i> Play Game
+                        </a>
+                        <a href="https://youtu.be/_-S2DVjqv3M" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-youtube"></i> Demo Video
+                        </a>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <video controls autoplay muted loop class="project-image" style="width: 100%; height: auto; border: 3px solid var(--border-color); box-shadow: 3px 3px 0 rgba(0,0,0,0.1);">
+                        <source src="kivi files/GameplayVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <img src="kivi files/HeroScreen.png" alt="Kivi Board Game - Full game screen" class="project-image" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-layer-group"></i> Tech Stack</h3>
+                <div class="tech-stack-categories">
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Core Technical Stack</h4>
+                            <ul class="tech-stack-list">
+                                <li>Java</li>
+                                <li>Java Swing</li>
+                                <li>Object-Oriented Programming (OOP)</li>
+                                <li>GRASP Design Patterns</li>
+                                <li>Multi-threading</li>
+                                <li>Java Serialization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Systems & Logic</h4>
+                            <ul class="tech-stack-list">
+                                <li>Game Architecture</li>
+                                <li>AI Heuristics & Logic</li>
+                                <li>Pattern Validation Algorithms</li>
+                                <li>State Management</li>
+                                <li>Concurrency Control</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">UI/UX & Accessibility</h4>
+                            <ul class="tech-stack-list">
+                                <li>Event-Driven Programming</li>
+                                <li>Inclusive Design (CVD Support)</li>
+                                <li>Interface Decoupling</li>
+                                <li>Asset Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Tools & Workflow</h4>
+                            <ul class="tech-stack-list">
+                                <li>GitHub</li>
+                                <li>IntelliJ IDEA </li>
+                                <li>Technical Documentation</li>
+                                <li>Figma</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features & Contributions -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-star"></i> Features & Contributions</h3>
+                
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: var(--text-primary);">Setup & Main Menu</h4>
+                <p class="project-description">
+                    Configure 2–4 players: human/AI (Easy/Hard), names, colors, vision mode, and backgrounds via the MainMenu.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="kivi files/MainMenu.png" alt="Kivi Board Game - Main menu and player configuration" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Core Gameplay Loop</h4>
+                <p class="project-description">
+                    Roll 6 dice (up to 3 times) → grid highlights pattern matches → place stone → live stats update → next player. 10 rounds to win!
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="kivi files/ActiveGameplay.png" alt="Kivi Board Game - Active gameplay" class="project-image" loading="lazy">
+                </div>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="kivi files/GridMatchingPatterns.png" alt="Kivi Board Game - Grid matching patterns" class="project-image" loading="lazy">
+                </div>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="kivi files/DicePatterns.png" alt="Kivi Board Game - Dice patterns" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Player Stats & UI</h4>
+                <p class="project-description">
+                    Real-time panels show names, colors (R/G/B/W), stones left, and scores – only the current player can act.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="kivi files/PlayerInfo.jpg" alt="Kivi Board Game - Player statistics" class="project-image" style="max-width: 400px;" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Save/Load Feature</h4>
+                <p class="project-description">
+                    Serialize full game state (board, players, round) – pause and resume anytime.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="kivi files/GameSave.png" alt="Kivi Board Game - Save game dialog" class="project-image" style="max-width: 500px;" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Accessibility Options</h4>
+                <p class="project-description">
+                    Toggle color vision deficiency mode (numbered grids 1–3, labeled stones) and custom backgrounds (Whimsy World, Critter Carnival).
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <img src="kivi files/DisplaySettings.png" alt="Kivi - Display settings" class="project-image" loading="lazy">
+                        <img src="kivi files/DisplaySettingsConfirmation.png" alt="Kivi - Settings confirmation" class="project-image" loading="lazy">
+                    </div>
+                </div>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Game Over & Win</h4>
+                <p class="project-description">
+                    Final scores are calculated; winner is announced with a Duke mascot popup.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="kivi files/GameOver.png" alt="Kivi Board Game - Game over screen" class="project-image" style="max-width: 500px;" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-code"></i> Technical Implementation</h3>
+                
+                <h4 class="tech-stack-category__title">Architecture & GRASP</h4>
+                <p class="project-description">
+                    The game is structured around a central <strong>GameManager</strong> that acts as the controller: it coordinates turns, validates moves, updates the board and scores, and notifies the UI. UI and logic stay decoupled via a <strong>GridCellClickListener</strong> so grid clicks are handled separately from game logic (low coupling). All dice-rule checks live in a single <strong>validateDiceCombination</strong> method so rule changes don’t ripple through the codebase (protected variations). The AI runs as a <strong>ComputerPlayerAI</strong> thread so the UI stays responsive during computer turns (pure fabrication).
+                </p>
+                
+                <h4 class="tech-stack-category__title">Dice validation</h4>
+                <p class="project-description">
+                    A roll is valid if it matches one of three patterns: sum over 30, three pairs, or a straight 1–6. Validation is centralized: dice are sorted, then checked against each pattern. Only valid combinations allow placing a stone, and the grid highlights only cells that match the current roll.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Real-time grid highlighting</h4>
+                <p class="project-description">
+                    When the player rolls, the grid loops over all empty cells, checks whether the dice match each cell’s required pattern, and highlights valid cells (e.g. green border). Transient state like highlights is cleared and repainted each time. The logic is driven by the same validation used for placement, so the UI always reflects the current roll.
+                </p>
+                
+                <h4 class="tech-stack-category__title">AI behavior</h4>
+                <p class="project-description">
+                    Easy AI rolls at most twice and picks a random valid placement. Hard AI gets three rolls and uses a <strong>prioritizeBlocking</strong> step to prefer moves that block the opponent’s longest line. All AI work runs on a background thread; when done, it calls <strong>SwingUtilities.invokeLater</strong> to update the GameManager and end the turn on the EDT.
+                </p>
+                
+                <h4 class="tech-stack-category__title">Persistence</h4>
+                <p class="project-description">
+                    Save writes the full <strong>GameManager</strong> (board, players, round, state) plus current player index and game state to an <strong>ObjectOutputStream</strong>. Transient fields such as threads are not serialized. Load reads those objects back and then calls <strong>restoreUI</strong> to rebuild panels and state from the loaded model so the player can resume exactly where they left off.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
