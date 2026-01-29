@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
-    <meta name="description" content="TO-DO-LIST-APP - A lightweight task management utility app built in Unreal Engine 5 using UMG by Prateek Raghav. Features persistent data storage and full task management capabilities.">
+    <meta name="description" content="TO-DO-LIST-APP - A UI-focused app built in Unreal Engine 5 with UMG and Blueprints by Prateek Raghav. Task management, widget composition, and event-driven Blueprint programming.">
     <title>TO-DO-LIST-APP | Prateek Raghav</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="style.css">
@@ -46,7 +46,10 @@
             <div class="showcase-container">
                 <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> Project Overview</h3>
                 <p class="project-description">
-                    <strong>TO-DO-LIST-APP</strong> is a lightweight task management utility app built in Unreal Engine 5 using UMG. The application provides a simple, intuitive way to organize daily goals with persistent data storage and full task creation and management capabilities.
+                    A to-do list application built inside <strong>Unreal Engine 5</strong>, designed as a UI-focused “app-style” experience rather than a traditional game. It uses <strong>Unreal Motion Graphics (UMG)</strong> for the interface and <strong>Blueprints</strong> for all application logic, demonstrating how UE5 can be used to prototype functional productivity tools and interactive UI systems.
+                </p>
+                <p class="project-description">
+                    The app supports creating and managing tasks through a clean, responsive interface with typical to-do workflows (adding, updating, completing, and organizing tasks), while emphasizing UI/UX structure, widget composition, and event-driven Blueprint programming.
                 </p>
                 <div class="showcase-detail-grid" style="margin-top: 1.25rem;">
                     <div class="showcase-detail-item">
@@ -85,7 +88,10 @@
                     </div>
                 </div>
                 <div class="project-media-block" style="margin-top: 1.5rem;">
-                    <img src="Poster-Todo.png" alt="TO-DO-LIST-APP - Task management interface" class="project-image" loading="lazy">
+                    <video controls autoplay muted loop class="project-image" style="width: 100%; height: auto; border: 3px solid var(--border-color); box-shadow: 3px 3px 0 rgba(0,0,0,0.1);" poster="Poster-Todo.png" aria-label="TO-DO-LIST-APP gameplay">
+                        <source src="Todo-list/GameplayDemo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
 
@@ -99,30 +105,32 @@
                             <ul class="tech-stack-list">
                                 <li>Unreal Engine 5</li>
                                 <li>UMG (Unreal Motion Graphics)</li>
-                                <li>Blueprint Visual Scripting</li>
                                 <li>Widget Blueprints</li>
+                                <li>ScrollBox / ListView-style layout</li>
+                                <li>Input fields & button widgets</li>
                             </ul>
                         </div>
                     </div>
                     <div class="tech-stack-category">
                         <div class="tech-stack-subcontainer">
-                            <h4 class="tech-stack-category__title">Data & Logic</h4>
+                            <h4 class="tech-stack-category__title">Logic & Data</h4>
                             <ul class="tech-stack-list">
-                                <li>Custom Data Structures</li>
-                                <li>File I/O & Persistence</li>
-                                <li>Save/Load Systems</li>
-                                <li>Event-Driven Architecture</li>
+                                <li>Blueprint visual scripting</li>
+                                <li>Event-driven architecture</li>
+                                <li>Custom structs / data models</li>
+                                <li>State management</li>
+                                <li>SaveGame (persistence)</li>
                             </ul>
                         </div>
                     </div>
                     <div class="tech-stack-category">
                         <div class="tech-stack-subcontainer">
-                            <h4 class="tech-stack-category__title">UI/UX & Design</h4>
+                            <h4 class="tech-stack-category__title">UI/UX & Patterns</h4>
                             <ul class="tech-stack-list">
-                                <li>Task Display Widgets</li>
-                                <li>Input Fields & Buttons</li>
-                                <li>Clean Interface Design</li>
-                                <li>Software Development Practices</li>
+                                <li>Reusable task-row widgets</li>
+                                <li>Event bindings (OnClicked, TextCommitted)</li>
+                                <li>Render-list update pattern</li>
+                                <li>Visual hierarchy & feedback</li>
                             </ul>
                         </div>
                     </div>
@@ -133,24 +141,34 @@
             <div class="showcase-container">
                 <h3 class="showcase-heading"><i class="fas fa-star"></i> Features & Contributions</h3>
                 
-                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: var(--text-primary);">Task Creation</h4>
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: var(--text-primary);">Task creation flow</h4>
                 <p class="project-description">
-                    Add new tasks with titles, descriptions, and priority levels. The interface supports quick entry and clear organization from the start.
+                    Add new tasks through an input-driven UI with clear, responsive controls.
                 </p>
 
-                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Task Management</h4>
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Task list rendering</h4>
                 <p class="project-description">
-                    Edit, delete, and mark tasks as complete. Full CRUD-style workflow keeps your list up to date without leaving the app.
+                    Display tasks dynamically in a scrollable list/grid that updates with the underlying data.
                 </p>
 
-                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Data Persistence</h4>
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Completion state</h4>
                 <p class="project-description">
-                    All tasks are saved automatically and persist between sessions using Unreal’s file system, so you can close and resume without losing data.
+                    Mark tasks as done/undone with immediate visual feedback.
                 </p>
 
-                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Organization & UI</h4>
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Editing and deletion</h4>
                 <p class="project-description">
-                    Organize tasks by priority and completion status. The UMG-based interface is clean and user-friendly, with custom widget blueprints for task display, input fields, and actions.
+                    Update task text and remove tasks from the list through the UI.
+                </p>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">UI polish</h4>
+                <p class="project-description">
+                    Button states, hover/pressed feedback, consistent spacing and typography, and clear visual hierarchy.
+                </p>
+
+                <h4 style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Blueprint architecture</h4>
+                <p class="project-description">
+                    Reusable widget components with UI separated from task state for maintainable logic.
                 </p>
             </div>
 
@@ -158,24 +176,24 @@
             <div class="showcase-container">
                 <h3 class="showcase-heading"><i class="fas fa-code"></i> Technical Implementation</h3>
                 
-                <h4 class="tech-stack-category__title">UMG Widgets</h4>
+                <h4 class="tech-stack-category__title">UI structure (UMG)</h4>
                 <p class="project-description">
-                    Custom widget blueprints handle task display, input fields, and buttons. Each UI element is built in UMG for rapid iteration and a consistent look. Event bindings connect user actions to game logic without extra glue code.
+                    The interface uses a main “app” widget that hosts the input area (task entry) and a list container (e.g. ScrollBox/ListView-style pattern). Reusable task-row widgets encapsulate per-task controls (complete/edit/delete) and visuals.
                 </p>
                 
-                <h4 class="tech-stack-category__title">Data structures</h4>
+                <h4 class="tech-stack-category__title">State and data model (Blueprints)</h4>
                 <p class="project-description">
-                    Task information is stored in custom Blueprint data structures (e.g. title, description, priority, completion flag). These structs are used across widgets and save/load logic so the data model stays consistent.
+                    Tasks are stored in an in-memory collection (e.g. an array of structs or objects) representing each task’s fields (title, completion state, etc.). Event-driven updates: when a task is added/edited/toggled, the UI refreshes by creating or updating the corresponding task-row widget(s). UI events (Button OnClicked, TextCommitted, etc.) are bound to Blueprint functions for consistent, predictable behavior.
                 </p>
                 
-                <h4 class="tech-stack-category__title">File I/O & persistence</h4>
+                <h4 class="tech-stack-category__title">UI updating pattern</h4>
                 <p class="project-description">
-                    Save/load uses Unreal’s file APIs to write and read task data to disk. On launch, the app loads persisted tasks and rebuilds the UI from that data. All task changes are reflected in the saved state so sessions survive restarts.
+                    A “render list” function clears and repopulates the list container when the underlying data changes, keeping the prototype simple and reliable.
                 </p>
                 
-                <h4 class="tech-stack-category__title">Event-driven architecture</h4>
+                <h4 class="tech-stack-category__title">Persistence</h4>
                 <p class="project-description">
-                    The Blueprint event system drives UI interactions and data updates: button clicks, list updates, and save triggers are wired through events. This keeps UI and logic decoupled and makes it easy to add or change behaviors without touching unrelated code.
+                    Using UE5 SaveGame, the app serializes the task array on save and loads it on startup so tasks persist between sessions.
                 </p>
             </div>
         </section>
