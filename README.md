@@ -5,7 +5,7 @@ A responsive, multi-page portfolio site showcasing **game development**, **3D wo
 ## Live Demo
 
 <!-- Add your live URL here when deployed, e.g. GitHub Pages -->
-**[View Live Site](https://your-username.github.io/Portolfio_Website/)** *(optional)*
+**[View Live Site]-https://siddwayy.github.io/my-portfolio/
 
 ---
 
@@ -33,6 +33,3 @@ A responsive, multi-page portfolio site showcasing **game development**, **3D wo
 
 No build tools, package manager, or bundler — plain static files.
 
----
-
-## Project Structure
