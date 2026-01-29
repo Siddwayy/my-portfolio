@@ -1,7 +1,6 @@
 // Page transition and loading animations
 document.addEventListener('DOMContentLoaded', function() {
     initPageAnimations();
-    initPhoneCopy();
     initPageTransitions();
     initImageLoading();
     initThemeToggle();
@@ -11,33 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function initPageAnimations() {
     document.documentElement.classList.add('loaded');
     document.body.classList.add('loaded');
-}
-
-function initPhoneCopy() {
-    const phoneElement = document.getElementById('phone-number');
-
-    if (phoneElement) {
-        phoneElement.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            const phoneNumber = this.innerText;
-            
-            navigator.clipboard.writeText(phoneNumber).then(() => {
-                const originalText = this.innerText;
-                this.innerText = 'Copied!';
-                this.classList.add('copied');
-
-                setTimeout(() => {
-                    this.innerText = originalText;
-                    this.classList.remove('copied');
-                }, 2000);
-
-            }).catch(err => {
-                console.error('Failed to copy phone number: ', err);
-                alert('Could not copy number. Please copy it manually.');
-            });
-        });
-    }
 }
 
 function initPageTransitions() {
