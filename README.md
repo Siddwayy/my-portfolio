@@ -5,7 +5,7 @@ A responsive, multi-page portfolio site showcasing **game development**, **3D wo
 ## Live Demo
 
 <!-- Add your live URL here when deployed, e.g. GitHub Pages -->
-**[View Live Site]-https://siddwayy.github.io/my-portfolio/
+##[View Live Site]-https://siddwayy.github.io/my-portfolio/
 
 ---
 
