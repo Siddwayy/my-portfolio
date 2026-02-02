@@ -3,7 +3,7 @@
 
 :root {
     --font-family: 'Nunito', sans-serif;
-    --bg-color: #f5f5f5;
+    --bg-color: #e8ecf4;
     --card-bg: #ffffff;
     --border-color: #000000;
     --text-primary: #000000;
@@ -11,12 +11,17 @@
     --accent-blue: #4ecdc4;
     --accent-teal: #7dd3d0;
     --accent-red: #ff4444;
-    --grid-color: #e0e0e0;
+    --grid-color: rgba(78, 205, 196, 0.12);
+    --bg-gradient-start: #e8f4f8;
+    --bg-gradient-mid: #ede8f4;
+    --bg-gradient-end: #e8ecf4;
+    --bg-dot-color: rgba(78, 205, 196, 0.25);
+    --bg-line-color: rgba(0, 0, 0, 0.04);
 }
 
 /* Dark Mode Variables – reddish-orange & dark maroon theme */
 [data-theme="dark"] {
-    --bg-color: #221C1D;
+    --bg-color: #0f0e17;
     --card-bg: #282122;
     --border-color: #E45B4B;
     --text-primary: #ffffff;
@@ -26,7 +31,12 @@
     --accent-teal: #E45B4B;
     --accent-red: #E45B4B;
     --accent-maroon: #A03737;
-    --grid-color: #362d2e;
+    --grid-color: rgba(228, 91, 75, 0.08);
+    --bg-gradient-start: #0f0e17;
+    --bg-gradient-mid: #1a1525;
+    --bg-gradient-end: #15121f;
+    --bg-dot-color: rgba(228, 91, 75, 0.15);
+    --bg-line-color: rgba(228, 91, 75, 0.06);
 }
 
 [data-theme="dark"] html {
@@ -43,18 +53,91 @@
     padding: 0;
 }
 
+/* Techy animated background */
+@keyframes bgGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes bgFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(2%, -1%) scale(1.02); }
+    66% { transform: translate(-1%, 2%) scale(0.98); }
+}
+
 body {
     font-family: var(--font-family);
     background-color: var(--bg-color);
-    background-image: 
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-image:
+        /* Circuit-style dot grid */
+        radial-gradient(circle at 50% 50%, var(--bg-dot-color) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, var(--bg-dot-color) 1px, transparent 1px),
+        /* Subtle line grid */
+        linear-gradient(var(--bg-line-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg-line-color) 1px, transparent 1px),
+        /* Animated gradient base */
+        linear-gradient(
+            135deg,
+            var(--bg-gradient-start) 0%,
+            var(--bg-gradient-mid) 50%,
+            var(--bg-gradient-end) 100%
+        );
+    background-size:
+        32px 32px,
+        32px 32px,
+        24px 24px,
+        24px 24px,
+        200% 200%;
+    background-position:
+        0 0,
+        16px 16px,
+        0 0,
+        0 0,
+        0 50%;
+    animation: fadeInAnimation 0.2s ease-out forwards, bgGradientShift 18s ease-in-out infinite;
     color: var(--text-primary);
     line-height: 1.6;
     font-weight: 400;
-    animation: fadeInAnimation 0.2s ease-out forwards;
     overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Optional: subtle tech "glow" orbs in corners (decorative) */
+body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    right: -10%;
+    width: 50vmax;
+    height: 50vmax;
+    background: radial-gradient(
+        ellipse at center,
+        var(--bg-dot-color) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+    animation: bgFloat 20s ease-in-out infinite;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -15%;
+    left: -10%;
+    width: 40vmax;
+    height: 40vmax;
+    background: radial-gradient(
+        ellipse at center,
+        var(--bg-dot-color) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+    animation: bgFloat 25s ease-in-out infinite reverse;
 }
 
 .project-details-block .project-description {
@@ -111,6 +194,11 @@ html.loaded .loading-spinner {
 }
 
 /* --- Layout Containers --- */
+header {
+    position: relative;
+    z-index: 1;
+}
+
 .container {
     max-width: 1200px;
     margin: 1rem auto;
@@ -118,6 +206,8 @@ html.loaded .loading-spinner {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .container-full-width {
@@ -125,6 +215,8 @@ html.loaded .loading-spinner {
     margin: 1rem auto;
     padding: 0 1rem;
     min-width: 0;
+    position: relative;
+    z-index: 1;
 }
 
 /* --- Components --- */
@@ -2128,5 +2220,8 @@ button:focus-visible {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+    body {
+        animation: fadeInAnimation 0.2s ease-out forwards;
     }
 }
