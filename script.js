@@ -116,8 +116,10 @@ function initTiltCards() {
         var rect = card.getBoundingClientRect();
         var x = (e.clientX - rect.left) / rect.width - 0.5;
         var y = (e.clientY - rect.top) / rect.height - 0.5;
-        var tiltX = Math.max(-8, Math.min(8, y * 8));
-        var tiltY = Math.max(-8, Math.min(8, -x * 8));
+        var isGridCard = card.classList.contains('game-project-card');
+        var maxTilt = isGridCard ? 4 : 8;
+        var tiltX = Math.max(-maxTilt, Math.min(maxTilt, y * maxTilt));
+        var tiltY = Math.max(-maxTilt, Math.min(maxTilt, -x * maxTilt));
         card.style.transform = 'perspective(800px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) translateZ(12px) scale(1.02)';
     }, { passive: true });
     document.addEventListener('mouseout', function(e) {
