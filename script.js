@@ -5,11 +5,151 @@ document.addEventListener('DOMContentLoaded', function() {
     initImageLoading();
     initThemeToggle();
     initGameProjectsFilter();
+    // Defer decorative effects until idle to prioritize critical rendering
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+            initCursorOrbs();
+            initTiltCards();
+        }, { timeout: 1500 });
+    } else {
+        setTimeout(function() {
+            initCursorOrbs();
+            initTiltCards();
+        }, 100);
+    }
 }, { once: true });
+
+// --- Cursor-reactive floating orbs + spotlight ---
+function initCursorOrbs() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+    var orbCount = window.innerWidth < 768 || 'ontouchstart' in window ? 6 : 12;
+    const orbs = [];
+    let rafId = null;
+    
+    const container = document.createElement('div');
+    container.className = 'cursor-orbs';
+    container.setAttribute('aria-hidden', 'true');
+    document.body.insertBefore(container, document.body.firstChild);
+    
+    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-blue').trim() || '#4ecdc4';
+    const colors = [accentColor, 'rgba(255, 180, 100, 0.6)', 'rgba(150, 120, 255, 0.5)', 'rgba(100, 220, 200, 0.5)'];
+    
+    for (let i = 0; i < orbCount; i++) {
+        const orb = document.createElement('div');
+        orb.className = 'cursor-orb';
+        const size = 40 + Math.random() * 80;
+        orb.style.width = size + 'px';
+        orb.style.height = size + 'px';
+        orb.style.left = Math.random() * 100 + '%';
+        orb.style.top = Math.random() * 100 + '%';
+        orb.style.background = colors[i % colors.length];
+        orb.style.animationDelay = (Math.random() * 5) + 's';
+        orb.dataset.vx = (Math.random() - 0.5) * 0.5;
+        orb.dataset.vy = (Math.random() - 0.5) * 0.5;
+        container.appendChild(orb);
+        orbs.push({
+            el: orb,
+            x: parseFloat(orb.style.left) / 100 * window.innerWidth,
+            y: parseFloat(orb.style.top) / 100 * window.innerHeight,
+            vx: parseFloat(orb.dataset.vx),
+            vy: parseFloat(orb.dataset.vy),
+            size: size,
+            attract: Math.random() > 0.5
+        });
+    }
+    
+    function animate() {
+        document.documentElement.style.setProperty('--cursor-x', mouseX + 'px');
+        document.documentElement.style.setProperty('--cursor-y', mouseY + 'px');
+        const damp = 0.98;
+        const strength = 0.015;
+        const repelRadius = 120;
+        
+        orbs.forEach(function(o) {
+            const dx = mouseX - o.x;
+            const dy = mouseY - o.y;
+            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            
+            if (dist < 400) {
+                const force = (o.attract ? 1 : -1) * strength * (1 - dist / 500);
+                o.vx += (dx / dist) * force * 50;
+                o.vy += (dy / dist) * force * 50;
+            }
+            
+            o.vx *= damp;
+            o.vy *= damp;
+            o.x += o.vx;
+            o.y += o.vy;
+            
+            o.x = Math.max(-o.size, Math.min(window.innerWidth + o.size, o.x));
+            o.y = Math.max(-o.size, Math.min(window.innerHeight + o.size, o.y));
+            
+            o.el.style.transform = `translate(${o.x}px, ${o.y}px) translate(-50%, -50%)`;
+        });
+        rafId = requestAnimationFrame(animate);
+    }
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    }, { passive: true });
+    rafId = requestAnimationFrame(animate);
+    // Pause animation when tab is hidden to save CPU/battery
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = null;
+        } else {
+            rafId = requestAnimationFrame(animate);
+        }
+    });
+}
+
+// --- Tilt cards toward cursor (event delegation) ---
+function initTiltCards() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    
+    document.addEventListener('mousemove', function(e) {
+        var card = e.target.closest('.game-project-card, .expertise-item');
+        if (!card) return;
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        var tiltX = Math.max(-8, Math.min(8, y * 8));
+        var tiltY = Math.max(-8, Math.min(8, -x * 8));
+        card.style.transform = 'perspective(800px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) translateZ(12px) scale(1.02)';
+    }, { passive: true });
+    document.addEventListener('mouseout', function(e) {
+        var card = e.target.closest('.game-project-card, .expertise-item');
+        if (card && !card.contains(e.relatedTarget)) {
+            card.style.transform = '';
+        }
+    }, { passive: true });
+}
 
 function initPageAnimations() {
     document.documentElement.classList.add('loaded');
     document.body.classList.add('loaded');
+    initStickyHeader();
+}
+
+function initStickyHeader() {
+    var header = document.querySelector('header');
+    if (!header) return;
+    var ticking = false;
+    function onScroll() {
+        var scrollY = window.scrollY || document.documentElement.scrollTop;
+        header.classList.toggle('scrolled', scrollY > 20);
+        ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(onScroll);
+            ticking = true;
+        }
+    }, { passive: true });
+    onScroll();
 }
 
 function initPageTransitions() {
@@ -191,8 +331,8 @@ function initThemeToggle() {
     
     if (!themeToggle || !themeIcon) return;
     
-    // Get saved theme or default to light
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // Get saved theme or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     
     // Apply saved theme
     if (currentTheme === 'dark') {

@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <script>try{var t=localStorage.getItem('theme');if(t!=='light')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
     <meta name="description" content="Game Projects by Prateek Raghav - Showcasing game development projects built with Java, Godot Engine, and Unreal Engine 5.">
     <title>Game Projects | Prateek Raghav</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,7 +54,7 @@
                 <!-- data-category: space-separated list. Use "game-projects" and/or "level-design". You can add more categories later. -->
                 <a href="kivi-board-game.html" class="game-project-card" data-category="game-projects">
                     <div class="game-project-card__thumb">
-                        <img src="kivi files/Poster.png" alt="Kivi Board Game" loading="lazy">
+                        <img src="kivi files/Poster.png" alt="Kivi Board Game" loading="lazy" decoding="async">
                     </div>
                     <div class="game-project-card__meta">
                         <h3 class="game-project-card__title">Kivi Board Game</h3>
@@ -61,7 +64,7 @@
 
                 <a href="towerecho.html" class="game-project-card" data-category="game-projects">
                     <div class="game-project-card__thumb">
-                        <img src="TowerEchoFiles/Poster.png" alt="TowerEcho" loading="lazy">
+                        <img src="TowerEchoFiles/Poster.png" alt="TowerEcho" loading="lazy" decoding="async">
                     </div>
                     <div class="game-project-card__meta">
                         <h3 class="game-project-card__title">TowerEcho</h3>
@@ -71,7 +74,7 @@
 
                 <a href="todo-list-app.html" class="game-project-card" data-category="game-projects">
                     <div class="game-project-card__thumb">
-                        <img src="Poster-Todo.png" alt="TO-DO-LIST-APP" loading="lazy">
+                        <img src="Poster-Todo.png" alt="TO-DO-LIST-APP" loading="lazy" decoding="async">
                     </div>
                     <div class="game-project-card__meta">
                         <h3 class="game-project-card__title">TO-DO-LIST-APP</h3>
@@ -81,7 +84,7 @@
 
                 <a href="pit2_gdd.html" class="game-project-card" data-category="game-projects">
                     <div class="game-project-card__thumb">
-                        <img src="Assets/Poster-pit2.png" alt="Pit2" loading="lazy">
+                        <img src="Assets/Poster-pit2.png" alt="Pit2" loading="lazy" decoding="async">
                     </div>
                     <div class="game-project-card__meta">
                         <h3 class="game-project-card__title">Pit2</h3>
@@ -91,7 +94,7 @@
 
                 <a href="zombie-mayhem.html" class="game-project-card" data-category="game-projects">
                     <div class="game-project-card__thumb">
-                        <img src="Zombie/Poster.png" alt="Zombie Mayhem" loading="lazy">
+                        <img src="Zombie/Poster.png" alt="Zombie Mayhem" loading="lazy" decoding="async">
                     </div>
                     <div class="game-project-card__meta">
                         <h3 class="game-project-card__title">Zombie Mayhem</h3>
@@ -102,6 +105,6 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

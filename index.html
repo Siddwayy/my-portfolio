@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <script>try{var t=localStorage.getItem('theme');if(t!=='light')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
     <meta name="description" content="Prateek Raghav - Game Developer & 3D Designer. Portfolio showcasing game development projects, 3D work, and design documents built with Unreal Engine, Unity, and Godot.">
     <title>Prateek Raghav | Game Developer & 3D Designer</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -40,7 +43,7 @@
 
     <main class="container">
         <aside class="sidebar">
-            <img src="Assets/profile.jpg" alt="Prateek Raghav" class="profile-pic" loading="lazy">
+            <img src="Assets/profile.jpg" alt="Prateek Raghav" class="profile-pic" loading="lazy" width="120" height="120" decoding="async">
             <h1>Prateek Raghav</h1>
             
             <div class="contact-info">
@@ -105,7 +108,7 @@
         <section class="main-content">
             <article id="about">
                 <h2>About Me</h2>
-                <p>Hi, I'm Sid — a Game Developer & 3D Designer. I build interactive worlds and engaging gameplay systems using Unreal Engine (Blueprints & C++), Unity, and Godot. Alongside coding mechanics like combat and AI, I design and model characters, props, and environments, with a strong focus on level design and player experience. My goal is to create games that are both visually immersive and mechanically fun.</p>
+                <p>Hi, I'm Prateek, a Canada-based game designer and developer pursuing my lifelong goal of working in the games industry. I've been a passionate gamer for as long as I can remember, and my curiosity about game development began when I started questioning how games work and how I could create experiences that feel more artistic, visually appealing, and fun. I focus on game design and development with a growing specialty in level design and environment art, crafting immersive spaces that feel alive, guide players naturally, and tell stories through mood, composition, lighting, and detail.</p>
             </article>
 
             <article id="expertise">
@@ -146,11 +149,11 @@
 
           <article id="tech-stack">
     <h2>Tech Stack</h2>
-    <img src="Assets/my-stack.png" alt="My Tech Stack" class="tech-stack-image" loading="lazy">
+    <img src="Assets/my-stack.png" alt="My Tech Stack" class="tech-stack-image" loading="lazy" decoding="async">
 </article>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
