@@ -1,6 +1,6 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --font-family: 'Nunito', sans-serif;
+    --font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     --font-display: 'Fredoka', sans-serif;
     --cursor-x: 50%;
     --cursor-y: 50%;
@@ -9,6 +9,7 @@
     --border-color: #2d2d3a;
     --text-primary: #1a1a2e;
     --text-secondary: #4a4a5a;
+    --text-tertiary: #6b6b7a;
     --accent-blue: #00d4aa;
     --accent-teal: #00b4d8;
     --accent-red: #ff6b6b;
@@ -30,14 +31,16 @@
     color: var(--accent-mustard);
 }
 
+
+
 /* Dark Mode Variables – gamey dark theme */
 [data-theme="dark"] {
     --bg-color: #0f0e17;
     --card-bg: #1e1b26;
     --border-color: #ff6b6b;
     --accent-hover: #00d4aa;
-    --text-primary: #ffffff;
-    --text-secondary: #c4b5d6;
+    --text-primary: #f5f5f5;
+    --text-secondary: #e0dce8;
     --text-tertiary: #8b7a9e;
     --accent-blue: #00d4aa;
     --accent-teal: #00b4d8;
@@ -60,6 +63,8 @@
 [data-theme="dark"] .game-projects-filter .filter-btn:not(.filter-btn--active) {
     color: var(--text-tertiary);
 }
+
+
 
 * {
     box-sizing: border-box;
@@ -1333,6 +1338,7 @@ nav .theme-toggle:active {
     text-align: center;
     border-bottom: 1px solid var(--border-color);
     min-width: 0;
+    min-height: 5.5rem;
 }
 
 [data-theme="dark"] .game-project-card--detailed .game-project-card__header {
@@ -1360,10 +1366,64 @@ nav .theme-toggle:active {
     color: var(--accent-blue);
 }
 
+.game-project-card--detailed .game-project-card__duration {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: center;
+    min-height: 1.25rem;
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .game-project-card--detailed .game-project-card__duration {
+    color: var(--text-tertiary);
+}
+
+.game-project-card__duration--empty {
+    visibility: hidden;
+    margin: 0 0 0.5rem 0;
+}
+
+.game-project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-project-card__tag {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background-color: #2563eb;
+    border: 1.5px solid #000;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
 .game-project-card--detailed .game-project-card__details {
     padding: 0.75rem 1rem 1rem;
     border-bottom: 1px solid var(--border-color);
     min-width: 0;
+    min-height: 4.5rem;
+}
+
+.game-project-card__intro {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+[data-theme="dark"] .game-project-card__intro {
+    color: var(--text-tertiary);
 }
 
 [data-theme="dark"] .game-project-card--detailed .game-project-card__details {
@@ -2379,7 +2439,20 @@ pre code {
     font-family: var(--font-family);
     font-size: 1rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--accent-mustard);
+}
+
+[data-theme="light"] .showcase-detail-item__value {
+    color: #8b0000;
+}
+
+.card-highlight {
+    color: var(--accent-mustard);
+    font-weight: 600;
+}
+
+[data-theme="light"] .card-highlight {
+    color: #8b0000;
 }
 
 .showcase-detail-grid--span-1 {
