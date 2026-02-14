@@ -2455,6 +2455,10 @@ pre code {
     color: #8b0000;
 }
 
+[data-theme="light"] .highlight-text {
+    color: #8b0000;
+}
+
 .showcase-detail-grid--span-1 {
     grid-template-columns: 1fr;
 }

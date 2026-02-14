@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="Assets/profile.jpg" as="image">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
@@ -43,7 +44,7 @@
 
     <main class="container">
         <aside class="sidebar">
-            <img src="Assets/profile.jpg" alt="Prateek Raghav" class="profile-pic" loading="lazy" width="120" height="120" decoding="async">
+            <img src="Assets/profile.jpg" alt="Prateek Raghav" class="profile-pic" loading="eager" fetchpriority="high" width="120" height="120" decoding="async">
             <h1>Prateek Raghav</h1>
             
             <div class="contact-info">
