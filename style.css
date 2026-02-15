@@ -1,6 +1,6 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    --font-family: 'Comic Sans MS', 'Comic Sans', 'Nunito', sans-serif;
     --font-display: 'Fredoka', sans-serif;
     --cursor-x: 50%;
     --cursor-y: 50%;
@@ -131,6 +131,8 @@ body::after {
 
 body {
     font-family: var(--font-family);
+    font-style: normal;
+    font-synthesis: none;
     background-color: var(--bg-color);
     background-image:
         radial-gradient(circle at 50% 50%, var(--bg-dot-color) 1px, transparent 1px),
