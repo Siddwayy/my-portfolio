@@ -1,6 +1,6 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --font-family: 'Comic Sans MS', 'Comic Sans', 'Nunito', sans-serif;
+    --font-family: 'Nunito', sans-serif;
     --font-display: 'Fredoka', sans-serif;
     --cursor-x: 50%;
     --cursor-y: 50%;
@@ -25,6 +25,7 @@
     --shadow-hover: 10px 10px 0 var(--border-color);
     --radius-cartoon: 20px;
     --accent-mustard: #c99349;
+    --container-max-width: 1440px;
 }
 
 .highlight-text {
@@ -273,7 +274,7 @@ header.scrolled {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 1rem auto;
     padding: 0 1rem;
     display: grid;
@@ -284,7 +285,7 @@ header.scrolled {
 }
 
 .container-full-width {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 1rem auto;
     padding: 0 1rem;
     min-width: 0;
@@ -300,7 +301,7 @@ header {
 }
 
 nav {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     background-color: var(--card-bg);
     border: 4px solid var(--border-color);
@@ -754,7 +755,7 @@ nav .theme-toggle:active {
 
 /* Gaming Achievements Section - full width below main area */
 .gaming-achievements-section {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto 2rem;
     padding: 0 1rem;
     position: relative;
@@ -1316,7 +1317,7 @@ nav .theme-toggle:active {
 
 /* Detailed project card layout */
 .game-projects-grid--detailed {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
