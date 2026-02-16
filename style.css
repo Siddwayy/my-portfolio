@@ -571,11 +571,12 @@ nav .theme-toggle:active {
     min-width: 0;
 }
 
-/* About page: minimal, less cluttered */
+/* About page: minimal, less cluttered – shadow and hover like coding project cards */
 .container .info-card {
     border-width: 2px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-cartoon), 0 2px 12px rgba(0, 0, 0, 0.06);
     padding: 1.5rem 1.75rem;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
 
 .container .info-card::before {
@@ -583,29 +584,40 @@ nav .theme-toggle:active {
 }
 
 .container .info-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover), 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] .container .info-card {
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-cartoon), 0 2px 16px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] .container .info-card:hover {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-hover), 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 
 .container .main-content {
     border-width: 2px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-cartoon), 0 2px 12px rgba(0, 0, 0, 0.06);
     padding: 1.5rem 1.75rem;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
 
 .container .main-content::before {
     display: none;
 }
 
+.container .main-content:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover), 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 [data-theme="dark"] .container .main-content {
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-cartoon), 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .container .main-content:hover {
+    box-shadow: var(--shadow-hover), 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 
 .container {
@@ -659,7 +671,7 @@ nav .theme-toggle:active {
 
 .container .expertise-item {
     border-width: 2px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-cartoon), 0 2px 10px rgba(0, 0, 0, 0.05);
     padding: 1.25rem;
 }
 
@@ -668,11 +680,15 @@ nav .theme-toggle:active {
 }
 
 .container .expertise-item:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-hover), 0 16px 32px rgba(0, 0, 0, 0.12);
 }
 
 [data-theme="dark"] .container .expertise-item {
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-cartoon), 0 2px 14px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .container .expertise-item:hover {
+    box-shadow: var(--shadow-hover), 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
 .container .expertise-title {
@@ -699,16 +715,26 @@ nav .theme-toggle:active {
 
 .container .sidebar {
     border-width: 2px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-cartoon), 0 2px 12px rgba(0, 0, 0, 0.06);
     padding: 1.25rem 1.75rem;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
 
 .container .sidebar::before {
     display: none;
 }
 
+.container .sidebar:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover), 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 [data-theme="dark"] .container .sidebar {
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-cartoon), 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .container .sidebar:hover {
+    box-shadow: var(--shadow-hover), 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 
 /* My Expertise in its own container underneath About Me row */
@@ -1695,8 +1721,8 @@ table th,
 .expertise-item i {
     font-size: 1.75rem;
     color: var(--accent-teal);
-    margin-bottom: 0.75rem;
-    display: block;
+    margin: 0.4rem 0 0.75rem 0.4rem;
+    display: inline-block;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -1705,7 +1731,7 @@ table th,
 }
 
 .expertise-item:hover i {
-    transform: scale(1.1);
+    transform: rotate(-8deg);
 }
 
 .expertise-item h3 {
@@ -2206,7 +2232,7 @@ table th,
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(200px, auto);
-    gap: 1.25rem;
+    gap: 2rem;
     padding: 0;
 }
 
@@ -2232,20 +2258,27 @@ table th,
     grid-row: auto;
 }
 
-/* Bento card styling: compact and distinct */
+/* Bento card styling: polished rounded corners, strong border, shadow like coding project cards */
 .game-project-card--bento {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    border-radius: 16px;
-    overflow: hidden;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    border-radius: var(--radius-cartoon);
+    border: 4px solid var(--border-color);
+    overflow: visible;
+    box-shadow: var(--shadow-cartoon), 0 8px 24px rgba(0, 0, 0, 0.12);
+    background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .game-project-card--bento {
+    box-shadow: var(--shadow-cartoon), 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .game-project-card--bento .game-project-card__thumb {
     aspect-ratio: 16 / 10;
     flex-shrink: 0;
-    border-radius: 0;
+    border-radius: calc(var(--radius-cartoon) - 4px) calc(var(--radius-cartoon) - 4px) 0 0;
+    overflow: hidden;
 }
 
 .game-project-card--hero .game-project-card__thumb {
@@ -2308,14 +2341,14 @@ table th,
     margin: 0;
 }
 
-/* Bento hover: slight lift and glow */
+/* Bento hover: very subtle lift, compact shadow to avoid overlapping */
 .game-project-card--bento:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: var(--shadow-hover), 0 16px 32px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover), 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] .game-project-card--bento:hover {
-    box-shadow: var(--shadow-hover), 0 20px 40px rgba(0,0,0,0.35);
+    box-shadow: var(--shadow-hover), 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Empty state for bento grid */
