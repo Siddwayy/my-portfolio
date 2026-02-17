@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }, { once: true });
 
-// --- Cursor-reactive floating orbs + spotlight ---
+// --- Cursor-reactive floating orbs + spotlight (throttled for performance) ---
 function initCursorOrbs() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     
     let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-    var orbCount = window.innerWidth < 768 || 'ontouchstart' in window ? 6 : 12;
+    var orbCount = window.innerWidth < 768 || 'ontouchstart' in window ? 4 : 8;
     const orbs = [];
     let rafId = null;
     
@@ -60,12 +60,18 @@ function initCursorOrbs() {
         });
     }
     
-    function animate() {
+    var lastTick = 0;
+    var throttleMs = 32;
+    function animate(now) {
+        if (now - lastTick < throttleMs) {
+            rafId = requestAnimationFrame(animate);
+            return;
+        }
+        lastTick = now;
         document.documentElement.style.setProperty('--cursor-x', mouseX + 'px');
         document.documentElement.style.setProperty('--cursor-y', mouseY + 'px');
         const damp = 0.98;
-        const strength = 0.015;
-        const repelRadius = 120;
+        const strength = 0.012;
         
         orbs.forEach(function(o) {
             const dx = mouseX - o.x;
@@ -106,20 +112,24 @@ function initCursorOrbs() {
     });
 }
 
-// --- Tilt cards toward cursor (event delegation) ---
+// --- Tilt cards toward cursor (throttled for smooth nav) ---
 function initTiltCards() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     
+    var lastTilt = 0;
     document.addEventListener('mousemove', function(e) {
         var card = e.target.closest('.expertise-item');
         if (!card) return;
+        var now = performance.now();
+        if (now - lastTilt < 50) return;
+        lastTilt = now;
         var rect = card.getBoundingClientRect();
         var x = (e.clientX - rect.left) / rect.width - 0.5;
         var y = (e.clientY - rect.top) / rect.height - 0.5;
-        var maxTilt = 8;
+        var maxTilt = 6;
         var tiltX = Math.max(-maxTilt, Math.min(maxTilt, y * maxTilt));
         var tiltY = Math.max(-maxTilt, Math.min(maxTilt, -x * maxTilt));
-        card.style.transform = 'perspective(800px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) translateZ(12px) scale(1.02)';
+        card.style.transform = 'perspective(800px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) translateZ(8px) scale(1.01)';
     }, { passive: true });
     document.addEventListener('mouseout', function(e) {
         var card = e.target.closest('.expertise-item');
@@ -154,74 +164,27 @@ function initStickyHeader() {
 }
 
 function initPageTransitions() {
-    if (window.pageTransitionsSetup) {
-        return;
-    }
+    if (window.pageTransitionsSetup) return;
     window.pageTransitionsSetup = true;
-    window.isNavigating = false;
-    
+
     const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])');
     
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            
-            if (window.isNavigating) {
+            if (!href || href === '#' || href.startsWith('http') || href.startsWith('//')) return;
+
+            const currentPath = (window.location.pathname.split('/').pop() || 'index.html').replace(/^\//, '');
+            const targetPath = (href.split('/').pop() || href || 'index.html').split('?')[0];
+            const cur = currentPath === '' ? 'index.html' : currentPath;
+            const tgt = (targetPath === '' || targetPath === './' || targetPath === '.') ? 'index.html' : targetPath;
+
+            if (cur === tgt) {
                 e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation();
                 return false;
             }
-            
-            // Skip if it's the same page or external link
-            if (!href || href === '#' || href.startsWith('http') || href.startsWith('//')) {
-                return true; // Allow default behavior
-            }
-            
-            // Check if clicking the same page
-            const currentPath = window.location.pathname.split('/').pop() || '';
-            const targetPath = href.split('/').pop() || '';
-            
-            // Normalize paths (handle index.html vs ./ vs empty)
-            let normalizedCurrent = currentPath || 'index.html';
-            let normalizedTarget = targetPath || 'index.html';
-            
-            // Handle relative paths
-            if (href === './' || href === '/' || href === '') {
-                normalizedTarget = 'index.html';
-            }
-            if (currentPath === '' || currentPath === '/') {
-                normalizedCurrent = 'index.html';
-            }
-            
-            if (normalizedCurrent === normalizedTarget) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-            }
-            
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-            
-            window.isNavigating = true;
-            document.body.classList.add('transitioning');
-            
-            // Create transition overlay and show it immediately
-            const overlay = document.createElement('div');
-            overlay.className = 'page-transition active';
-            document.body.appendChild(overlay);
-            
-            overlay.offsetHeight;
-            setTimeout(() => {
-                overlay.classList.add('exit');
-                setTimeout(() => {
-                    if (window.isNavigating) window.location.href = href;
-                }, 180);
-            }, 10);
-            
-            return false;
-        }, { passive: false });
+            // Use native navigation – faster, no blank overlay
+        });
     });
 }
 
@@ -243,68 +206,11 @@ function initImageLoading() {
     });
 }
 
-// Clean up function for stuck states
-function cleanupStuckStates() {
-    // Clean up any stuck overlays or transitions
-    const stuckOverlays = document.querySelectorAll('.page-transition.active');
-    stuckOverlays.forEach(overlay => {
-        overlay.classList.remove('active');
-        overlay.classList.remove('exit');
-        overlay.style.pointerEvents = 'none';
-        overlay.style.opacity = '0';
-        setTimeout(() => {
-            if (overlay.parentNode) {
-                overlay.parentNode.removeChild(overlay);
-            }
-        }, 100);
-    });
-    
-    // Remove transitioning class
-    document.body.classList.remove('transitioning');
-    
-    // Reset navigation flag
-    window.isNavigating = false;
-    
-    // Remove loading spinner if stuck
-    const spinner = document.querySelector('.loading-spinner');
-    if (spinner && spinner.classList.contains('active')) {
-        spinner.classList.remove('active');
-        spinner.style.opacity = '0';
-        spinner.style.pointerEvents = 'none';
-    }
-}
-
-// Safety timeout to clean up stuck states after 2 seconds
-setTimeout(() => {
-    const activeOverlay = document.querySelector('.page-transition.active');
-    const activeSpinner = document.querySelector('.loading-spinner.active');
-    if (activeOverlay || activeSpinner) {
-        cleanupStuckStates();
-    }
-}, 2000);
-
-// Handle browser back/forward navigation (popstate)
-window.addEventListener('popstate', function(event) {
-    cleanupStuckStates();
-    // Re-initialize animations
-    setTimeout(() => {
-        initPageAnimations();
-    }, 50);
-});
-
-// Handle browser back/forward navigation (pageshow - for cached pages)
 window.addEventListener('pageshow', function(event) {
-    cleanupStuckStates();
-    
     if (event.persisted) {
-        // Page was loaded from cache, trigger animations
         document.body.classList.add('loaded');
         document.documentElement.classList.add('loaded');
-        
-        // Re-initialize animations
-        setTimeout(() => {
-            initPageAnimations();
-        }, 50);
+        initPageAnimations();
     }
 });
 
