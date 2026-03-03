@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>try{var t=localStorage.getItem('theme');if(t!=='light')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+    <meta name="description" content="Habbitto - Habit tracker with a built-in focus timer and stopwatch by Prateek Raghav. Build habits one session at a time with streaks, time tracking, and Galaxy view.">
+    <title>Habbitto | Prateek Raghav</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner active">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="game_projects.html" class="nav-link">Game Projects</a></li>
+                <li><a href="other_projects.html" class="nav-link active">Coding Projects</a></li>
+                <li><a href="3d_work.html" class="nav-link">3D Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-full-width">
+        <section class="main-content">
+            <article>
+                <h2 class="page-title">HABBITTO</h2>
+            </article>
+
+            <!-- Project Overview -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> Project Overview</h3>
+                <p class="project-description">
+                    <strong>Habbitto</strong> is a habit tracker with a built-in focus timer and stopwatch. Instead of only checking "done," you track <strong>how long</strong> you spent on each habit. A focus timer (30–90 min or custom) and a stopwatch both log time to the habit you choose. Habits can be marked done for the day, and the app shows streaks and total time spent so progress is visible and motivating.
+                </p>
+                <div class="showcase-detail-grid" style="margin-top: 1.25rem;">
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Type</span>
+                        <span class="showcase-detail-item__value">Web App</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Platform</span>
+                        <span class="showcase-detail-item__value">Browser, Desktop (download)</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Stack</span>
+                        <span class="showcase-detail-item__value">Vanilla JS, Vite, Supabase, CSS</span>
+                    </div>
+                    <div class="showcase-detail-item">
+                        <span class="showcase-detail-item__label">Team</span>
+                        <span class="showcase-detail-item__value">Solo Developer</span>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <div class="project-cta-buttons">
+                        <a href="https://habbitto.netlify.app/" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fas fa-globe"></i> Use in Browser
+                        </a>
+                        <a href="https://drive.google.com/file/d/19hz0xK5ZFSMVVUohZKmw5BDZ9RcwAtFJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fas fa-download"></i> Download for Desktop
+                        </a>
+                        <a href="https://github.com/Siddwayy/Habbitto" target="_blank" rel="noopener noreferrer" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-media-block" style="margin-top: 1.5rem;">
+                    <img src="Assets/Habbitto/Main app view.png" decoding="async" alt="Habbitto - Main app view" class="project-image" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-star"></i> Features</h3>
+                
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: var(--text-primary);">Auth</h4>
+                <p class="project-description">
+                    Email/password sign up and login via Supabase.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Assets/Habbitto/Auth.png" decoding="async" alt="Habbitto - Auth and sign in" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Habit Tracker</h4>
+                <p class="project-description">
+                    Custom habits, icon picker, edit/delete, mark done for the day.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Assets/Habbitto/Habbit Tracker.png" decoding="async" alt="Habbitto - Habit tracker" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Focus Timer</h4>
+                <p class="project-description">
+                    Preset durations (30, 45, 60, 75, 90 min), custom duration, circular progress, optional break phase.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Assets/Habbitto/Focus Timer.png" decoding="async" alt="Habbitto - Focus timer" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Stopwatch</h4>
+                <p class="project-description">
+                    Free-form timing with save to habit.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Assets/Habbitto/Stopwatch.png" decoding="async" alt="Habbitto - Stopwatch" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Time & Streaks</h4>
+                <p class="project-description">
+                    Time spent per habit, daily completions, consecutive-day streak counter.
+                </p>
+                <div class="project-media-block" style="margin-top: 1rem;">
+                    <img src="Assets/Habbitto/Time Spent.png" decoding="async" alt="Habbitto - Time spent" class="project-image" loading="lazy">
+                </div>
+                <div class="project-media-block" style="margin-top: 0.75rem;">
+                    <img src="Assets/Habbitto/Streaks.png" decoding="async" alt="Habbitto - Streaks" class="project-image" loading="lazy">
+                </div>
+
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Session-end Flow</h4>
+                <p class="project-description">
+                    Congratulatory dialog and optional sound when the focus timer finishes.
+                </p>
+
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Guide & Shortcuts</h4>
+                <p class="project-description">
+                    In-app "How it works" with simple steps and icons. Space to start/pause/resume; keys 1–5 for duration presets when idle. Offline / local mode works without Supabase using localStorage.
+                </p>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-layer-group"></i> Tech Stack</h3>
+                <div class="tech-stack-categories">
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Frontend</h4>
+                            <ul class="tech-stack-list">
+                                <li>Vanilla JavaScript (ES modules)</li>
+                                <li>Vite</li>
+                                <li>CSS (custom properties)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tech-stack-category">
+                        <div class="tech-stack-subcontainer">
+                            <h4 class="tech-stack-category__title">Backend & Storage</h4>
+                            <ul class="tech-stack-list">
+                                <li>Supabase (Auth)</li>
+                                <li>PostgreSQL with RLS</li>
+                                <li>localStorage (offline mode)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design & UX -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-palette"></i> Design & UX</h3>
+                <p class="project-description">
+                    Dark and light theme support with clear typography and accent color. Circular progress ring for the timer with a subtle pulse when running. Full-width Start button, habit picker with streak badges, empty state ("Create your first habit"). Modals for account, guide, and session-end; tab title shows remaining time when the timer is running.
+                </p>
+            </div>
+
+            <!-- Challenges & Learnings -->
+            <div class="showcase-container">
+                <h3 class="showcase-heading"><i class="fas fa-lightbulb"></i> Challenges & Learnings</h3>
+                <ul class="tech-stack-list" style="margin-top: 0.5rem;">
+                    <li><strong>Supabase RLS</strong> — Policies so users only see and edit their own habits, completions, and sessions</li>
+                    <li><strong>Timer state</strong> — Keeping phase (idle / work / break / stopwatch), intervals, and UI in sync; handling tab visibility for re-renders</li>
+                    <li><strong>Sound and dialog</strong> — Looping completion sound until the user dismisses the session-end dialog, then cleaning up audio and state</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
