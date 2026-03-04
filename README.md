@@ -1,8 +1,7 @@
 # Portfolio Website
 
 A responsive, multi-page portfolio site showcasing **game development**, **3D work**, and **coding projects**. Built with vanilla HTML, CSS, and JavaScript — no frameworks or build step.
-
-## Live Demo
+<img width="1246" height="1229" alt="image" src="https://github.com/user-attachments/assets/3a036d1e-a7b1-49d8-922a-df2a13fcd16a" />
 
 <!-- Add your live URL here when deployed, e.g. GitHub Pages -->
 ##[View Live Site]-https://siddwayy.github.io/my-portfolio/
