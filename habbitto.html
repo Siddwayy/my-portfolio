@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>try{var t=localStorage.getItem('theme');if(t!=='light')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
-    <meta name="description" content="Habbitto - Habit tracker with a built-in focus timer and stopwatch by Prateek Raghav. Build habits one session at a time with streaks, time tracking, and Galaxy view.">
+    <meta name="description" content="Habbitto - Habit tracker with a built-in focus timer and stopwatch by Prateek Raghav. Build habits by tying them to focused work blocks with streaks and time tracking.">
     <title>Habbitto | Prateek Raghav</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,9 +49,9 @@
 
             <!-- Project Overview -->
             <div class="showcase-container">
-                <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> Project Overview</h3>
+                <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> Overview</h3>
                 <p class="project-description">
-                    <strong>Habbitto</strong> is a habit tracker with a built-in focus timer and stopwatch. Instead of only checking "done," you track <strong>how long</strong> you spent on each habit. A focus timer (30–90 min or custom) and a stopwatch both log time to the habit you choose. Habits can be marked done for the day, and the app shows streaks and total time spent so progress is visible and motivating.
+                    Habbitto helps you build habits by tying them to focused work blocks. Instead of only checking "done," you track <strong>how long</strong> you spent on each habit. A focus timer (30–90 min or custom) and a stopwatch both log time to the habit you choose. Habits can be marked done for the day, and the app shows streaks and total time spent so progress is visible and motivating.
                 </p>
                 <div class="showcase-detail-grid" style="margin-top: 1.25rem;">
                     <div class="showcase-detail-item">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="showcase-detail-item">
                         <span class="showcase-detail-item__label">Platform</span>
-                        <span class="showcase-detail-item__value">Browser, Desktop (download)</span>
+                        <span class="showcase-detail-item__value">Browser</span>
                     </div>
                     <div class="showcase-detail-item">
                         <span class="showcase-detail-item__label">Stack</span>
@@ -76,37 +76,80 @@
                         <a href="https://habbitto.netlify.app/" target="_blank" rel="noopener noreferrer" class="github-link">
                             <i class="fas fa-globe"></i> Use in Browser
                         </a>
-                        <a href="https://drive.google.com/file/d/19hz0xK5ZFSMVVUohZKmw5BDZ9RcwAtFJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="github-link">
-                            <i class="fas fa-download"></i> Download for Desktop
-                        </a>
                         <a href="https://github.com/Siddwayy/Habbitto" target="_blank" rel="noopener noreferrer" class="github-link">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
                 </div>
                 <div class="project-media-block" style="margin-top: 1.5rem;">
-                    <img src="Assets/Habbitto/Main app view.png" decoding="async" alt="Habbitto - Main app view" class="project-image" loading="lazy">
+                    <img src="https://github.com/user-attachments/assets/a0e92371-20bb-4a6c-ada0-5c4635be19b5" decoding="async" alt="Habbitto - Main app view" class="project-image" loading="lazy">
                 </div>
             </div>
 
             <!-- Features -->
             <div class="showcase-container">
                 <h3 class="showcase-heading"><i class="fas fa-star"></i> Features</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Auth</strong></td>
+                            <td>Email/password sign-up and login via Supabase</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Habit Tracker</strong></td>
+                            <td>Custom habits, icon picker, edit/delete</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Focus Timer</strong></td>
+                            <td>Preset durations (30, 45, 60, 75, 90 min), custom duration, circular progress, optional break phase</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stopwatch</strong></td>
+                            <td>Free-form timing with save to habit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time & Streaks</strong></td>
+                            <td>Time spent per habit, daily completions, consecutive-day streak counter</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Session-End Flow</strong></td>
+                            <td>Congratulatory dialog and optional sound when the focus timer finishes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guide</strong></td>
+                            <td>In-app "How it works" section with simple steps and icons</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shortcuts</strong></td>
+                            <td>Space to start/pause/resume; keys 1–5 for duration presets when idle</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Offline / Local Mode</strong></td>
+                            <td>Works without Supabase using localStorage</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
-                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: var(--text-primary);">Auth</h4>
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Auth</h4>
                 <p class="project-description">
                     Email/password sign up and login via Supabase.
                 </p>
                 <div class="project-media-block" style="margin-top: 1rem;">
-                    <img src="Assets/Habbitto/Auth.png" decoding="async" alt="Habbitto - Auth and sign in" class="project-image" loading="lazy">
+                    <img src="https://github.com/user-attachments/assets/53925c69-cccb-4e83-8849-5b1494a89754" decoding="async" alt="Habbitto - Auth and sign in" class="project-image" loading="lazy">
                 </div>
 
-                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Habit Tracker</h4>
+                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Habits</h4>
                 <p class="project-description">
-                    Custom habits, icon picker, edit/delete, mark done for the day.
+                    Custom habits, icon picker, edit/delete.
                 </p>
                 <div class="project-media-block" style="margin-top: 1rem;">
-                    <img src="Assets/Habbitto/Habbit Tracker.png" decoding="async" alt="Habbitto - Habit tracker" class="project-image" loading="lazy">
+                    <img src="https://github.com/user-attachments/assets/bb02cac3-0ce0-4901-bdc1-b474c2a7d623" decoding="async" alt="Habbitto - Habit tracker" class="project-image" loading="lazy">
                 </div>
 
                 <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Focus Timer</h4>
@@ -114,7 +157,7 @@
                     Preset durations (30, 45, 60, 75, 90 min), custom duration, circular progress, optional break phase.
                 </p>
                 <div class="project-media-block" style="margin-top: 1rem;">
-                    <img src="Assets/Habbitto/Focus Timer.png" decoding="async" alt="Habbitto - Focus timer" class="project-image" loading="lazy">
+                    <img src="https://github.com/user-attachments/assets/c4b2e1fc-a45f-4c1d-ae92-224bce184c3c" decoding="async" alt="Habbitto - Focus timer" class="project-image" loading="lazy">
                 </div>
 
                 <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Stopwatch</h4>
@@ -122,7 +165,7 @@
                     Free-form timing with save to habit.
                 </p>
                 <div class="project-media-block" style="margin-top: 1rem;">
-                    <img src="Assets/Habbitto/Stopwatch.png" decoding="async" alt="Habbitto - Stopwatch" class="project-image" loading="lazy">
+                    <img src="https://github.com/user-attachments/assets/6462663e-6072-48ca-8371-1ca997a164cd" decoding="async" alt="Habbitto - Stopwatch" class="project-image" loading="lazy">
                 </div>
 
                 <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Time & Streaks</h4>
@@ -130,56 +173,53 @@
                     Time spent per habit, daily completions, consecutive-day streak counter.
                 </p>
                 <div class="project-media-block" style="margin-top: 1rem;">
-                    <img src="Assets/Habbitto/Time Spent.png" decoding="async" alt="Habbitto - Time spent" class="project-image" loading="lazy">
+                    <img src="https://github.com/user-attachments/assets/51b2bf1d-2178-40e1-bbb5-23914158df55" decoding="async" alt="Habbitto - Time spent" class="project-image" loading="lazy">
                 </div>
                 <div class="project-media-block" style="margin-top: 0.75rem;">
-                    <img src="Assets/Habbitto/Streaks.png" decoding="async" alt="Habbitto - Streaks" class="project-image" loading="lazy">
+                    <img src="https://github.com/user-attachments/assets/6d554eef-eeff-4649-9a1d-87fbbc78012d" decoding="async" alt="Habbitto - Streaks" class="project-image" loading="lazy">
                 </div>
-
-                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Session-end Flow</h4>
-                <p class="project-description">
-                    Congratulatory dialog and optional sound when the focus timer finishes.
-                </p>
-
-                <h4 style="font-family: 'Nunito', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary);">Guide & Shortcuts</h4>
-                <p class="project-description">
-                    In-app "How it works" with simple steps and icons. Space to start/pause/resume; keys 1–5 for duration presets when idle. Offline / local mode works without Supabase using localStorage.
-                </p>
             </div>
 
             <!-- Tech Stack -->
             <div class="showcase-container">
                 <h3 class="showcase-heading"><i class="fas fa-layer-group"></i> Tech Stack</h3>
-                <div class="tech-stack-categories">
-                    <div class="tech-stack-category">
-                        <div class="tech-stack-subcontainer">
-                            <h4 class="tech-stack-category__title">Frontend</h4>
-                            <ul class="tech-stack-list">
-                                <li>Vanilla JavaScript (ES modules)</li>
-                                <li>Vite</li>
-                                <li>CSS (custom properties)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="tech-stack-category">
-                        <div class="tech-stack-subcontainer">
-                            <h4 class="tech-stack-category__title">Backend & Storage</h4>
-                            <ul class="tech-stack-list">
-                                <li>Supabase (Auth)</li>
-                                <li>PostgreSQL with RLS</li>
-                                <li>localStorage (offline mode)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Layer</th>
+                            <th>Tech</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Frontend</strong></td>
+                            <td>Vanilla JavaScript (ES modules), Vite</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Backend</strong></td>
+                            <td>Supabase (Auth, Postgres with RLS)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage</strong></td>
+                            <td>Supabase when signed in; localStorage when not</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Styling</strong></td>
+                            <td>CSS (custom properties, no framework)</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Design & UX -->
             <div class="showcase-container">
                 <h3 class="showcase-heading"><i class="fas fa-palette"></i> Design & UX</h3>
-                <p class="project-description">
-                    Dark and light theme support with clear typography and accent color. Circular progress ring for the timer with a subtle pulse when running. Full-width Start button, habit picker with streak badges, empty state ("Create your first habit"). Modals for account, guide, and session-end; tab title shows remaining time when the timer is running.
-                </p>
+                <ul class="tech-stack-list" style="margin-top: 0.5rem;">
+                    <li>Dark-themed UI with clear typography and accent color</li>
+                    <li>Circular progress ring for the timer with a subtle pulse when running</li>
+                    <li>Full-width Start button, habit picker with streak badges, empty state ("Create your first habit")</li>
+                    <li>Modals for account, guide, and session-end; tab title shows remaining time when the timer is running</li>
+                </ul>
             </div>
 
             <!-- Challenges & Learnings -->
