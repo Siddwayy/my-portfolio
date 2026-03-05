@@ -238,19 +238,10 @@ function initThemeToggle() {
     
     if (!themeToggle || !themeIcon) return;
     
-    // Get saved theme or default to dark
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    
-    // Apply saved theme
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-    }
+    // Always start with dark mode
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
     
     // Toggle theme on button click
     themeToggle.addEventListener('click', function() {
