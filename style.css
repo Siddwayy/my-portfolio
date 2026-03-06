@@ -3603,6 +3603,95 @@ table td strong {
     font-weight: 700;
 }
 
+/* Level Design Document */
+.level-design-doc .level-doc-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.level-design-doc .doc-h4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.level-design-doc .doc-subsection .doc-h4 {
+    margin-top: 0;
+}
+
+.level-design-doc .project-description {
+    margin-bottom: 0.75rem;
+}
+
+.level-design-doc .doc-checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.level-design-doc .doc-checklist li {
+    padding: 0.35rem 0;
+}
+
+/* Document subsection containers */
+.level-design-doc .doc-subsection {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .level-design-doc .doc-subsection {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.level-design-doc .doc-subsection:last-child {
+    margin-bottom: 0;
+}
+
+/* Subcontainers (pillars, blocks) inside subsections */
+.level-design-doc .doc-pillar {
+    background: rgba(255, 255, 255, 0.5);
+    border-left: 4px solid var(--accent-mustard);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .level-design-doc .doc-pillar {
+    background: rgba(0, 0, 0, 0.2);
+    border-left-color: var(--accent-teal);
+}
+
+.level-design-doc .doc-pillar:last-child {
+    margin-bottom: 0;
+}
+
+.level-design-doc .doc-pillar .project-description {
+    margin-bottom: 0;
+}
+
+/* Block groups for related items (e.g. Core emotions, Weather) */
+.level-design-doc .doc-block {
+    margin-bottom: 1rem;
+}
+
+.level-design-doc .doc-block:last-child {
+    margin-bottom: 0;
+}
+
+.level-design-doc .doc-block-title {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
 /* --- Original Animations --- */
 @keyframes fadeInAnimation {
     from {
