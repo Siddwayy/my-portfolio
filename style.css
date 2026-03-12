@@ -3603,6 +3603,48 @@ table td strong {
     font-weight: 700;
 }
 
+/* Level Design Document - Presentation Style */
+.level-doc-presentation .presentation-hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.02) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+}
+
+[data-theme="dark"] .level-doc-presentation .presentation-hero {
+    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+}
+
+.level-doc-presentation .presentation-hero__title {
+    font-family: var(--font-family);
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.level-doc-presentation .presentation-hero__subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin: 0;
+    font-weight: 600;
+}
+
+.level-doc-presentation .presentation-slide {
+    margin-bottom: 2rem;
+}
+
+.level-doc-presentation .presentation-section-num {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
 /* Level Design Document */
 .level-design-doc .level-doc-subtitle {
     font-family: 'Nunito', sans-serif;

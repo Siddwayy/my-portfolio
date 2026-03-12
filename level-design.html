@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>try{document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
-    <meta name="description" content="Operation: False Foundation - Level Design Document for The Rooms: Descent into Deception by Prateek Raghav. Tactical stealth level design for Unreal Engine 5.">
-    <title>Operation: False Foundation — The Rooms | Prateek Raghav</title>
+    <meta name="description" content="The Rooms: Descent into Deception - Level Design Document for Operation: False Foundation by Prateek Raghav. Tactical stealth level design for Unreal Engine 5.">
+    <title>The Rooms: Descent into Deception | Prateek Raghav</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,22 +55,23 @@
     </header>
 
     <main class="container-full-width">
-        <section class="main-content level-design-doc">
-            <article>
-                <h2 class="page-title">Operation: False Foundation</h2>
-                <p class="level-doc-subtitle">Level Design Document — The Rooms: Descent into Deception</p>
-            </article>
+        <section class="main-content level-design-doc level-doc-presentation">
+            <!-- Presentation Hero -->
+            <div class="presentation-hero">
+                <h1 class="presentation-hero__title">The Rooms: Descent into Deception</h1>
+                <p class="presentation-hero__subtitle">Operation: False Foundation — Level Design Document</p>
+            </div>
 
-            <!-- 1. Header Information -->
-            <div class="showcase-container">
-                <h3 class="showcase-heading"><i class="fas fa-file-alt"></i> 1. Header Information</h3>
-                <p class="project-description">Fill this out for every version of the document.</p>
+            <!-- Overview -->
+            <div class="showcase-container presentation-slide">
+                <h3 class="showcase-heading"><i class="fas fa-file-alt"></i> Overview</h3>
+                <h4 class="presentation-section-num">1. Header Information</h4>
                 <div class="doc-subsection">
                 <table>
                     <thead>
                         <tr>
                             <th>Field</th>
-                            <th>Detail</th>
+                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,8 +86,8 @@
                 </div>
             </div>
 
-            <!-- 2. Game Definition & Pillars -->
-            <div class="showcase-container">
+            <!-- 2. Game Definition & Pillars (Optional Recap) -->
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-clipboard-list"></i> 2. Game Definition & Pillars (Optional Recap)</h3>
                 <p class="project-description">Briefly restate the game context so anyone reading the level doc understands the bigger picture.</p>
                 
@@ -97,24 +98,31 @@
                         <li><strong>Camera / Perspective:</strong> Third-person, over-the-shoulder perspective to facilitate spatial awareness and cover-based gameplay.</li>
                         <li><strong>Core player role:</strong> You play as Sid, an elite infiltration agent specializing in high-stakes clandestine operations.</li>
                         <li><strong>High-level gameplay loop:</strong> The player performs reconnaissance to identify threats, infiltrates the zone using multiple paths, gathers essential intelligence or items, sabotages the enemy's objective, and executes a high-speed exfiltration.</li>
-                        <li><strong>Setting:</strong> Modern-day St. John's, Newfoundland and Labrador. The primary location is a high-security cliffside construction zone adjacent to "The Rooms" museum building, Rainy, Thunder and Dark Night.</li>
+                        <li><strong>Setting:</strong> Modern-day St. John's, Newfoundland and Labrador. The primary location is a high-security cliffside construction zone adjacent to "The Rooms" museum building, Rainy, Thunder and Dark Night</li>
                     </ul>
                 </div>
 
                 <div class="doc-subsection">
                     <h4 class="doc-h4">2.2 Game Features / Pillars</h4>
-                    <p class="project-description">List the features that define this game and influence level decisions.</p>
                     <div class="doc-pillar">
-                        <p class="project-description"><strong>Pillar 1: Ghost vs. Panther (Adaptive Player Agency)</strong><br>The game provides a binary yet fluid choice between absolute invisibility ("Ghost") and aggressive tactical combat ("Panther"), ensuring the environment reacts dynamically to the player's presence. Level design supports this by offering non-lethal ventilation routes alongside triggerable environmental traps for lethal engagement.</p>
+                        <p class="project-description"><strong>Pillar 1: Ghost vs. Panther (Adaptive Player Agency)</strong></p>
+                        <p class="project-description">The game provides a binary yet fluid choice between absolute invisibility ("Ghost") and aggressive tactical combat ("Panther"), ensuring the environment reacts dynamically to the player's presence.</p>
+                        <p class="project-description">Level design supports this by offering non-lethal ventilation routes alongside triggerable environmental traps for lethal engagement.</p>
                     </div>
                     <div class="doc-pillar">
-                        <p class="project-description"><strong>Pillar 2: Environmental Lethality (The World is Your Weapon)</strong><br>Instead of relying solely on firearms, the player is encouraged to sabotage industrial equipment—such as Cranes, Cement Vats, and Electrical Grids—to neutralize enemies or create massive distractions. This differentiates the game from standard shooters by turning the level itself into a series of combat puzzles.</p>
+                        <p class="project-description"><strong>Pillar 2: Environmental Lethality (The World is Your Weapon)</strong></p>
+                        <p class="project-description">Instead of relying solely on firearms, the player is encouraged to sabotage industrial equipment—such as Cranes, Cement Vats, and Electrical Grids—to neutralize enemies or create massive distractions.</p>
+                        <p class="project-description">This differentiates the game from standard shooters by turning the level itself into a series of combat puzzles.</p>
                     </div>
                     <div class="doc-pillar">
-                        <p class="project-description"><strong>Pillar 3: Atmospheric High-Stakes Pressure (No Wrong Move)</strong><br>Thick volumetric fog, red sniper lasers, and a persistent guard Radio Check-in System ensure every decision feels critical. Sensory feedback, such as an audible heartbeat when near danger and "Squeaky Floor" hazards, reinforces a tense, high-stakes atmosphere.</p>
+                        <p class="project-description"><strong>Pillar 3: Atmospheric High-Stakes Pressure (No Wrong Move)</strong></p>
+                        <p class="project-description">Thick volumetric fog, red sniper lasers, and a persistent guard Radio Check-in System ensure every decision feels critical.</p>
+                        <p class="project-description">Sensory feedback, such as an audible heartbeat when near danger and "Squeaky Floor" hazards, reinforces a tense, high-stakes atmosphere.</p>
                     </div>
                     <div class="doc-pillar">
-                        <p class="project-description"><strong>Pillar 4: Multi-Layered Vertical Infiltration (Non-Linear Navigation)</strong><br>The level offers distinct, non-linear entry points across massive vertical heights, from high-altitude crane jumps down into hidden subterranean tunnels. This verticality provides a sense of scale and agency, allowing players to choose paths based on their preferred risk-to-reward ratio.</p>
+                        <p class="project-description"><strong>Pillar 4: Multi-Layered Vertical Infiltration (Non-Linear Navigation)</strong></p>
+                        <p class="project-description">The level offers distinct, non-linear entry points across massive vertical heights, from high-altitude crane jumps down into hidden subterranean tunnels.</p>
+                        <p class="project-description">This verticality provides a sense of scale and agency, allowing players to choose paths based on their preferred risk-to-reward ratio.</p>
                     </div>
                 </div>
 
@@ -147,24 +155,37 @@
             </div>
 
             <!-- 3. Level Specifications -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-cog"></i> 3. Level Specifications (Time, Difficulty, Scope)</h3>
-                <p class="project-description">Define the constraints for this level before going into detail.</p>
                 <p class="project-description">This section sets the rules and limits for the level to ensure it is fun and runs smoothly.</p>
                 <div class="doc-subsection">
-                    <ul class="tech-stack-list">
-                        <li><strong>Estimated Playtime:</strong> 15–20 minutes. (The time changes based on which path the player chooses to take: Crane, Railway, or Main Gate).</li>
-                        <li><strong>Position in Campaign / Progression:</strong> Mid-game. This is a major turning point in the story where a simple investigation becomes a big terrorist threat.</li>
-                        <li><strong>Target Difficulty:</strong> 8/10. It is harder than earlier levels because of overlapping sniper lasers and the guard radio check-in system.</li>
-                        <li><strong>Difficulty Curve Notes:</strong> The level starts with low-pressure reconnaissance to let the player look around. It builds to high-tension stealth in the Museum Archives. It peaks with a timed bomb defusal in the Basement while guards try to find you.</li>
-                        <li><strong>Technical Limits:</strong> Requires high-density volumetric fog to create the St. John's weather. Needs physics for heavy objects like cranes and falling bricks.</li>
-                        <li><strong>Template:</strong> Using AGLS Template by Jakub W.</li>
-                    </ul>
+                    <p class="project-description"><strong>Estimated Playtime:</strong> 15–20 minutes.</p>
+                    <p class="project-description">The time changes based on which path the player chooses to take (Crane, Railway, or Main Gate).</p>
+                    <p class="project-description"><strong>Position in Campaign / Progression:</strong> Mid-game.</p>
+                    <p class="project-description">This is a major turning point in the story where a simple investigation becomes a big terrorist threat.</p>
+                    <p class="project-description"><strong>Target Difficulty:</strong> 8/10.</p>
+                    <p class="project-description">It is harder than earlier levels because of overlapping sniper lasers and the guard radio check-in system.</p>
+                    <div class="doc-block">
+                        <p class="doc-block-title">Difficulty Curve Notes</p>
+                        <ul class="tech-stack-list">
+                            <li>The level starts with low-pressure reconnaissance to let the player look around.</li>
+                            <li>It builds to high-tension stealth in the Museum Archives.</li>
+                            <li>It peaks with a timed bomb defusal in the Basement while guards try to find you.</li>
+                        </ul>
+                    </div>
+                    <div class="doc-block">
+                        <p class="doc-block-title">Technical Limits</p>
+                        <ul class="tech-stack-list">
+                            <li>Requires high-density volumetric fog to create the St. John's weather.</li>
+                            <li>Needs physics for heavy objects like cranes and falling bricks.</li>
+                            <li>Using AGLS Template by Jakub W</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- 4. Context: Story, Theme, Location, Objective -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-book"></i> 4. Context: Story, Theme, Location, Objective</h3>
                 <p class="project-description">Describe why this level exists and what it should make players feel.</p>
                 
@@ -188,7 +209,8 @@
                             <li><strong>Urgency:</strong> The need to move fast but stay quiet before the world leaders arrive.</li>
                         </ul>
                     </div>
-                    <p class="project-description"><strong>Time of day:</strong> Night (The level takes place in the middle of a dark night to help with stealth).</p>
+                    <p class="project-description"><strong>Time of day:</strong></p>
+                    <p class="project-description">Night: The level takes place in the middle of a dark night to help with stealth.</p>
                     <div class="doc-block">
                         <p class="doc-block-title">Weather / Environmental Conditions</p>
                         <ul class="tech-stack-list">
@@ -241,7 +263,6 @@
 
                 <div class="doc-subsection">
                     <h4 class="doc-h4">4.4 Overarching Player Objective</h4>
-                    <p class="project-description"><strong>One clear, actionable sentence.</strong></p>
                     <p class="project-description"><strong>Main Objective:</strong> Infiltrate the zone to uncover the kidnapping, override the signal to start the fail-safe timer, and defuse the detonators in the basement within 10 minutes before calling for backup and jumping off the cliff.</p>
                     <div class="doc-block">
                         <p class="doc-block-title">Fail Conditions</p>
@@ -256,7 +277,7 @@
             </div>
 
             <!-- 5. Core Content -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-gamepad"></i> 5. Core Content: Mechanics, Elements, Objectives</h3>
                 <p class="project-description">Specify the gameplay ingredients present in this level.</p>
                 
@@ -294,57 +315,68 @@
                     <p class="project-description">Elements are concrete objects or entities that use those mechanics.</p>
                     <div class="doc-block">
                         <p class="doc-block-title">Weapons Available</p>
-                        <ul class="tech-stack-list">
-                            <li><strong>Weapon 1: Silenced Tactical Pistol:</strong> A quiet handgun used for taking out guards from a distance or shooting objects like lights and gas tanks.</li>
-                            <li><strong>Weapon 2: Environmental Weapons (The World):</strong> Not a gun you carry, but things in the world like falling bricks, swinging crane hooks, and leaking gas tanks that you can trigger to stop enemies.</li>
-                        </ul>
+                        <p class="project-description"><strong>Weapon 1: Silenced Tactical Pistol</strong></p>
+                        <p class="project-description">A quiet handgun used for taking out guards from a distance or shooting objects like lights and gas tanks.</p>
+                        <p class="project-description"><strong>Weapon 2: Environmental Weapons (The World)</strong></p>
+                        <p class="project-description">Not a gun you carry, but things in the world like falling bricks, swinging crane hooks, and leaking gas tanks that you can trigger to stop enemies.</p>
                     </div>
                     <div class="doc-block">
                         <p class="doc-block-title">Enemy types</p>
-                        <ul class="tech-stack-list">
-                            <li><strong>Enemy Type 1: Mercenary Guard (The Searcher):</strong> Role: Basic security for the construction site and museum. Behavior: They walk in patterns, use flashlights to look under trailers, and must report in on their radios every few minutes.</li>
-                            <li><strong>Enemy Type 2: Elite Sniper (The Watcher):</strong> Role: High-ground security on the museum roof and crane tops. Behavior: They stay still and use a bright red laser sight. If the laser touches Sid for more than two seconds, they will fire a high-damage shot.</li>
-                        </ul>
+                        <p class="project-description"><strong>Enemy Type 1: Mercenary Guard (The Searcher)</strong></p>
+                        <p class="project-description">Role: Basic security for the construction site and museum.</p>
+                        <p class="project-description">Behavior: They walk in patterns, use flashlights to look under trailers, and must report in on their radios every few minutes.</p>
+                        <p class="project-description"><strong>Enemy Type 2: Elite Sniper (The Watcher)</strong></p>
+                        <p class="project-description">Role: High-ground security on the museum roof and crane tops.</p>
+                        <p class="project-description">Behavior: They stay still and use a bright red laser sight. If the laser touches Sid for more than two seconds, they will fire a high-damage shot.</p>
                     </div>
                     <div class="doc-block">
                         <p class="doc-block-title">Interaction Elements</p>
-                        <ul class="tech-stack-list">
-                            <li><strong>Security Keycard:</strong> Found at the top of the Skeleton Building; used to open the museum's locked side entrance.</li>
-                            <li><strong>Hacking Terminals:</strong> Computers in the Site Trailer and the Archives used to find the kidnapping proof and stop the bomb signal.</li>
-                            <li><strong>Crane Levers:</strong> Controls found in the crane cabins that let the player drop heavy loads on guards or create new paths.</li>
-                            <li><strong>The Master Bomb:</strong> Located in the basement; a complex machine with wires that must be cut to stop the 10-minute timer.</li>
-                        </ul>
+                        <p class="project-description"><strong>Security Keycard:</strong> Found at the top of the Skeleton Building; used to open the museum's locked side entrance.</p>
+                        <p class="project-description"><strong>Hacking Terminals:</strong> Computers in the Site Trailer and the Archives used to find the kidnapping proof and stop the bomb signal.</p>
+                        <p class="project-description"><strong>Crane Levers:</strong> Controls found in the crane cabins that let the player drop heavy loads on guards or create new paths.</p>
+                        <p class="project-description"><strong>The Master Bomb:</strong> Located in the basement; a complex machine with wires that must be cut to stop the 10-minute timer.</p>
                     </div>
                     <div class="doc-block">
                         <p class="doc-block-title">Collectibles / Rewards</p>
-                        <ul class="tech-stack-list">
-                            <li><strong>Intel Folders:</strong> Secret files that explain more about the terrorist group and the kidnapped family.</li>
-                            <li><strong>Laundered Cash:</strong> Small bags of money hidden around the site (a nod to Sid's original mission) that give extra points.</li>
-                            <li><strong>Upgraded Hacking Tool:</strong> A hidden item that makes the signal override in the Archives go faster.</li>
-                        </ul>
+                        <p class="project-description"><strong>Intel Folders:</strong> Secret files that explain more about the terrorist group and the kidnapped family.</p>
+                        <p class="project-description"><strong>Laundered Cash:</strong> Small bags of money hidden around the site (a nod to Sid's original mission) that give extra points.</p>
+                        <p class="project-description"><strong>Upgraded Hacking Tool:</strong> A hidden item that makes the signal override in the Archives go faster.</p>
                     </div>
                     <div class="doc-block">
                         <p class="doc-block-title">Environmental Hazards</p>
-                        <ul class="tech-stack-list">
-                            <li><strong>Squeaky Floors:</strong> Old wooden floors in the Museum Archives that alert guards if Sid walks too fast.</li>
-                            <li><strong>Cliff Edges:</strong> Very high drops that will kill Sid instantly if he falls before the final "Leap of Faith".</li>
-                            <li><strong>Rainy Puddles:</strong> Wet spots on the ground that make footsteps splash loudly and make the ground slippery.</li>
-                            <li><strong>Live Wires:</strong> Broken electrical boxes in the construction zone that can shock Sid or be used to trap guards.</li>
-                            <li><strong>Moving Maintenance Cart (The Crusher):</strong> Found on the maintenance rail route. A heavy metal cart moves back and forth on the tracks. Sid must time his movement perfectly. If the cart is coming, he has to drop down and hang from the rail or jump to a side platform to avoid being crushed.</li>
-                            <li><strong>High-Altitude Winds (The Pusher):</strong> When walking across the high Crane arms or the Skeleton Building beams, the storm wind blows very hard. The wind tries to push Sid off balance. The player must move slowly and counter the wind to keep from falling into the dark ocean below.</li>
-                        </ul>
+                        <p class="project-description"><strong>Squeaky Floors:</strong> Old wooden floors in the Museum Archives that alert guards if Sid walks too fast.</p>
+                        <p class="project-description"><strong>Cliff Edges:</strong> Very high drops that will kill Sid instantly if he falls before the final "Leap of Faith".</p>
+                        <p class="project-description"><strong>Rainy Puddles:</strong> Wet spots on the ground that make footsteps splash loudly and make the ground slippery.</p>
+                        <p class="project-description"><strong>Live Wires:</strong> Broken electrical boxes in the construction zone that can shock Sid or be used to trap guards.</p>
+                        <p class="project-description"><strong>Moving Maintenance Cart (The Crusher):</strong> Found on the maintenance rail route. A heavy metal cart moves back and forth on the tracks. Sid must time his movement perfectly. If the cart is coming, he has to drop down and hang from the rail or jump to a side platform to avoid being crushed.</p>
+                        <p class="project-description"><strong>High-Altitude Winds (The Pusher):</strong> When walking across the high Crane arms or the Skeleton Building beams, the storm wind blows very hard. The wind tries to push Sid off balance. The player must move slowly and counter the wind to keep from falling into the dark ocean below.</p>
                     </div>
                 </div>
 
                 <div class="doc-subsection">
                     <h4 class="doc-h4">5.3 Player Objectives (Mission Beats)</h4>
-                    <ul class="tech-stack-list">
-                        <li><strong>Objective 1: Infiltrate the Site Trailer and Gather Intel:</strong> Sneak into the construction yard and hack the main computer to find the money records. The Twist: This is where you discover the kidnapping of the owner's family and the "Fake Accident" bomb plot.</li>
-                        <li><strong>Objective 2: Secure the Security Keycard:</strong> Climb to the top of the Skeleton Building while fighting high-altitude winds. Steal the keycard from the foreman's office to gain access to the museum's locked side doors.</li>
-                        <li><strong>Objective 3: Reach the Level 3 Archives and Block the Signal:</strong> Use the keycard or the maintenance rail (avoiding the moving cart) to enter the museum. Reach the Level 3 Archives and use the terminals to stop the remote detonation signal. The Fail-Safe: Triggering this starts the 10-minute countdown.</li>
-                        <li><strong>Objective 4: Defuse the Master Bomb in the Basement:</strong> Race down through the museum before the 10 minutes run out. Navigate the subterranean basement and manually disconnect the detonators to save the building.</li>
-                        <li><strong>Objective 5: Call for Backup and Escape via the "Leap of Faith":</strong> Use your radio to call the agency for reinforcements to secure the site. Run to the cliff edge and jump into the ocean to reach your rescue boat.</li>
-                    </ul>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Objective 1: Infiltrate the Site Trailer and Gather Intel</strong></p>
+                        <p class="project-description">Sneak into the construction yard and hack the main computer to find the money records.</p>
+                        <p class="project-description">The Twist: This is where you discover the kidnapping of the owner's family and the "Fake Accident" bomb plot.</p>
+                    </div>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Objective 2: Secure the Security Keycard</strong></p>
+                        <p class="project-description">Climb to the top of the Skeleton Building while fighting high-altitude winds. Steal the keycard from the foreman's office to gain access to the museum's locked side doors.</p>
+                    </div>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Objective 3: Reach the Level 3 Archives and Block the Signal</strong></p>
+                        <p class="project-description">Use the keycard or the maintenance rail (avoiding the moving cart) to enter the museum. Reach the Level 3 Archives and use the terminals to stop the remote detonation signal.</p>
+                        <p class="project-description">The Fail-Safe: Triggering this starts the 10-minute countdown.</p>
+                    </div>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Objective 4: Defuse the Master Bomb in the Basement</strong></p>
+                        <p class="project-description">Race down through the museum before the 10 minutes run out. Navigate the subterranean basement and manually disconnect the detonators to save the building.</p>
+                    </div>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Objective 5: Call for Backup and Escape via the "Leap of Faith"</strong></p>
+                        <p class="project-description">Use your radio to call the agency for reinforcements to secure the site. Run to the cliff edge and jump into the ocean to reach your rescue boat.</p>
+                    </div>
                 </div>
 
                 <div class="doc-subsection">
@@ -360,20 +392,29 @@
                     <div class="doc-block">
                         <p class="doc-block-title">Intentional Rule-Breaks</p>
                         <div class="doc-pillar">
-                            <p class="project-description"><strong>The Fail-Safe Timer:</strong> Usually, the game allows for a slow, methodical "Ghost" pace. We break this rule by introducing the 10-minute timer after the Archive hack. Why: To shift the gameplay from slow stealth to high-speed "Panther" action. How it's communicated: A large red HUD timer appears, the music shifts to a fast tempo, and Sid says, "The signal override triggered a fail-safe! I've got ten minutes before this place is at the bottom of the ocean!".</p>
+                            <p class="project-description"><strong>The Fail-Safe Timer:</strong></p>
+                            <p class="project-description">Usually, the game allows for a slow, methodical "Ghost" pace. We break this rule by introducing the 10-minute timer after the Archive hack.</p>
+                            <p class="project-description">Why: To shift the gameplay from slow stealth to high-speed "Panther" action.</p>
+                            <p class="project-description">How it's communicated: A large red HUD timer appears, the music shifts to a fast tempo, and Sid says, "The signal override triggered a fail-safe! I've got ten minutes before this place is at the bottom of the ocean!".</p>
                         </div>
                         <div class="doc-pillar">
-                            <p class="project-description"><strong>Squeaky Floors:</strong> In most levels, "crouch-walking" is perfectly silent. In the Archives, this rule is broken. Why: To make the interior of the museum feel more fragile and tense than the noisy construction site. How it's communicated: The first time Sid steps on an old floorboard, a loud creak sounds, and a visual "noise ripple" appears around his feet to warn the player.</p>
+                            <p class="project-description"><strong>Squeaky Floors:</strong></p>
+                            <p class="project-description">In most levels, "crouch-walking" is perfectly silent. In the Archives, this rule is broken.</p>
+                            <p class="project-description">Why: To make the interior of the museum feel more fragile and tense than the noisy construction site.</p>
+                            <p class="project-description">How it's communicated: The first time Sid steps on an old floorboard, a loud creak sounds, and a visual "noise ripple" appears around his feet to warn the player.</p>
                         </div>
                         <div class="doc-pillar">
-                            <p class="project-description"><strong>The "Leap of Faith" Exit:</strong> Typically, missions end at a designated extraction point. This level breaks that rule by making the "exit" a high-altitude jump. Why: To provide a cinematic payoff for the verticality of the cliffside. How it's communicated: A mission marker appears over the open cliff edge, and the agency radioed: "Sid, the boat is directly below you. It's now or never—jump!".</p>
+                            <p class="project-description"><strong>The "Leap of Faith" Exit:</strong></p>
+                            <p class="project-description">Typically, missions end at a designated extraction point. This level breaks that rule by making the "exit" a high-altitude jump.</p>
+                            <p class="project-description">Why: To provide a cinematic payoff for the verticality of the cliffside.</p>
+                            <p class="project-description">How it's communicated: A mission marker appears over the open cliff edge, and the agency radioed: "Sid, the boat is directly below you. It's now or never—jump!".</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- 6. Player Journey (Beats Table) -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-route"></i> 6. Player Journey (Beats Table)</h3>
                 <p class="project-description">Break the level into key beats that describe how the experience evolves.</p>
                 <div class="doc-subsection">
@@ -392,7 +433,11 @@
                 </div>
                 <div class="doc-subsection">
                     <p class="doc-block-title">Notes on Pacing</p>
-                    <p class="project-description">The level starts slow and quiet to let you explore the yard. The pressure rises during the climb and the archive infiltration. The intensity peaks during the 10-minute countdown where you must move fast to survive.</p>
+                    <ul class="tech-stack-list">
+                        <li>The level starts slow and quiet to let you explore the yard.</li>
+                        <li>The pressure rises during the climb and the archive infiltration.</li>
+                        <li>The intensity peaks during the 10-minute countdown where you must move fast to survive.</li>
+                    </ul>
                 </div>
                 <div class="doc-subsection">
                     <p class="doc-block-title">Emotional Curve</p>
@@ -406,7 +451,7 @@
             </div>
 
             <!-- 7. Difficulty vs Time Plan -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-chart-line"></i> 7. Difficulty vs Time Plan</h3>
                 <p class="project-description">Use this section to validate that challenge ramps in a satisfying way.</p>
                 <div class="doc-subsection">
@@ -417,7 +462,7 @@
                     <tbody>
                         <tr><td>1</td><td>Yard Entry</td><td>Enter the construction site and hide from the first guards.</td><td>2</td></tr>
                         <tr><td>2</td><td>Patrol Sneak</td><td>Move past guards checking trailers with flashlights.</td><td>3</td></tr>
-                        <tr><td>3</td><td>Trailer Hack</td><td>Discover the kidnapping twist and the "Fake Accident" plot.</td><td>4</td></tr>
+                        <tr><td>3</td><td>The Trailer Hack</td><td>Discover the kidnapping twist and the "Fake Accident" plot.</td><td>4</td></tr>
                         <tr><td>4</td><td>The Big Climb</td><td>Start climbing the Skeleton Building while fighting the wind.</td><td>5</td></tr>
                         <tr><td>5</td><td>Keycard Steal</td><td>Reach the top and take the keycard while under sniper lasers.</td><td>6</td></tr>
                         <tr><td>6</td><td>Museum Entry</td><td>Use the rail route and time your move to avoid the heavy cart.</td><td>7</td></tr>
@@ -429,19 +474,32 @@
             </div>
 
             <!-- 8. Top-Down Layout Sketch -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-map"></i> 8. Top-Down Layout Sketch</h3>
                 <p class="project-description">Summarize how the level is structured spatially.</p>
                 
                 <div class="doc-subsection">
                     <h4 class="doc-h4">8.1 Zones Overview</h4>
                     <p class="project-description">These are the three main areas Sid must move through, in order:</p>
-                    <ul class="tech-stack-list">
-                        <li><strong>Zone 1: The Construction Yard:</strong> Description: A large, messy outside area filled with excavators, cement mixers, and stacks of crates. Key Spot: The Site Trailers where the kidnapping proof is hidden.</li>
-                        <li><strong>Zone 2: The Skeleton Building & Crane:</strong> Description: A tall, half-finished steel structure and a yellow construction crane. Key Spot: The top floor where Sid must steal the security keycard.</li>
-                        <li><strong>Zone 3: The Rooms Museum (Interior):</strong> Description: A clean, modern building with a lobby, gift shop, and upper-level archives. Key Spot: The subterranean basement where the bomb is hidden.</li>
-                        <li><strong>Optional Side Area: The Maintenance Rail:</strong> A secret path along the cliff edge that lets you skip some guards but requires timing to avoid the moving cart.</li>
-                    </ul>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Zone 1: The Construction Yard</strong></p>
+                        <p class="project-description">Description: A large, messy outside area filled with excavators, cement mixers, and stacks of crates.</p>
+                        <p class="project-description">Key Spot: The Site Trailers where the kidnapping proof is hidden.</p>
+                    </div>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Zone 2: The Skeleton Building & Crane</strong></p>
+                        <p class="project-description">Description: A tall, half-finished steel structure and a yellow construction crane.</p>
+                        <p class="project-description">Key Spot: The top floor where Sid must steal the security keycard.</p>
+                    </div>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Zone 3: The Rooms Museum (Interior)</strong></p>
+                        <p class="project-description">Description: A clean, modern building with a lobby, gift shop, and upper-level archives.</p>
+                        <p class="project-description">Key Spot: The subterranean basement where the bomb is hidden.</p>
+                    </div>
+                    <div class="doc-pillar">
+                        <p class="project-description"><strong>Optional Side Area: The Maintenance Rail</strong></p>
+                        <p class="project-description">A secret path along the cliff edge that lets you skip some guards but requires timing to avoid the moving cart.</p>
+                    </div>
                 </div>
 
                 <div class="doc-subsection">
@@ -454,7 +512,8 @@
                             <li><strong>Exit:</strong> A final "Leap of Faith" off the cliff into the ocean below.</li>
                         </ul>
                     </div>
-                    <p class="project-description"><strong>Main Routes ("Golden Path"):</strong> Yard Entrance → Site Trailer → Skeleton Building → Museum Lobby → Level 3 Archives → Basement Bomb.</p>
+                    <p class="project-description"><strong>Main Routes ("Golden Path"):</strong></p>
+                    <p class="project-description">The most direct way is: Yard Entrance → Site Trailer → Skeleton Building → Museum Lobby → Level 3 Archives → Basement Bomb.</p>
                     <div class="doc-block">
                         <p class="doc-block-title">Optional Routes / Shortcuts</p>
                         <ul class="tech-stack-list">
@@ -476,19 +535,19 @@
                     <h4 class="doc-h4">8.3 Symbol Legend (For Your Sketch)</h4>
                     <p class="project-description">Define the symbols used on your map so others can read it quickly.</p>
                     <ul class="tech-stack-list">
-                        <li>Player spawn / extraction point symbol.</li>
-                        <li>Enemy type symbols.</li>
-                        <li>Objective markers.</li>
-                        <li>Doors (open/closed).</li>
-                        <li>Hazards (e.g., toxic areas, traps).</li>
-                        <li>Cover / obstacles.</li>
-                        <li>Line-of-sight / enemy vision cones (if relevant).</li>
+                        <li>Player spawn / extraction point symbol:</li>
+                        <li>Enemy type symbols:</li>
+                        <li>Objective markers:</li>
+                        <li>Doors (open/closed):</li>
+                        <li>Hazards (e.g., toxic areas, traps):</li>
+                        <li>Cover / obstacles:</li>
+                        <li>Line-of-sight / enemy vision cones (if relevant):</li>
                     </ul>
                 </div>
             </div>
 
             <!-- 9. Space Hierarchy -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-layer-group"></i> 9. Space Hierarchy</h3>
                 <p class="project-description">Document how each key space is shaped and why it exists.</p>
                 <div class="doc-subsection">
@@ -497,16 +556,16 @@
                         <tr><th>Space Name</th><th>Form</th><th>Size</th><th>Placement</th><th>Purpose</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Area 1: The Construction Yard</td><td>Open Arena</td><td>Large</td><td>First (Beat 1)</td><td>Stealth & Story: Sneak to the trailer to discover the kidnapping and "Fake Accident" plot.</td></tr>
-                        <tr><td>Area 2: The Skeleton Building & Crane</td><td>Vertical Hub</td><td>Medium</td><td>Second (Beat 2)</td><td>Traversal & Vista: Climb for the keycard while fighting heavy winds and snipers.</td></tr>
-                        <tr><td>Area 3: The Rooms Museum Interior</td><td>Corridor / Hub</td><td>Large</td><td>Third (Beats 3–5)</td><td>Stealth & Pacing: Moves from quiet archives to a high-speed, 10-minute dash to defuse the bomb.</td></tr>
+                        <tr><td>Area 1: The Construction Yard</td><td>Open Arena</td><td>Large: Needed for multiple infiltration paths and cover.</td><td>First (Beat 1): The mission start point.</td><td>Stealth & Story: Sneak to the trailer to discover the kidnapping and "Fake Accident" plot.</td></tr>
+                        <tr><td>Area 2: The Skeleton Building & Crane</td><td>Vertical Hub</td><td>Medium: Small footprint but high verticality.</td><td>Second (Beat 2): Reached after finding the initial intel.</td><td>Traversal & Vista: Climb for the keycard while fighting heavy winds and snipers.</td></tr>
+                        <tr><td>Area 3: The Rooms Museum Interior</td><td>Corridor / Hub</td><td>Large: Includes the lobby, Level 3 Archives, and subterranean basement.</td><td>Third (Beats 3–5): The location for the mission's climax.</td><td>Stealth & Pacing: Moves from quiet archives to a high-speed, 10-minute dash to defuse the bomb.</td></tr>
                     </tbody>
                 </table>
                 </div>
             </div>
 
             <!-- 10. Guidance & Navigation Notes -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-compass"></i> 10. Guidance & Navigation Notes</h3>
                 <p class="project-description">Explain how the player understands where to go without relying only on UI markers.</p>
                 <div class="doc-subsection">
@@ -516,10 +575,10 @@
                         <tr><th>Location / Beat</th><th>Visual Landmarks</th><th>Lighting Cues</th><th>Audio Cues</th><th>Other Guidance (VFX/Barks)</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Opening (Construction Yard)</td><td>Site Trailer sits as a focal point amidst dark excavators.</td><td>High-intensity floodlights illuminate entrance.</td><td>Rhythmic "patter" of rain on metal roof.</td><td>Muddy tire tracks lead from yard entrance to door.</td></tr>
-                        <tr><td>Mid Level (Building / Museum)</td><td>Yellow Crane and tall glowing glass windows of Lobby.</td><td>Red sniper lasers highlight the vertical path.</td><td>Mechanical "clank-clank" of the maintenance cart.</td><td>Wind VFX (slanting rain) pushes Sid toward entrance.</td></tr>
-                        <tr><td>Climax (Archives to Basement)</td><td>Large illuminated "BASEMENT" and "EXIT" signs.</td><td>Pulsing red emergency lights during countdown.</td><td>Rapid, high-pitched ticking increasing in volume.</td><td>Agency voiceover (NPC barks) provides directional hints.</td></tr>
-                        <tr><td>Resolution (The High Cliff)</td><td>Broken railing at Cliff Edge and rescue boat.</td><td>Bright blue strobe light on rescue boat.</td><td>Sound of crashing waves and engine hum.</td><td>Final UI prompt appears: [SPACE] LEAP OF FAITH.</td></tr>
+                        <tr><td>Opening (Construction Yard)</td><td>The Site Trailer sits as a bright white focal point amidst dark excavators and crates.</td><td>High-intensity floodlights illuminate the trailer's entrance, creating a clear goal.</td><td>The rhythmic "pattern" of rain on the trailer's metal roof draws the player toward it.</td><td>Muddy tire tracks on the ground lead directly from the yard entrance to the trailer door.</td></tr>
+                        <tr><td>Mid Level (Skeleton Building / Museum)</td><td>The Yellow Crane and the tall, glowing glass windows of the Museum Lobby.</td><td>Red sniper lasers sweep across the Skeleton Building, highlighting the vertical path upward.</td><td>The mechanical "clank-clank" of the moving maintenance cart warns the player of the rail route.</td><td>Wind VFX (slanting rain) pushes Sid toward the interior museum entrance for cover.</td></tr>
+                        <tr><td>Climax (Archives to Basement)</td><td>Large, illuminated "BASEMENT" and "EXIT" signs inside the museum corridors.</td><td>Pulsing red emergency lights activate during the 10-minute countdown to signal danger.</td><td>A rapid, high-pitched ticking sound increases in volume as Sid gets closer to the bomb.</td><td>The Agency's voiceover (NPC barks) provides directional hints: "Sid, the stairs to the basement are behind the lobby!".</td></tr>
+                        <tr><td>Resolution (The High Cliff)</td><td>The broken railing at the Cliff Edge and the rescue boat in the water.</td><td>A bright blue strobe light on the rescue boat flashes in the dark ocean below the cliff.</td><td>The sound of crashing waves and the low hum of the rescue boat's engine.</td><td>A final UI prompt appears at the edge: [SPACE] LEAP OF FAITH.</td></tr>
                     </tbody>
                 </table>
                 </div>
@@ -535,7 +594,7 @@
             </div>
 
             <!-- 11. Reference Images -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-images"></i> 11. Reference Images</h3>
                 <p class="project-description">Gather a small set of images that communicate mood, architecture, and gameplay references.</p>
                 <div class="doc-subsection">
@@ -549,15 +608,15 @@
             </div>
 
             <!-- 12. Player Journey Summary -->
-            <div class="showcase-container">
-                <h3 class="showcase-heading"><i class="fas fa-list-ol"></i> 12. Player Journey Summary</h3>
+            <div class="showcase-container presentation-slide">
+                <h3 class="showcase-heading"><i class="fas fa-list-ol"></i> 12. Player Journey Summary (3–4 Sentences)</h3>
                 <div class="doc-subsection">
-                <p class="project-description">12. Player Journey Summary: Sid begins the mission by stealthily infiltrating a dark, rainy construction yard in St. John's via a high-altitude zipline or a dangerous maintenance rail. The tension rises as he discovers a terrorist plot to mask a museum bombing as a "construction accident," forcing him to climb the wind-swept Skeleton Building for a keycard before sneaking through the museum's squeaky-floored archives. The level reaches a frantic climax when a 10-minute fail-safe timer triggers, sending Sid on a high-speed dash to the subterranean basement to manually defuse the detonators. After stopping the countdown and calling for backup, he performs a cinematic "Leap of Faith" off the cliff into the ocean, reporting that the museum owner is an innocent victim and shifting the next mission's focus to a hostage rescue.</p>
+                <p class="project-description">Sid begins the mission by stealthily infiltrating a dark, rainy construction yard in St. John's via a high-altitude zipline or a dangerous maintenance rail. The tension rises as he discovers a terrorist plot to mask a museum bombing as a "construction accident," forcing him to climb the wind-swept Skeleton Building for a keycard before sneaking through the museum's squeaky-floored archives. The level reaches a frantic climax when a 10-minute fail-safe timer triggers, sending Sid on a high-speed dash to the subterranean basement to manually defuse the detonators. After stopping the countdown and calling for backup, he performs a cinematic "Leap of Faith" off the cliff into the ocean, reporting that the museum owner is an innocent victim and shifting the next mission's focus to a hostage rescue.</p>
                 </div>
             </div>
 
             <!-- 13. Documentation Checklist -->
-            <div class="showcase-container">
+            <div class="showcase-container presentation-slide">
                 <h3 class="showcase-heading"><i class="fas fa-tasks"></i> 13. Documentation Checklist</h3>
                 <p class="project-description">Use this checklist before sharing the doc with others.</p>
                 <div class="doc-subsection">
@@ -578,19 +637,10 @@
             </div>
 
             <!-- 14. Iteration Notes -->
-            <div class="showcase-container">
-                <h3 class="showcase-heading"><i class="fas fa-edit"></i> 14. Iteration Notes (Optional)</h3>
-                <p class="project-description">Reserve a small section for tracking major changes between versions.</p>
+            <div class="showcase-container presentation-slide">
+                <h3 class="showcase-heading"><i class="fas fa-edit"></i> 14. Iteration Notes</h3>
                 <div class="doc-subsection">
-                    <p class="doc-block-title">Version 0.1 → 0.2 (what changed and why)</p>
-                    <p class="project-description"></p>
-                </div>
-                <div class="doc-subsection">
-                    <p class="doc-block-title">Version 0.2 → 0.3</p>
-                    <p class="project-description"></p>
-                </div>
-                <div class="doc-subsection">
-                    <p class="doc-block-title">Open questions / risks to validate in playtests</p>
+                    <p class="doc-block-title">Version 0.1</p>
                     <p class="project-description"></p>
                 </div>
             </div>
