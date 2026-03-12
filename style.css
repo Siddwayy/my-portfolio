@@ -3627,6 +3627,10 @@ table td strong {
     object-fit: contain;
 }
 
+.level-doc-presentation .presentation-hero .project-cta-buttons {
+    margin-top: 1.25rem;
+}
+
 [data-theme="dark"] .level-doc-presentation .presentation-hero {
     background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
 }
